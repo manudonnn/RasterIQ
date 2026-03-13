@@ -1,0 +1,5 @@
+*.bin
+*.pyc
+venv/
+./data
+.env

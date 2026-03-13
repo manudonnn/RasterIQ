@@ -1,0 +1,6 @@
+name: "anomaly_scan"
+description: "Flag ROs where any stage duration exceeds 2x its historical average, indicating a bottleneck."
+parameters:
+  none: "No parameters required"
+sql_query: "SELECT RO_ID, ORG_NM, DART_GEN_DURATION, AVG_DART_GEN_DURATION, (DART_GEN_DURATION - AVG_DART_GEN_DURATION) as DURATION_DELTA FROM roster_processing_details WHERE DART_GEN_DURATION > (2 * AVG_DART_GEN_DURATION) AND DART_GEN_DURATION > 0"
+instruction: "Run the query to identify ROs with excessively long stage durations. Format the results as an alert."

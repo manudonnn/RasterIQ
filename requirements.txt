@@ -1,0 +1,14 @@
+streamlit
+langchain
+langchain-community
+langchain-openai
+duckdb
+pandas
+chromadb
+faiss-cpu
+sentence-transformers
+plotly
+tavily-python
+jinja2
+pyyaml
+python-dotenv

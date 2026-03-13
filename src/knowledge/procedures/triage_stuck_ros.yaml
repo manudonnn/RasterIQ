@@ -1,0 +1,6 @@
+name: "triage_stuck_ros"
+description: "Finds all IS_STUCK=1 ROs, ranks by time stuck and Red health flags, recommends escalation priority"
+parameters:
+  state_filter: "Optional 2-letter state code e.g. KS or CA"
+sql_query: "SELECT RO_ID, ORG_NM, CNT_STATE, LATEST_STAGE_NM, IS_STUCK, PRE_PROCESSING_HEALTH, DART_GEN_HEALTH, SPS_LOAD_HEALTH FROM roster_processing_details WHERE IS_STUCK = 1 ORDER BY CAST(CASE WHEN LATEST_STAGE_NM='DART_GENERATION' THEN DART_GEN_DURATION ELSE 0 END AS INT) DESC"
+instruction: "Run the query, analyze the output, and format a sorted list of stuck ROs by longest duration and most red flags."

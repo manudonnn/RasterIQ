@@ -1,0 +1,122 @@
+[
+  {
+    "concept": "PRE_PROCESSING",
+    "type": "Pipeline Stage",
+    "description": "The initial stage where incoming roster files are validated for structural integrity, correct formatting, and basic data types. Failed files may be halted (STOPPED) before reaching mapping."
+  },
+  {
+    "concept": "MAPPING_APROVAL",
+    "type": "Pipeline Stage",
+    "description": "Stage where the payer's standard schema is mapped to the provider's custom data format. Requires approval from data stewards."
+  },
+  {
+    "concept": "ISF_GEN",
+    "type": "Pipeline Stage",
+    "description": "Intermediate Standard Format Generation. Converts the proprietary provider data into the master internal format."
+  },
+  {
+    "concept": "DART_GEN",
+    "type": "Pipeline Stage",
+    "description": "Data Analysis & Review Tool Generation. Creates the dataset that operational teams will review for data quality and anomalies."
+  },
+  {
+    "concept": "DART_REVIEW",
+    "type": "Pipeline Stage",
+    "description": "Manual or automated review of the DART dataset to identify critical data quality issues before pushing to production."
+  },
+  {
+    "concept": "DART_UI_VALIDATION",
+    "type": "Pipeline Stage",
+    "description": "Validation checks specifically targeting the UI presentation of the roster data."
+  },
+  {
+    "concept": "SPS_LOAD",
+    "type": "Pipeline Stage",
+    "description": "The final load into the downstream Source Provider System (SPS). This is the operational system of record."
+  },
+  {
+    "concept": "FILE_STATUS_CD",
+    "type": "Metric",
+    "description": "Numeric status indicating where a Roster Operation is. 9=Stopped, 45=DART Review, 49=DART Generation, 99=Resolved."
+  },
+  {
+    "concept": "9",
+    "type": "Status Code",
+    "description": "STOPPED status for a roster file."
+  },
+  {
+    "concept": "45",
+    "type": "Status Code",
+    "description": "DART_REVIEW status for a roster file."
+  },
+  {
+    "concept": "49",
+    "type": "Status Code",
+    "description": "DART_GENERATION status for a roster file."
+  },
+  {
+    "concept": "99",
+    "type": "Status Code",
+    "description": "RESOLVED status for a roster file. The process has concluded successfully."
+  },
+  {
+    "concept": "Green Health Flag",
+    "type": "Status Indicator",
+    "description": "Indicates the pipeline stage or processing step completed within expected parameters and historical timeframes."
+  },
+  {
+    "concept": "Yellow Health Flag",
+    "type": "Status Indicator",
+    "description": "Indicates a warning: the pipeline stage took longer than average or encountered non-critical warnings but did not fail."
+  },
+  {
+    "concept": "Red Health Flag",
+    "type": "Status Indicator",
+    "description": "Indicates a critical error or severe delay: a pipeline stage has exceeded acceptable duration thresholds or encountered failures."
+  },
+  {
+    "concept": "IS_STUCK",
+    "type": "State",
+    "description": "A boolean indicating if the RO is currently stuck in its latest stage and not moving forward. Usually correlated with high stage duration."
+  },
+  {
+    "concept": "IS_FAILED",
+    "type": "State",
+    "description": "A boolean indicating that the RO encountered a terminal error and cannot be processed further without intervention."
+  },
+  {
+    "concept": "SCS_PERCENT",
+    "type": "Metric",
+    "description": "The overall transaction success rate percentage for a market and month. Shows the ratio of successful transactions to total transactions."
+  },
+  {
+    "concept": "RUN_NO",
+    "type": "Metric",
+    "description": "The processing iteration. 1 = initial run, >1 = reprocessing attempt (retry lift). A higher run number indicates previous failures were retried."
+  },
+  {
+    "concept": " Medicare HMO",
+    "type": "LOB",
+    "description": "Medicare Health Maintenance Organization Line of Business."
+  },
+  {
+    "concept": "Medicaid FFS",
+    "type": "LOB",
+    "description": "Medicaid Fee-For-Service Line of Business."
+  },
+  {
+    "concept": "Commercial PPO/EPO",
+    "type": "LOB",
+    "description": "Commercial Preferred Provider Organization / Exclusive Provider Organization Line of Business."
+  },
+  {
+    "concept": "AvailityPDM",
+    "type": "Source System",
+    "description": "Provider Data Management system by Availity."
+  },
+  {
+    "concept": "Complete Validation Failure",
+    "type": "Failure Reason",
+    "description": "A failure state indicating that the roster records completely failed internal business rules and data quality validation."
+  }
+]

@@ -1,0 +1,6 @@
+name: "retry_effectiveness_analysis"
+description: "For RUN_NO > 1, derives retry lift rate and determines whether reprocessing is recovering transactions or just adding latency"
+parameters:
+  none: "No parameters required"
+sql_query: "SELECT CNT_STATE, SUM(CAST(RUN_NO AS INT)) as TOTAL_RUNS, AVG(PRE_PROCESSING_DURATION + MAPPING_APROVAL_DURATION) as AVG_LATENCY, SUM(CAST(IS_FAILED AS INT)) as TOTAL_FAILURES FROM roster_processing_details WHERE RUN_NO > 1 GROUP BY CNT_STATE"
+instruction: "Query the processing details. If the retry latency is high and the failure rate remains high, suggest that reprocessing is ineffective."

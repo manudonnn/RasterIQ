@@ -1,0 +1,6 @@
+name: "market_health_report"
+description: "Correlates a market's SCS_PERCENT (CSV 2) with its pipeline-level health flags and stuck RO counts (CSV 1) for the same state."
+parameters:
+  target_state: "The 2-letter state code to analyze (e.g. KS)"
+sql_query: "SELECT m.MARKET, m.SCS_PERCENT, COUNT(r.RO_ID) as TOTAL_ROS, SUM(CAST(r.IS_STUCK AS INT)) as STUCK_ROS FROM aggregated_operational_metrics m LEFT JOIN roster_processing_details r ON m.MARKET = r.CNT_STATE WHERE m.MARKET = '{target_state}' GROUP BY m.MARKET, m.SCS_PERCENT"
+instruction: "Execute the query using the DuckDB tool, substituting {target_state}. Explain the correlation between the market success percent and the number of stuck ROs."
