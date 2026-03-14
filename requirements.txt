@@ -12,3 +12,9 @@ tavily-python
 jinja2
 pyyaml
 python-dotenv
+umap-learn
+scikit-learn
+networkx
+pyvis
+scipy
+seaborn

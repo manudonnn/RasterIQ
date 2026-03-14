@@ -1,5 +1,1001 @@
 ID,RO_ID,RA_FILE_DETAILS_ID,RA_ROSTER_DETAILS_ID,RA_PLM_RO_PROF_DATA_ID,SRC_SYS,ORG_NM,CNT_STATE,LOB,RUN_NO,FILE_STATUS_CD,LATEST_STAGE_NM,PRE_PROCESSING_DURATION,MAPPING_APROVAL_DURATION,ISF_GEN_DURATION,DART_GEN_DURATION,DART_REVIEW_DURATION,DART_UI_VALIDATION_DURATION,SPS_LOAD_DURATION,AVG_PRE_PROCESSING_DURATION,AVG_MAPPING_APROVAL_DURATION,AVG_ISF_GEN_DURATION,AVG_DART_GEN_DURATION,AVG_DART_REVIEW_DURATION,AVG_DART_UI_VALIDATION_DURATION,AVG_SPS_LOAD_DURATION,PRE_PROCESSING_HEALTH,MAPPING_APROVAL_HEALTH,ISF_GEN_HEALTH,DART_GEN_HEALTH,DART_REVIEW_HEALTH,DART_UI_VALIDATION_HEALTH,SPS_LOAD_HEALTH,IS_STUCK,IS_FAILED,FAILURE_STATUS
-1,RO_1001,F_2001,R_3001,P_4001,AvailityPDM,Norton Hospitals,KS,Medicaid FFS,1,99,RESOLVED,10,5,15,20,30,12,8,12,6,14,18,25,10,9,Green,Green,Yellow,Yellow,Red,Yellow,Green,0,0,
-2,RO_1002,F_2002,R_3002,P_4002,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,1,9,STOPPED,12,6,14,65,0,0,0,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,-,-,-,1,0,
-3,RO_1003,F_2003,R_3003,P_4003,ProviderGroup,MercyOne Medical Group,NY,Commercial PPO/EPO,2,49,DART_GENERATION,15,8,18,50,0,0,0,12,6,15,20,30,15,12,Yellow,Yellow,Yellow,Red,-,-,-,1,0,
-4,RO_1004,F_2004,R_3004,P_4004,AvailityPDM,Norton Hospitals,KS,Medicaid FFS,1,9,STOPPED,10,5,15,20,0,0,0,12,6,14,18,25,10,9,Green,Green,Yellow,Yellow,-,-,-,0,1,Complete Validation Failure
+1,RO_1000,F_2000,R_3000,P_4000,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,3,63,RESOLVED,2,5,9,16,16,8,12,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Red,Green,Red,0,1,Address Mismatch
+2,RO_1001,F_2001,R_3001,P_4001,AvailityPDM,Kaiser Permanente,NY,Medicaid FFS,4,17,SPS_LOAD,8,4,25,65,31,4,1,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Red,Red,0,0,
+3,RO_1002,F_2002,R_3002,P_4002,ProviderGroup,Northwestern Memorial,CA,Medicaid Managed Care,1,73,ISF_GEN,13,5,21,76,3,9,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Green,Red,Red,1,0,
+4,RO_1003,F_2003,R_3003,P_4003,Demographic,Norton Hospitals,KS,Medicare HMO,3,33,STOPPED,13,8,29,25,3,1,8,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Red,Red,Green,1,1,Complete Validation Failure
+5,RO_1004,F_2004,R_3004,P_4004,Demographic,Norton Hospitals,KS,Medicaid Managed Care,3,84,STOPPED,1,10,27,60,16,8,5,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Yellow,Yellow,Red,0,1,Complete Validation Failure
+6,RO_1005,F_2005,R_3005,P_4005,Demographic,Cleveland Clinic,NY,Medicaid FFS,4,77,PRE_PROCESSING,6,14,28,21,18,10,1,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Red,Yellow,Green,0,1,Duplicate Record
+7,RO_1006,F_2006,R_3006,P_4006,AvailityPDM,Kaiser Permanente,NY,Medicare HMO,1,92,ISF_GEN,24,4,29,62,4,3,4,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Red,Green,Red,1,0,
+8,RO_1007,F_2007,R_3007,P_4007,AvailityPDM,MercyOne Medical Group,NY,Commercial PPO/EPO,1,29,MAPPING_APPROVAL,19,11,10,14,31,1,1,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Green,Green,0,0,
+9,RO_1008,F_2008,R_3008,P_4008,Salesforce,Northwestern Memorial,KS,Medicaid FFS,3,13,SPS_LOAD,16,4,25,36,21,5,6,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Green,Green,0,1,Network Gap
+10,RO_1009,F_2009,R_3009,P_4009,AvailityPDM,Kaiser Permanente,KS,Medicaid Managed Care,2,46,RESOLVED,8,3,26,21,5,13,2,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Yellow,Green,1,0,
+11,RO_1010,F_2010,R_3010,P_4010,AvailityPDM,Cedars-Sinai Medical Care Foundation,KS,Commercial PPO/EPO,3,35,RESOLVED,1,7,15,26,34,0,5,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Red,Green,Green,0,1,Duplicate Record
+12,RO_1011,F_2011,R_3011,P_4011,AvailityPDM,UCSF Medical Center,NY,Commercial PPO/EPO,3,6,ISF_GEN,16,3,22,15,21,17,7,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Red,Yellow,Green,0,1,Missing NPI
+13,RO_1012,F_2012,R_3012,P_4012,Demographic,Kaiser Permanente,NY,Medicaid FFS,3,82,SPS_LOAD,9,12,8,14,0,6,2,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Green,Red,Yellow,0,0,
+14,RO_1013,F_2013,R_3013,P_4013,Demographic,Northwestern Memorial,KS,Medicaid Managed Care,3,69,DART_UI_VALIDATION,13,3,7,66,19,0,6,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Yellow,Green,Green,0,0,
+15,RO_1014,F_2014,R_3014,P_4014,AvailityPDM,Kaiser Permanente,NY,Medicaid FFS,4,47,PRE_PROCESSING,11,11,17,37,21,0,6,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Red,Green,0,0,
+16,RO_1015,F_2015,R_3015,P_4015,Demographic,Kaiser Permanente,KS,Medicare HMO,1,25,ISF_GEN,13,10,27,78,10,0,5,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Green,Yellow,Red,0,0,
+17,RO_1016,F_2016,R_3016,P_4016,Salesforce,Cleveland Clinic,KS,Medicare HMO,4,66,RESOLVED,21,5,13,68,12,3,5,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Red,Red,0,0,
+18,RO_1017,F_2017,R_3017,P_4017,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,4,10,RESOLVED,10,5,25,42,2,3,14,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Red,Yellow,Green,0,1,Invalid Taxonomy
+19,RO_1018,F_2018,R_3018,P_4018,Salesforce,Northwestern Memorial,CA,Medicaid Managed Care,4,56,MAPPING_APPROVAL,4,14,10,71,8,17,3,10,5,15,20,25,12,10,Green,Red,Green,Red,Yellow,Yellow,Red,0,1,Network Gap
+20,RO_1019,F_2019,R_3019,P_4019,ProviderGroup,Norton Hospitals,CA,Medicare HMO,3,30,SPS_LOAD,6,6,16,59,11,10,10,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Yellow,Yellow,Yellow,0,0,
+21,RO_1020,F_2020,R_3020,P_4020,AvailityPDM,Mayo Clinic,NY,Medicare HMO,2,5,RESOLVED,7,8,6,28,22,0,10,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Green,Red,Yellow,0,0,
+22,RO_1021,F_2021,R_3021,P_4021,Demographic,MercyOne Medical Group,CA,Medicare HMO,1,33,PRE_PROCESSING,5,10,7,78,13,9,11,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Green,Green,0,0,
+23,RO_1022,F_2022,R_3022,P_4022,Salesforce,MercyOne Medical Group,KS,Medicare HMO,2,65,MAPPING_APPROVAL,11,6,7,75,32,8,12,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Green,Red,Red,0,0,
+24,RO_1023,F_2023,R_3023,P_4023,ProviderGroup,UCSF Medical Center,NY,Medicaid FFS,4,18,DART_REVIEW,13,12,16,56,17,3,2,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Yellow,Green,Red,1,1,Invalid Taxonomy
+25,RO_1024,F_2024,R_3024,P_4024,ProviderGroup,Mayo Clinic,KS,Commercial PPO/EPO,4,96,DART_UI_VALIDATION,19,1,19,48,8,5,7,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Green,Yellow,Yellow,0,0,
+26,RO_1025,F_2025,R_3025,P_4025,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,2,49,PRE_PROCESSING,23,8,13,77,22,15,1,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Red,Green,0,0,
+27,RO_1026,F_2026,R_3026,P_4026,Demographic,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,2,11,STOPPED,10,8,27,42,9,1,6,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Yellow,Red,0,0,
+28,RO_1027,F_2027,R_3027,P_4027,ProviderGroup,Norton Hospitals,KS,Commercial PPO/EPO,2,85,STOPPED,10,9,12,22,18,17,6,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Yellow,Yellow,0,1,Complete Validation Failure
+29,RO_1028,F_2028,R_3028,P_4028,AvailityPDM,MercyOne Medical Group,CA,Commercial PPO/EPO,4,26,DART_UI_VALIDATION,11,9,15,63,4,9,3,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Red,Yellow,0,0,
+30,RO_1029,F_2029,R_3029,P_4029,AvailityPDM,Norton Hospitals,NY,Commercial PPO/EPO,4,63,STOPPED,21,2,20,16,22,16,2,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Yellow,Red,Yellow,0,1,Missing NPI
+31,RO_1030,F_2030,R_3030,P_4030,Salesforce,Cleveland Clinic,CA,Commercial PPO/EPO,1,89,STOPPED,7,2,29,23,29,12,12,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Red,Yellow,Red,0,0,
+32,RO_1031,F_2031,R_3031,P_4031,AvailityPDM,Kaiser Permanente,CA,Medicaid FFS,1,86,MAPPING_APPROVAL,18,3,26,28,24,17,2,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Red,Yellow,Green,0,1,Network Gap
+33,RO_1032,F_2032,R_3032,P_4032,ProviderGroup,Northwestern Memorial,NY,Medicare HMO,4,59,SPS_LOAD,4,1,8,63,27,12,14,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Yellow,Red,Yellow,1,0,
+34,RO_1033,F_2033,R_3033,P_4033,ProviderGroup,Cleveland Clinic,KS,Medicaid Managed Care,2,27,DART_GEN,2,4,5,92,33,16,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Red,Green,Yellow,1,0,
+35,RO_1034,F_2034,R_3034,P_4034,ProviderGroup,Norton Hospitals,CA,Medicaid FFS,2,49,RESOLVED,14,14,28,38,24,4,9,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Red,Yellow,Green,0,1,Address Mismatch
+36,RO_1035,F_2035,R_3035,P_4035,AvailityPDM,MercyOne Medical Group,CA,Commercial PPO/EPO,1,77,DART_UI_VALIDATION,13,4,11,33,9,10,11,10,5,15,20,25,12,10,Green,Green,Red,Green,Red,Green,Yellow,0,0,
+37,RO_1036,F_2036,R_3036,P_4036,Salesforce,Mayo Clinic,CA,Medicare HMO,4,33,SPS_LOAD,12,14,6,72,13,6,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Green,Red,0,0,
+38,RO_1037,F_2037,R_3037,P_4037,AvailityPDM,Norton Hospitals,NY,Medicare HMO,1,98,ISF_GEN,7,9,28,66,29,9,7,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Red,Yellow,0,0,
+39,RO_1038,F_2038,R_3038,P_4038,Salesforce,MercyOne Medical Group,KS,Medicare HMO,1,99,STOPPED,2,9,9,17,24,16,12,10,5,15,20,25,12,10,Red,Red,Green,Yellow,Red,Red,Red,0,1,Duplicate Record
+40,RO_1039,F_2039,R_3039,P_4039,AvailityPDM,Johns Hopkins Hospital,KS,Medicare HMO,3,1,PRE_PROCESSING,13,9,11,71,13,14,5,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Yellow,Green,0,1,Complete Validation Failure
+41,RO_1040,F_2040,R_3040,P_4040,ProviderGroup,UCSF Medical Center,NY,Commercial PPO/EPO,3,21,PRE_PROCESSING,14,10,8,38,34,17,7,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Red,Yellow,Red,1,0,
+42,RO_1041,F_2041,R_3041,P_4041,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,3,55,ISF_GEN,17,7,9,26,33,18,13,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Yellow,Yellow,Green,0,0,
+43,RO_1042,F_2042,R_3042,P_4042,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,2,6,STOPPED,9,14,28,75,9,1,4,10,5,15,20,25,12,10,Red,Green,Red,Red,Yellow,Red,Green,0,1,Address Mismatch
+44,RO_1043,F_2043,R_3043,P_4043,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,4,92,RESOLVED,17,2,5,15,34,3,8,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Green,Red,0,0,
+45,RO_1044,F_2044,R_3044,P_4044,AvailityPDM,Massachusetts General,NY,Medicare HMO,4,81,RESOLVED,8,10,5,67,10,2,13,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Yellow,Red,Red,0,1,Invalid Taxonomy
+46,RO_1045,F_2045,R_3045,P_4045,Demographic,Cleveland Clinic,NY,Commercial PPO/EPO,4,69,ISF_GEN,2,5,19,78,10,6,11,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Green,Red,Red,Yellow,0,0,
+47,RO_1046,F_2046,R_3046,P_4046,ProviderGroup,UCSF Medical Center,KS,Medicaid Managed Care,4,95,MAPPING_APPROVAL,24,4,24,37,20,17,14,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Green,Red,0,1,Missing NPI
+48,RO_1047,F_2047,R_3047,P_4047,AvailityPDM,Northwestern Memorial,KS,Medicaid Managed Care,3,5,RESOLVED,13,12,23,71,20,9,10,10,5,15,20,25,12,10,Green,Red,Green,Green,Green,Yellow,Red,1,1,Missing NPI
+49,RO_1048,F_2048,R_3048,P_4048,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,2,3,DART_UI_VALIDATION,3,11,14,50,21,6,13,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Red,Red,0,1,Address Mismatch
+50,RO_1049,F_2049,R_3049,P_4049,AvailityPDM,Massachusetts General,KS,Medicaid FFS,2,53,DART_GEN,16,8,22,90,6,7,11,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Red,Green,Green,0,0,
+51,RO_1050,F_2050,R_3050,P_4050,Salesforce,UCSF Medical Center,KS,Medicaid FFS,3,23,DART_UI_VALIDATION,6,2,7,50,16,5,10,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Green,Red,1,0,
+52,RO_1051,F_2051,R_3051,P_4051,ProviderGroup,Kaiser Permanente,CA,Medicaid Managed Care,2,53,DART_REVIEW,19,6,15,58,1,0,7,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Yellow,Green,Yellow,0,0,
+53,RO_1052,F_2052,R_3052,P_4052,Salesforce,Northwestern Memorial,CA,Commercial PPO/EPO,3,37,PRE_PROCESSING,7,13,19,58,11,3,10,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Yellow,Red,0,0,
+54,RO_1053,F_2053,R_3053,P_4053,ProviderGroup,Norton Hospitals,KS,Commercial PPO/EPO,4,74,STOPPED,10,5,15,12,17,13,5,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Yellow,Red,Red,0,1,Complete Validation Failure
+55,RO_1054,F_2054,R_3054,P_4054,Demographic,UCSF Medical Center,NY,Medicaid Managed Care,3,74,DART_GEN,9,12,21,107,10,16,11,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Green,Red,Red,0,0,
+56,RO_1055,F_2055,R_3055,P_4055,ProviderGroup,Mayo Clinic,CA,Medicaid Managed Care,4,83,STOPPED,2,2,21,44,15,19,6,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Yellow,Red,0,1,Duplicate Record
+57,RO_1056,F_2056,R_3056,P_4056,ProviderGroup,Massachusetts General,KS,Commercial PPO/EPO,4,17,SPS_LOAD,15,11,10,11,17,17,5,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Red,Red,Red,0,0,
+58,RO_1057,F_2057,R_3057,P_4057,Demographic,Norton Hospitals,KS,Medicaid FFS,1,85,STOPPED,5,10,9,33,34,10,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Red,Green,Green,1,1,Complete Validation Failure
+59,RO_1058,F_2058,R_3058,P_4058,ProviderGroup,Norton Hospitals,CA,Medicaid FFS,3,78,DART_GEN,22,1,12,106,25,13,12,10,5,15,20,25,12,10,Red,Green,Red,Green,Green,Red,Yellow,0,0,
+60,RO_1059,F_2059,R_3059,P_4059,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,1,73,MAPPING_APPROVAL,4,8,6,31,15,8,2,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Red,Green,0,0,
+61,RO_1060,F_2060,R_3060,P_4060,Demographic,Johns Hopkins Hospital,NY,Commercial PPO/EPO,3,1,RESOLVED,20,2,20,35,5,14,5,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Red,Yellow,0,0,
+62,RO_1061,F_2061,R_3061,P_4061,Demographic,Johns Hopkins Hospital,KS,Medicaid FFS,3,51,RESOLVED,4,7,24,52,11,11,10,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Yellow,0,0,
+63,RO_1062,F_2062,R_3062,P_4062,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,1,45,RESOLVED,18,9,28,64,12,9,3,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Yellow,Yellow,Yellow,0,1,Complete Validation Failure
+64,RO_1063,F_2063,R_3063,P_4063,Salesforce,Massachusetts General,CA,Medicare HMO,1,77,MAPPING_APPROVAL,4,9,16,48,3,18,9,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Yellow,Green,0,0,
+65,RO_1064,F_2064,R_3064,P_4064,Salesforce,Massachusetts General,CA,Medicaid Managed Care,3,4,RESOLVED,17,8,10,38,38,18,13,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Red,Red,0,0,
+66,RO_1065,F_2065,R_3065,P_4065,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,2,62,RESOLVED,12,11,5,29,1,5,6,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Green,Green,Green,0,0,
+67,RO_1066,F_2066,R_3066,P_4066,Demographic,Cedars-Sinai Medical Care Foundation,NY,Medicaid Managed Care,4,65,DART_UI_VALIDATION,22,14,8,50,25,19,13,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Red,Yellow,Green,1,1,Invalid Taxonomy
+68,RO_1067,F_2067,R_3067,P_4067,ProviderGroup,Cleveland Clinic,NY,Commercial PPO/EPO,1,32,MAPPING_APPROVAL,17,12,21,63,26,5,10,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Yellow,Green,Yellow,0,0,
+69,RO_1068,F_2068,R_3068,P_4068,AvailityPDM,Northwestern Memorial,CA,Commercial PPO/EPO,4,34,RESOLVED,10,10,17,29,26,7,3,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Green,Green,Green,0,1,Address Mismatch
+70,RO_1069,F_2069,R_3069,P_4069,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,2,92,PRE_PROCESSING,22,9,22,28,14,0,7,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Red,Red,Red,1,0,
+71,RO_1070,F_2070,R_3070,P_4070,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,2,95,MAPPING_APPROVAL,1,2,9,75,7,16,4,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Yellow,Yellow,Green,0,1,Address Mismatch
+72,RO_1071,F_2071,R_3071,P_4071,ProviderGroup,MercyOne Medical Group,CA,Medicare HMO,2,72,SPS_LOAD,22,6,28,39,6,16,14,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Green,Yellow,Red,0,0,
+73,RO_1072,F_2072,R_3072,P_4072,Salesforce,Mayo Clinic,CA,Medicaid Managed Care,1,39,SPS_LOAD,24,4,28,62,39,14,3,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Green,Yellow,Red,1,0,
+74,RO_1073,F_2073,R_3073,P_4073,ProviderGroup,Northwestern Memorial,KS,Commercial PPO/EPO,2,26,PRE_PROCESSING,18,14,7,43,11,6,8,10,5,15,20,25,12,10,Red,Red,Red,Green,Yellow,Green,Yellow,0,0,
+75,RO_1074,F_2074,R_3074,P_4074,AvailityPDM,Northwestern Memorial,KS,Medicaid FFS,1,34,STOPPED,18,4,15,31,12,18,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Red,Yellow,Green,0,0,
+76,RO_1075,F_2075,R_3075,P_4075,Demographic,UCSF Medical Center,CA,Medicaid FFS,2,54,STOPPED,14,5,17,76,16,2,4,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Green,Yellow,0,0,
+77,RO_1076,F_2076,R_3076,P_4076,ProviderGroup,Cleveland Clinic,KS,Medicaid FFS,4,3,PRE_PROCESSING,15,12,8,15,16,10,11,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Green,Red,Red,0,1,Missing NPI
+78,RO_1077,F_2077,R_3077,P_4077,Demographic,Johns Hopkins Hospital,NY,Medicaid Managed Care,4,50,MAPPING_APPROVAL,12,3,18,36,35,19,1,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Green,Green,0,0,
+79,RO_1078,F_2078,R_3078,P_4078,Salesforce,Northwestern Memorial,CA,Medicaid FFS,3,12,DART_REVIEW,4,14,26,19,20,18,6,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Yellow,Yellow,0,1,Invalid Taxonomy
+80,RO_1079,F_2079,R_3079,P_4079,Salesforce,UCSF Medical Center,NY,Medicaid FFS,4,65,STOPPED,3,1,15,57,7,8,10,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Green,Yellow,0,1,Complete Validation Failure
+81,RO_1080,F_2080,R_3080,P_4080,Salesforce,Mayo Clinic,CA,Medicare HMO,3,54,STOPPED,20,8,14,79,4,9,11,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Green,Yellow,0,0,
+82,RO_1081,F_2081,R_3081,P_4081,Demographic,Massachusetts General,NY,Medicaid Managed Care,4,5,DART_GEN,12,5,23,65,25,1,11,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Yellow,Red,Green,0,1,Missing NPI
+83,RO_1082,F_2082,R_3082,P_4082,ProviderGroup,UCSF Medical Center,KS,Medicaid Managed Care,1,94,RESOLVED,7,3,22,68,15,0,1,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Red,Green,0,0,
+84,RO_1083,F_2083,R_3083,P_4083,Demographic,Northwestern Memorial,KS,Medicaid FFS,4,94,DART_UI_VALIDATION,11,10,10,11,35,15,5,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Red,Yellow,1,0,
+85,RO_1084,F_2084,R_3084,P_4084,Demographic,Johns Hopkins Hospital,NY,Medicaid Managed Care,3,57,DART_UI_VALIDATION,1,14,19,38,27,17,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Red,Green,0,1,Address Mismatch
+86,RO_1085,F_2085,R_3085,P_4085,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,3,17,PRE_PROCESSING,6,7,25,77,28,16,6,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Yellow,Yellow,Green,1,0,
+87,RO_1086,F_2086,R_3086,P_4086,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,2,47,DART_GEN,15,7,14,103,11,5,14,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Yellow,Yellow,0,0,
+88,RO_1087,F_2087,R_3087,P_4087,Salesforce,UCSF Medical Center,NY,Commercial PPO/EPO,1,23,RESOLVED,15,1,9,35,36,13,2,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Green,Yellow,Green,0,0,
+89,RO_1088,F_2088,R_3088,P_4088,ProviderGroup,Kaiser Permanente,NY,Medicare HMO,4,79,DART_UI_VALIDATION,19,12,9,19,29,14,11,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Red,Yellow,0,0,
+90,RO_1089,F_2089,R_3089,P_4089,Demographic,Johns Hopkins Hospital,KS,Commercial PPO/EPO,2,85,STOPPED,11,9,14,62,22,13,4,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Red,Yellow,Green,0,1,Missing NPI
+91,RO_1090,F_2090,R_3090,P_4090,Demographic,Massachusetts General,KS,Medicaid FFS,4,14,RESOLVED,23,2,9,68,15,2,11,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Green,0,0,
+92,RO_1091,F_2091,R_3091,P_4091,Salesforce,Kaiser Permanente,NY,Commercial PPO/EPO,4,66,DART_UI_VALIDATION,2,5,7,31,13,18,2,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Yellow,Green,0,0,
+93,RO_1092,F_2092,R_3092,P_4092,AvailityPDM,Johns Hopkins Hospital,NY,Commercial PPO/EPO,2,75,RESOLVED,14,13,27,60,9,11,11,10,5,15,20,25,12,10,Green,Red,Green,Red,Yellow,Green,Red,0,0,
+94,RO_1093,F_2093,R_3093,P_4093,AvailityPDM,Cleveland Clinic,CA,Medicaid FFS,2,51,MAPPING_APPROVAL,2,14,10,57,6,1,1,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Green,Red,0,0,
+95,RO_1094,F_2094,R_3094,P_4094,AvailityPDM,Massachusetts General,CA,Commercial PPO/EPO,2,38,MAPPING_APPROVAL,4,5,8,30,36,2,3,10,5,15,20,25,12,10,Green,Red,Red,Red,Green,Yellow,Yellow,0,0,
+96,RO_1095,F_2095,R_3095,P_4095,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,2,64,DART_GEN,17,14,22,67,28,17,3,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Green,Green,Red,0,0,
+97,RO_1096,F_2096,R_3096,P_4096,Demographic,Johns Hopkins Hospital,CA,Medicaid FFS,2,98,PRE_PROCESSING,3,8,13,39,2,0,12,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Green,Red,Red,Yellow,0,0,
+98,RO_1097,F_2097,R_3097,P_4097,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,4,38,DART_UI_VALIDATION,13,14,21,34,14,19,7,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Green,Green,0,0,
+99,RO_1098,F_2098,R_3098,P_4098,AvailityPDM,Cleveland Clinic,CA,Commercial PPO/EPO,2,50,DART_UI_VALIDATION,9,8,17,37,35,5,1,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Yellow,Red,0,1,Missing NPI
+100,RO_1099,F_2099,R_3099,P_4099,Salesforce,Johns Hopkins Hospital,NY,Medicare HMO,1,98,DART_REVIEW,7,14,19,74,18,4,9,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Red,Yellow,0,0,
+101,RO_1100,F_2100,R_3100,P_4100,Salesforce,Cleveland Clinic,KS,Medicaid Managed Care,3,82,STOPPED,15,7,24,54,12,0,11,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Red,Red,0,1,Network Gap
+102,RO_1101,F_2101,R_3101,P_4101,Salesforce,Mayo Clinic,KS,Medicaid FFS,2,30,STOPPED,23,7,21,77,20,18,6,10,5,15,20,25,12,10,Green,Red,Green,Green,Yellow,Yellow,Red,1,1,Missing NPI
+103,RO_1102,F_2102,R_3102,P_4102,ProviderGroup,Cleveland Clinic,KS,Medicaid FFS,2,79,DART_UI_VALIDATION,11,12,17,16,36,0,4,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Green,Yellow,Yellow,0,1,Duplicate Record
+104,RO_1103,F_2103,R_3103,P_4103,AvailityPDM,MercyOne Medical Group,CA,Medicaid FFS,4,91,MAPPING_APPROVAL,20,11,20,58,26,15,3,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Green,Yellow,Red,0,1,Missing NPI
+105,RO_1104,F_2104,R_3104,P_4104,AvailityPDM,Massachusetts General,CA,Medicare HMO,2,51,PRE_PROCESSING,2,6,26,18,28,11,3,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Yellow,Green,Yellow,0,0,
+106,RO_1105,F_2105,R_3105,P_4105,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,2,63,ISF_GEN,15,6,8,45,19,7,2,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Red,1,0,
+107,RO_1106,F_2106,R_3106,P_4106,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,2,98,RESOLVED,14,11,9,10,24,15,2,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Red,Red,Green,0,0,
+108,RO_1107,F_2107,R_3107,P_4107,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,4,52,ISF_GEN,20,9,9,19,5,0,14,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Yellow,Red,Green,1,0,
+109,RO_1108,F_2108,R_3108,P_4108,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,2,38,SPS_LOAD,22,6,13,45,35,3,12,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Green,Green,0,1,Duplicate Record
+110,RO_1109,F_2109,R_3109,P_4109,Salesforce,Johns Hopkins Hospital,KS,Medicaid Managed Care,3,97,MAPPING_APPROVAL,11,12,21,55,1,9,13,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Yellow,Red,Yellow,0,0,
+111,RO_1110,F_2110,R_3110,P_4110,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,4,88,DART_REVIEW,3,13,17,41,21,10,10,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Yellow,Yellow,Yellow,1,1,Invalid Taxonomy
+112,RO_1111,F_2111,R_3111,P_4111,Salesforce,Cleveland Clinic,CA,Medicaid FFS,3,79,DART_GEN,17,13,6,66,31,16,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Green,Green,0,0,
+113,RO_1112,F_2112,R_3112,P_4112,AvailityPDM,MercyOne Medical Group,CA,Commercial PPO/EPO,4,30,DART_GEN,12,2,17,93,15,6,9,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Yellow,Yellow,Yellow,0,1,Missing NPI
+114,RO_1113,F_2113,R_3113,P_4113,ProviderGroup,UCSF Medical Center,CA,Medicaid FFS,2,51,MAPPING_APPROVAL,24,2,26,57,17,11,2,10,5,15,20,25,12,10,Green,Green,Red,Green,Red,Yellow,Red,0,0,
+115,RO_1114,F_2114,R_3114,P_4114,Demographic,Norton Hospitals,NY,Medicaid Managed Care,3,81,SPS_LOAD,21,13,25,47,4,6,2,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Red,Green,Red,1,0,
+116,RO_1115,F_2115,R_3115,P_4115,AvailityPDM,Northwestern Memorial,NY,Medicare HMO,4,5,DART_GEN,15,5,27,103,35,11,12,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Green,Red,0,0,
+117,RO_1116,F_2116,R_3116,P_4116,ProviderGroup,UCSF Medical Center,NY,Medicaid Managed Care,1,29,RESOLVED,16,4,23,36,29,14,6,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Green,Red,0,1,Complete Validation Failure
+118,RO_1117,F_2117,R_3117,P_4117,Demographic,UCSF Medical Center,KS,Medicaid FFS,2,4,DART_GEN,5,11,7,112,18,1,13,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Red,Red,0,0,
+119,RO_1118,F_2118,R_3118,P_4118,Demographic,Cleveland Clinic,CA,Medicare HMO,4,10,DART_UI_VALIDATION,20,2,14,59,22,13,10,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Green,Yellow,0,1,Duplicate Record
+120,RO_1119,F_2119,R_3119,P_4119,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicaid Managed Care,1,56,MAPPING_APPROVAL,6,3,6,44,33,12,2,10,5,15,20,25,12,10,Green,Green,Green,Green,Yellow,Green,Yellow,1,1,Duplicate Record
+121,RO_1120,F_2120,R_3120,P_4120,Demographic,Johns Hopkins Hospital,CA,Medicaid FFS,4,17,SPS_LOAD,19,7,17,34,12,3,12,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Yellow,Yellow,Red,0,1,Address Mismatch
+122,RO_1121,F_2121,R_3121,P_4121,AvailityPDM,Cleveland Clinic,NY,Medicaid FFS,1,74,PRE_PROCESSING,5,8,23,37,28,13,4,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Red,Green,Green,0,0,
+123,RO_1122,F_2122,R_3122,P_4122,ProviderGroup,Johns Hopkins Hospital,KS,Medicaid FFS,2,17,MAPPING_APPROVAL,3,12,21,24,35,13,6,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Red,Yellow,1,1,Invalid Taxonomy
+124,RO_1123,F_2123,R_3123,P_4123,Salesforce,Norton Hospitals,KS,Commercial PPO/EPO,3,84,STOPPED,1,13,25,13,21,15,5,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Green,Red,Green,0,1,Complete Validation Failure
+125,RO_1124,F_2124,R_3124,P_4124,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,1,88,RESOLVED,6,6,18,36,35,6,1,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Red,Yellow,Red,0,0,
+126,RO_1125,F_2125,R_3125,P_4125,AvailityPDM,Northwestern Memorial,KS,Commercial PPO/EPO,4,69,STOPPED,15,11,16,35,8,18,6,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Yellow,Green,Red,0,0,
+127,RO_1126,F_2126,R_3126,P_4126,ProviderGroup,Mayo Clinic,CA,Medicare HMO,2,34,ISF_GEN,2,5,25,28,38,1,1,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Green,Red,0,0,
+128,RO_1127,F_2127,R_3127,P_4127,ProviderGroup,Cleveland Clinic,CA,Medicaid Managed Care,1,6,RESOLVED,3,13,16,26,18,9,3,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Red,Red,Green,0,0,
+129,RO_1128,F_2128,R_3128,P_4128,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,4,53,PRE_PROCESSING,17,1,15,52,37,17,10,10,5,15,20,25,12,10,Green,Green,Green,Red,Red,Green,Red,0,0,
+130,RO_1129,F_2129,R_3129,P_4129,AvailityPDM,Northwestern Memorial,CA,Medicare HMO,4,66,STOPPED,24,8,11,50,5,16,5,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Red,Green,0,1,Complete Validation Failure
+131,RO_1130,F_2130,R_3130,P_4130,Demographic,UCSF Medical Center,NY,Medicaid FFS,4,77,PRE_PROCESSING,12,3,8,51,14,4,14,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Yellow,Green,0,0,
+132,RO_1131,F_2131,R_3131,P_4131,AvailityPDM,Kaiser Permanente,NY,Medicaid FFS,1,43,STOPPED,18,6,23,59,19,11,10,10,5,15,20,25,12,10,Red,Red,Green,Red,Yellow,Green,Yellow,1,0,
+133,RO_1132,F_2132,R_3132,P_4132,AvailityPDM,MercyOne Medical Group,NY,Medicare HMO,1,75,SPS_LOAD,15,3,5,49,8,5,13,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Green,Yellow,Red,0,1,Address Mismatch
+134,RO_1133,F_2133,R_3133,P_4133,Salesforce,Massachusetts General,CA,Medicaid Managed Care,1,23,RESOLVED,12,7,28,48,31,8,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Yellow,Red,0,0,
+135,RO_1134,F_2134,R_3134,P_4134,AvailityPDM,Kaiser Permanente,NY,Commercial PPO/EPO,3,55,STOPPED,16,13,7,32,3,19,13,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Green,Yellow,0,1,Invalid Taxonomy
+136,RO_1135,F_2135,R_3135,P_4135,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,80,ISF_GEN,8,14,17,61,17,0,10,10,5,15,20,25,12,10,Red,Green,Red,Red,Red,Green,Green,1,0,
+137,RO_1136,F_2136,R_3136,P_4136,Demographic,Cleveland Clinic,NY,Medicare HMO,1,95,ISF_GEN,14,7,19,56,4,14,6,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Red,Red,0,0,
+138,RO_1137,F_2137,R_3137,P_4137,Salesforce,UCSF Medical Center,CA,Medicaid Managed Care,1,75,ISF_GEN,17,12,6,72,19,5,12,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Red,Green,Red,0,0,
+139,RO_1138,F_2138,R_3138,P_4138,Demographic,Cleveland Clinic,CA,Medicaid Managed Care,3,16,MAPPING_APPROVAL,21,9,15,78,22,18,10,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Red,Yellow,0,0,
+140,RO_1139,F_2139,R_3139,P_4139,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,1,8,SPS_LOAD,8,5,8,52,10,17,8,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Red,Red,Red,0,0,
+141,RO_1140,F_2140,R_3140,P_4140,Salesforce,Mayo Clinic,KS,Medicaid FFS,4,4,DART_UI_VALIDATION,15,8,23,57,36,5,5,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Yellow,Green,Green,0,1,Duplicate Record
+142,RO_1141,F_2141,R_3141,P_4141,Demographic,Northwestern Memorial,KS,Medicaid FFS,1,4,STOPPED,14,10,21,43,21,12,14,10,5,15,20,25,12,10,Green,Red,Red,Red,Red,Yellow,Red,0,0,
+143,RO_1142,F_2142,R_3142,P_4142,Demographic,Kaiser Permanente,KS,Medicare HMO,4,56,SPS_LOAD,18,10,7,49,3,0,11,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Red,Red,0,1,Complete Validation Failure
+144,RO_1143,F_2143,R_3143,P_4143,ProviderGroup,Johns Hopkins Hospital,CA,Medicaid FFS,4,25,SPS_LOAD,20,8,22,70,28,12,1,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Green,Green,Yellow,1,0,
+145,RO_1144,F_2144,R_3144,P_4144,Salesforce,UCSF Medical Center,KS,Medicaid Managed Care,4,67,DART_GEN,7,1,12,73,33,6,5,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Red,Red,Red,0,0,
+146,RO_1145,F_2145,R_3145,P_4145,ProviderGroup,Northwestern Memorial,CA,Commercial PPO/EPO,3,96,DART_REVIEW,3,12,26,76,12,14,3,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Green,Red,Yellow,0,0,
+147,RO_1146,F_2146,R_3146,P_4146,Salesforce,Northwestern Memorial,NY,Medicaid Managed Care,3,67,SPS_LOAD,12,5,29,71,8,11,4,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Red,Green,0,0,
+148,RO_1147,F_2147,R_3147,P_4147,Salesforce,UCSF Medical Center,NY,Commercial PPO/EPO,3,27,DART_UI_VALIDATION,21,3,28,67,30,0,13,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Red,Red,Yellow,0,1,Missing NPI
+149,RO_1148,F_2148,R_3148,P_4148,AvailityPDM,Norton Hospitals,CA,Medicare HMO,1,93,DART_REVIEW,24,1,23,42,6,14,8,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Red,Red,Yellow,0,1,Network Gap
+150,RO_1149,F_2149,R_3149,P_4149,Demographic,Northwestern Memorial,CA,Medicare HMO,4,32,RESOLVED,3,4,9,25,3,3,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Red,Yellow,0,1,Network Gap
+151,RO_1150,F_2150,R_3150,P_4150,Demographic,Mayo Clinic,NY,Commercial PPO/EPO,3,50,ISF_GEN,20,8,11,57,18,12,11,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Green,Red,0,0,
+152,RO_1151,F_2151,R_3151,P_4151,AvailityPDM,Norton Hospitals,NY,Medicaid FFS,3,61,ISF_GEN,14,3,25,19,29,4,5,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Yellow,Yellow,0,0,
+153,RO_1152,F_2152,R_3152,P_4152,ProviderGroup,MercyOne Medical Group,CA,Medicare HMO,1,51,SPS_LOAD,15,10,12,47,30,1,2,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Red,Yellow,0,0,
+154,RO_1153,F_2153,R_3153,P_4153,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,3,19,STOPPED,14,2,9,28,34,0,6,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Red,Yellow,Yellow,0,1,Invalid Taxonomy
+155,RO_1154,F_2154,R_3154,P_4154,Demographic,Mayo Clinic,NY,Medicaid FFS,1,21,DART_REVIEW,7,11,21,45,20,15,11,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Red,Yellow,Red,0,0,
+156,RO_1155,F_2155,R_3155,P_4155,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,2,5,STOPPED,17,9,9,68,30,5,6,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Green,Green,Red,0,0,
+157,RO_1156,F_2156,R_3156,P_4156,AvailityPDM,Cleveland Clinic,KS,Medicare HMO,3,82,DART_UI_VALIDATION,12,10,8,72,18,15,10,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Red,Green,0,0,
+158,RO_1157,F_2157,R_3157,P_4157,AvailityPDM,Norton Hospitals,NY,Medicare HMO,2,92,STOPPED,20,5,26,55,30,13,10,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Green,Yellow,0,0,
+159,RO_1158,F_2158,R_3158,P_4158,AvailityPDM,MercyOne Medical Group,NY,Medicaid Managed Care,1,42,DART_GEN,4,14,23,75,31,2,14,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Red,Green,Red,0,0,
+160,RO_1159,F_2159,R_3159,P_4159,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,4,61,DART_GEN,9,7,25,102,1,14,11,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Red,Yellow,Green,1,0,
+161,RO_1160,F_2160,R_3160,P_4160,AvailityPDM,Northwestern Memorial,NY,Medicaid FFS,3,22,DART_GEN,6,11,6,111,9,2,6,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Green,Yellow,0,1,Complete Validation Failure
+162,RO_1161,F_2161,R_3161,P_4161,AvailityPDM,Johns Hopkins Hospital,CA,Medicare HMO,1,21,DART_REVIEW,16,11,15,60,1,1,14,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Green,Yellow,0,1,Address Mismatch
+163,RO_1162,F_2162,R_3162,P_4162,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicaid Managed Care,4,70,DART_UI_VALIDATION,22,2,26,15,1,0,9,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Red,Yellow,Yellow,0,0,
+164,RO_1163,F_2163,R_3163,P_4163,AvailityPDM,MercyOne Medical Group,NY,Medicaid Managed Care,4,1,ISF_GEN,22,9,17,48,23,8,11,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Green,Green,0,0,
+165,RO_1164,F_2164,R_3164,P_4164,Demographic,Norton Hospitals,CA,Medicaid FFS,2,5,ISF_GEN,21,13,19,69,16,8,8,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Green,Red,0,0,
+166,RO_1165,F_2165,R_3165,P_4165,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,12,STOPPED,21,9,16,37,31,6,8,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Red,Green,Green,1,1,Complete Validation Failure
+167,RO_1166,F_2166,R_3166,P_4166,Salesforce,UCSF Medical Center,NY,Medicaid Managed Care,4,90,STOPPED,2,4,26,63,15,2,1,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Green,0,1,Duplicate Record
+168,RO_1167,F_2167,R_3167,P_4167,Demographic,Kaiser Permanente,KS,Medicaid FFS,3,46,DART_UI_VALIDATION,24,4,25,46,15,17,5,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Green,Yellow,Red,1,1,Network Gap
+169,RO_1168,F_2168,R_3168,P_4168,Demographic,Johns Hopkins Hospital,KS,Medicaid FFS,3,34,MAPPING_APPROVAL,8,6,26,18,38,10,7,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Green,Green,1,1,Invalid Taxonomy
+170,RO_1169,F_2169,R_3169,P_4169,Salesforce,Johns Hopkins Hospital,NY,Commercial PPO/EPO,2,49,DART_UI_VALIDATION,11,10,15,65,30,6,6,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Red,Green,Green,0,0,
+171,RO_1170,F_2170,R_3170,P_4170,Demographic,Massachusetts General,NY,Commercial PPO/EPO,4,78,STOPPED,13,10,11,68,23,8,5,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Yellow,Green,0,1,Missing NPI
+172,RO_1171,F_2171,R_3171,P_4171,Salesforce,Cleveland Clinic,KS,Medicare HMO,1,90,RESOLVED,17,10,9,11,0,0,8,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Green,Green,Red,0,0,
+173,RO_1172,F_2172,R_3172,P_4172,Salesforce,MercyOne Medical Group,NY,Medicaid Managed Care,3,45,SPS_LOAD,8,6,21,70,10,13,3,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Red,Green,0,0,
+174,RO_1173,F_2173,R_3173,P_4173,Demographic,Cleveland Clinic,NY,Medicaid Managed Care,4,27,STOPPED,21,12,28,67,20,19,6,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Green,Red,Green,1,1,Complete Validation Failure
+175,RO_1174,F_2174,R_3174,P_4174,AvailityPDM,Mayo Clinic,KS,Commercial PPO/EPO,4,73,DART_REVIEW,18,1,24,69,3,5,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Green,Red,0,0,
+176,RO_1175,F_2175,R_3175,P_4175,AvailityPDM,Cleveland Clinic,KS,Medicare HMO,2,26,SPS_LOAD,18,14,13,49,6,6,8,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Green,Yellow,1,0,
+177,RO_1176,F_2176,R_3176,P_4176,Salesforce,Northwestern Memorial,CA,Medicaid Managed Care,3,47,PRE_PROCESSING,14,14,18,45,25,9,4,10,5,15,20,25,12,10,Green,Green,Red,Red,Red,Green,Red,0,0,
+178,RO_1177,F_2177,R_3177,P_4177,ProviderGroup,Northwestern Memorial,NY,Medicaid FFS,3,86,STOPPED,15,9,16,46,11,6,8,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Red,Yellow,1,0,
+179,RO_1178,F_2178,R_3178,P_4178,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,56,MAPPING_APPROVAL,6,2,10,27,30,1,10,10,5,15,20,25,12,10,Red,Green,Green,Red,Green,Green,Green,1,1,Network Gap
+180,RO_1179,F_2179,R_3179,P_4179,Salesforce,Norton Hospitals,KS,Medicaid FFS,3,94,STOPPED,11,5,21,72,16,3,14,10,5,15,20,25,12,10,Green,Green,Green,Green,Red,Red,Yellow,0,1,Complete Validation Failure
+181,RO_1180,F_2180,R_3180,P_4180,Salesforce,MercyOne Medical Group,NY,Medicaid FFS,1,63,SPS_LOAD,13,9,23,31,32,16,2,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Green,Red,0,0,
+182,RO_1181,F_2181,R_3181,P_4181,AvailityPDM,MercyOne Medical Group,KS,Commercial PPO/EPO,3,48,ISF_GEN,1,4,23,20,10,0,9,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Yellow,Green,Red,0,0,
+183,RO_1182,F_2182,R_3182,P_4182,AvailityPDM,Northwestern Memorial,NY,Medicare HMO,2,61,PRE_PROCESSING,6,11,20,67,27,9,13,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Yellow,Red,1,0,
+184,RO_1183,F_2183,R_3183,P_4183,AvailityPDM,Norton Hospitals,NY,Medicaid FFS,3,81,PRE_PROCESSING,9,3,16,66,31,18,9,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Red,Red,Green,1,0,
+185,RO_1184,F_2184,R_3184,P_4184,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,26,DART_GEN,8,7,16,68,0,14,14,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Green,Yellow,0,0,
+186,RO_1185,F_2185,R_3185,P_4185,ProviderGroup,Mayo Clinic,KS,Medicaid Managed Care,1,36,DART_REVIEW,11,6,24,16,27,9,10,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Yellow,Yellow,0,0,
+187,RO_1186,F_2186,R_3186,P_4186,AvailityPDM,Massachusetts General,NY,Commercial PPO/EPO,2,1,ISF_GEN,22,8,10,70,6,18,10,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Green,Yellow,Red,0,1,Address Mismatch
+188,RO_1187,F_2187,R_3187,P_4187,Demographic,Johns Hopkins Hospital,CA,Medicaid Managed Care,3,8,DART_REVIEW,19,3,27,63,1,11,13,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Yellow,Red,Red,1,1,Invalid Taxonomy
+189,RO_1188,F_2188,R_3188,P_4188,Demographic,Massachusetts General,KS,Medicaid Managed Care,3,99,DART_REVIEW,24,5,8,77,23,15,6,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Red,Red,0,0,
+190,RO_1189,F_2189,R_3189,P_4189,Demographic,Northwestern Memorial,CA,Medicaid Managed Care,2,52,ISF_GEN,9,10,10,10,3,8,4,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Green,Green,Red,1,0,
+191,RO_1190,F_2190,R_3190,P_4190,Salesforce,Massachusetts General,KS,Medicaid FFS,3,79,PRE_PROCESSING,17,4,15,64,18,14,4,10,5,15,20,25,12,10,Green,Red,Red,Green,Yellow,Red,Red,0,0,
+192,RO_1191,F_2191,R_3191,P_4191,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,3,47,DART_REVIEW,12,13,5,12,25,16,13,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Green,Green,0,1,Missing NPI
+193,RO_1192,F_2192,R_3192,P_4192,Salesforce,Mayo Clinic,CA,Commercial PPO/EPO,1,56,DART_GEN,14,4,28,69,10,13,6,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Red,Red,Yellow,0,0,
+194,RO_1193,F_2193,R_3193,P_4193,Demographic,Kaiser Permanente,CA,Medicaid FFS,3,86,STOPPED,15,4,27,10,39,17,5,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Yellow,Yellow,Green,0,1,Complete Validation Failure
+195,RO_1194,F_2194,R_3194,P_4194,ProviderGroup,UCSF Medical Center,NY,Commercial PPO/EPO,3,14,PRE_PROCESSING,16,10,19,47,10,1,6,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Yellow,Red,0,1,Address Mismatch
+196,RO_1195,F_2195,R_3195,P_4195,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,2,90,DART_UI_VALIDATION,22,8,15,38,2,3,7,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Green,0,1,Missing NPI
+197,RO_1196,F_2196,R_3196,P_4196,Demographic,Cleveland Clinic,NY,Medicare HMO,2,28,RESOLVED,22,6,29,14,11,17,7,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Green,Red,0,1,Duplicate Record
+198,RO_1197,F_2197,R_3197,P_4197,AvailityPDM,Johns Hopkins Hospital,CA,Medicare HMO,4,87,MAPPING_APPROVAL,20,3,23,30,2,6,9,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Green,Green,Green,0,0,
+199,RO_1198,F_2198,R_3198,P_4198,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,1,78,STOPPED,1,10,22,76,26,12,8,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Red,0,0,
+200,RO_1199,F_2199,R_3199,P_4199,AvailityPDM,Mayo Clinic,CA,Medicaid Managed Care,3,88,DART_GEN,10,5,21,76,1,14,13,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Yellow,Yellow,0,1,Network Gap
+201,RO_1200,F_2200,R_3200,P_4200,AvailityPDM,Northwestern Memorial,NY,Medicaid FFS,3,2,STOPPED,8,6,23,44,15,0,6,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Green,Yellow,Red,1,0,
+202,RO_1201,F_2201,R_3201,P_4201,AvailityPDM,Massachusetts General,KS,Commercial PPO/EPO,4,26,SPS_LOAD,18,5,25,77,1,10,12,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Green,Red,0,0,
+203,RO_1202,F_2202,R_3202,P_4202,AvailityPDM,UCSF Medical Center,CA,Medicaid Managed Care,3,14,DART_GEN,1,6,18,71,29,9,6,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Green,Red,1,0,
+204,RO_1203,F_2203,R_3203,P_4203,Demographic,Mayo Clinic,CA,Medicare HMO,1,59,STOPPED,2,8,22,10,19,4,14,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Yellow,Yellow,0,0,
+205,RO_1204,F_2204,R_3204,P_4204,Demographic,Norton Hospitals,KS,Medicaid FFS,4,56,STOPPED,1,7,23,77,37,15,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Red,Green,0,1,Complete Validation Failure
+206,RO_1205,F_2205,R_3205,P_4205,Salesforce,Kaiser Permanente,NY,Medicare HMO,1,7,PRE_PROCESSING,1,5,19,21,27,10,1,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Yellow,Red,0,0,
+207,RO_1206,F_2206,R_3206,P_4206,Salesforce,Johns Hopkins Hospital,KS,Medicaid FFS,4,3,SPS_LOAD,9,10,19,69,24,5,9,10,5,15,20,25,12,10,Green,Green,Red,Green,Green,Green,Red,0,0,
+208,RO_1207,F_2207,R_3207,P_4207,Salesforce,Northwestern Memorial,NY,Medicaid Managed Care,4,23,SPS_LOAD,13,6,8,36,31,8,9,10,5,15,20,25,12,10,Red,Green,Green,Green,Yellow,Yellow,Red,0,1,Network Gap
+209,RO_1208,F_2208,R_3208,P_4208,Demographic,Norton Hospitals,KS,Medicaid FFS,2,18,STOPPED,1,14,11,65,9,12,9,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Green,Red,0,1,Complete Validation Failure
+210,RO_1209,F_2209,R_3209,P_4209,Salesforce,Norton Hospitals,KS,Medicaid Managed Care,1,38,STOPPED,13,4,17,32,39,7,11,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Yellow,Red,0,1,Complete Validation Failure
+211,RO_1210,F_2210,R_3210,P_4210,AvailityPDM,Kaiser Permanente,CA,Medicaid FFS,3,99,STOPPED,20,12,7,34,32,13,8,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Green,Green,Green,0,0,
+212,RO_1211,F_2211,R_3211,P_4211,Demographic,Mayo Clinic,CA,Commercial PPO/EPO,3,15,PRE_PROCESSING,22,9,20,30,12,0,13,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Green,Green,Red,0,0,
+213,RO_1212,F_2212,R_3212,P_4212,Salesforce,Kaiser Permanente,NY,Medicare HMO,1,64,PRE_PROCESSING,7,13,13,70,36,16,10,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Red,Red,Yellow,0,0,
+214,RO_1213,F_2213,R_3213,P_4213,AvailityPDM,MercyOne Medical Group,KS,Medicaid FFS,3,89,DART_REVIEW,2,4,12,72,15,4,13,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Yellow,Yellow,Green,0,0,
+215,RO_1214,F_2214,R_3214,P_4214,Salesforce,Mayo Clinic,NY,Medicaid FFS,3,28,DART_GEN,6,1,24,65,21,1,3,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Green,Red,Red,0,0,
+216,RO_1215,F_2215,R_3215,P_4215,ProviderGroup,Mayo Clinic,KS,Medicare HMO,1,74,RESOLVED,7,7,17,34,19,8,1,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Red,Red,0,1,Duplicate Record
+217,RO_1216,F_2216,R_3216,P_4216,Salesforce,Cleveland Clinic,KS,Medicaid FFS,4,39,DART_GEN,14,7,21,78,26,3,11,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Red,Yellow,Green,0,0,
+218,RO_1217,F_2217,R_3217,P_4217,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,1,57,DART_UI_VALIDATION,18,4,21,55,15,16,12,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Green,Green,Green,0,0,
+219,RO_1218,F_2218,R_3218,P_4218,Salesforce,Norton Hospitals,KS,Medicaid Managed Care,4,17,STOPPED,15,13,21,41,33,16,12,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Yellow,Green,Green,1,1,Complete Validation Failure
+220,RO_1219,F_2219,R_3219,P_4219,Salesforce,Massachusetts General,CA,Commercial PPO/EPO,3,86,DART_GEN,2,14,5,102,31,17,8,10,5,15,20,25,12,10,Red,Red,Green,Red,Yellow,Green,Yellow,1,0,
+221,RO_1220,F_2220,R_3220,P_4220,Demographic,Johns Hopkins Hospital,CA,Commercial PPO/EPO,3,90,DART_GEN,10,3,12,100,25,15,7,10,5,15,20,25,12,10,Green,Red,Green,Green,Green,Yellow,Green,0,1,Network Gap
+222,RO_1221,F_2221,R_3221,P_4221,Demographic,MercyOne Medical Group,KS,Medicare HMO,3,44,DART_REVIEW,23,8,23,45,24,7,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Yellow,Yellow,Red,0,0,
+223,RO_1222,F_2222,R_3222,P_4222,ProviderGroup,MercyOne Medical Group,KS,Commercial PPO/EPO,2,25,RESOLVED,12,5,10,58,1,10,5,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Green,Red,Yellow,0,0,
+224,RO_1223,F_2223,R_3223,P_4223,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,4,17,ISF_GEN,17,10,7,67,11,17,10,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Yellow,Yellow,Green,0,0,
+225,RO_1224,F_2224,R_3224,P_4224,AvailityPDM,UCSF Medical Center,NY,Commercial PPO/EPO,2,13,MAPPING_APPROVAL,8,7,9,48,39,9,7,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Green,Yellow,0,1,Invalid Taxonomy
+226,RO_1225,F_2225,R_3225,P_4225,AvailityPDM,Kaiser Permanente,NY,Medicaid FFS,2,84,ISF_GEN,11,4,17,70,8,12,10,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Red,Yellow,0,0,
+227,RO_1226,F_2226,R_3226,P_4226,ProviderGroup,UCSF Medical Center,CA,Medicaid FFS,1,25,ISF_GEN,3,4,19,18,11,16,4,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Yellow,Red,Yellow,0,0,
+228,RO_1227,F_2227,R_3227,P_4227,AvailityPDM,UCSF Medical Center,CA,Commercial PPO/EPO,2,68,STOPPED,6,8,18,15,25,17,9,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Green,Red,Green,0,0,
+229,RO_1228,F_2228,R_3228,P_4228,AvailityPDM,Cleveland Clinic,CA,Medicaid Managed Care,1,10,MAPPING_APPROVAL,9,14,27,44,8,9,11,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Green,Yellow,0,1,Address Mismatch
+230,RO_1229,F_2229,R_3229,P_4229,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Commercial PPO/EPO,1,67,SPS_LOAD,6,8,20,48,9,15,10,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Green,Yellow,Green,0,0,
+231,RO_1230,F_2230,R_3230,P_4230,Demographic,Johns Hopkins Hospital,CA,Medicaid FFS,2,18,PRE_PROCESSING,9,2,22,31,31,19,14,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Green,Yellow,0,0,
+232,RO_1231,F_2231,R_3231,P_4231,AvailityPDM,Norton Hospitals,CA,Commercial PPO/EPO,4,86,SPS_LOAD,7,14,26,50,33,4,2,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Red,Red,0,0,
+233,RO_1232,F_2232,R_3232,P_4232,AvailityPDM,Johns Hopkins Hospital,KS,Medicaid FFS,4,34,DART_REVIEW,9,2,26,14,19,12,9,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Yellow,Green,0,0,
+234,RO_1233,F_2233,R_3233,P_4233,Demographic,Norton Hospitals,NY,Medicaid Managed Care,4,8,STOPPED,18,3,15,51,38,17,9,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Green,Red,Red,0,1,Network Gap
+235,RO_1234,F_2234,R_3234,P_4234,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,4,40,DART_REVIEW,12,12,7,76,1,16,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Red,Green,0,1,Complete Validation Failure
+236,RO_1235,F_2235,R_3235,P_4235,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,4,83,ISF_GEN,8,12,26,39,0,8,11,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Red,Yellow,Yellow,0,0,
+237,RO_1236,F_2236,R_3236,P_4236,Demographic,Cleveland Clinic,KS,Medicaid FFS,2,42,ISF_GEN,8,3,14,66,35,13,1,10,5,15,20,25,12,10,Red,Green,Green,Green,Red,Red,Yellow,0,0,
+238,RO_1237,F_2237,R_3237,P_4237,Salesforce,Northwestern Memorial,NY,Medicaid Managed Care,2,41,DART_REVIEW,18,1,14,38,23,16,7,10,5,15,20,25,12,10,Green,Green,Red,Green,Yellow,Red,Yellow,1,0,
+239,RO_1238,F_2238,R_3238,P_4238,AvailityPDM,Johns Hopkins Hospital,CA,Medicare HMO,3,6,PRE_PROCESSING,20,14,25,46,26,3,10,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Green,Yellow,0,0,
+240,RO_1239,F_2239,R_3239,P_4239,Demographic,Northwestern Memorial,KS,Commercial PPO/EPO,4,52,DART_UI_VALIDATION,15,3,20,22,1,17,10,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Yellow,Yellow,1,0,
+241,RO_1240,F_2240,R_3240,P_4240,AvailityPDM,Johns Hopkins Hospital,KS,Medicare HMO,2,26,RESOLVED,7,6,16,41,30,19,4,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Green,Green,0,0,
+242,RO_1241,F_2241,R_3241,P_4241,AvailityPDM,Johns Hopkins Hospital,NY,Commercial PPO/EPO,3,64,ISF_GEN,11,8,6,55,13,14,9,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Red,Green,0,0,
+243,RO_1242,F_2242,R_3242,P_4242,Salesforce,Mayo Clinic,CA,Medicaid FFS,4,98,PRE_PROCESSING,20,13,13,32,1,10,6,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Yellow,Red,Red,0,0,
+244,RO_1243,F_2243,R_3243,P_4243,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,1,59,ISF_GEN,16,12,28,54,28,11,13,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Red,Yellow,Red,0,1,Network Gap
+245,RO_1244,F_2244,R_3244,P_4244,ProviderGroup,Johns Hopkins Hospital,KS,Medicare HMO,3,56,DART_UI_VALIDATION,4,14,7,26,14,8,3,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Yellow,Red,Red,0,1,Duplicate Record
+246,RO_1245,F_2245,R_3245,P_4245,Demographic,Norton Hospitals,NY,Medicaid FFS,2,59,PRE_PROCESSING,6,10,28,75,11,12,6,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Yellow,Yellow,0,1,Invalid Taxonomy
+247,RO_1246,F_2246,R_3246,P_4246,ProviderGroup,Cleveland Clinic,KS,Medicaid FFS,1,70,DART_REVIEW,22,6,29,15,36,14,13,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Green,Green,0,0,
+248,RO_1247,F_2247,R_3247,P_4247,Demographic,MercyOne Medical Group,KS,Medicaid FFS,1,33,RESOLVED,3,5,19,27,27,14,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Green,Yellow,Yellow,1,1,Missing NPI
+249,RO_1248,F_2248,R_3248,P_4248,ProviderGroup,Northwestern Memorial,KS,Medicare HMO,1,53,STOPPED,9,4,7,31,19,4,6,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Yellow,Green,Red,0,0,
+250,RO_1249,F_2249,R_3249,P_4249,Salesforce,Massachusetts General,CA,Medicaid FFS,3,22,DART_UI_VALIDATION,10,3,23,42,38,18,5,10,5,15,20,25,12,10,Green,Green,Red,Green,Red,Red,Red,0,0,
+251,RO_1250,F_2250,R_3250,P_4250,Demographic,Cleveland Clinic,CA,Medicaid Managed Care,2,21,MAPPING_APPROVAL,14,13,22,39,23,19,2,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Green,Red,Green,0,1,Missing NPI
+252,RO_1251,F_2251,R_3251,P_4251,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,1,70,DART_UI_VALIDATION,11,4,12,41,20,13,10,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Green,Yellow,Yellow,0,0,
+253,RO_1252,F_2252,R_3252,P_4252,Salesforce,Johns Hopkins Hospital,NY,Medicaid Managed Care,4,70,STOPPED,18,14,21,51,9,16,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Yellow,Yellow,Red,1,0,
+254,RO_1253,F_2253,R_3253,P_4253,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,1,4,DART_GEN,22,7,12,112,13,17,2,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Red,Red,Yellow,1,0,
+255,RO_1254,F_2254,R_3254,P_4254,AvailityPDM,Kaiser Permanente,CA,Medicare HMO,1,94,ISF_GEN,12,1,11,45,36,2,7,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Red,Green,1,0,
+256,RO_1255,F_2255,R_3255,P_4255,AvailityPDM,Johns Hopkins Hospital,NY,Medicaid FFS,3,75,STOPPED,23,7,11,43,17,1,2,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Red,Red,Yellow,0,0,
+257,RO_1256,F_2256,R_3256,P_4256,Salesforce,Northwestern Memorial,CA,Medicaid Managed Care,3,62,MAPPING_APPROVAL,12,1,7,37,23,0,12,10,5,15,20,25,12,10,Green,Red,Green,Green,Green,Green,Green,0,0,
+258,RO_1257,F_2257,R_3257,P_4257,AvailityPDM,Johns Hopkins Hospital,KS,Medicare HMO,2,62,STOPPED,13,2,5,20,13,9,6,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Green,Red,Red,0,1,Network Gap
+259,RO_1258,F_2258,R_3258,P_4258,AvailityPDM,UCSF Medical Center,KS,Commercial PPO/EPO,4,94,ISF_GEN,13,4,8,48,33,18,5,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Red,Red,Yellow,1,0,
+260,RO_1259,F_2259,R_3259,P_4259,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,3,95,SPS_LOAD,19,1,29,56,11,16,4,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Red,Yellow,0,0,
+261,RO_1260,F_2260,R_3260,P_4260,ProviderGroup,Johns Hopkins Hospital,CA,Medicaid Managed Care,1,24,STOPPED,19,11,9,28,21,11,7,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Green,Green,Yellow,0,0,
+262,RO_1261,F_2261,R_3261,P_4261,Demographic,Mayo Clinic,KS,Commercial PPO/EPO,2,55,STOPPED,23,12,5,24,5,0,8,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Yellow,Green,Yellow,0,0,
+263,RO_1262,F_2262,R_3262,P_4262,ProviderGroup,Cleveland Clinic,CA,Commercial PPO/EPO,1,9,SPS_LOAD,14,11,19,37,35,11,4,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Green,Green,0,1,Missing NPI
+264,RO_1263,F_2263,R_3263,P_4263,AvailityPDM,Kaiser Permanente,KS,Medicaid FFS,1,3,MAPPING_APPROVAL,4,11,9,33,35,16,1,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Red,Green,0,0,
+265,RO_1264,F_2264,R_3264,P_4264,Demographic,Cleveland Clinic,NY,Commercial PPO/EPO,3,31,DART_UI_VALIDATION,13,9,17,18,21,2,1,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Yellow,0,0,
+266,RO_1265,F_2265,R_3265,P_4265,ProviderGroup,MercyOne Medical Group,KS,Medicaid FFS,2,40,DART_GEN,8,12,12,88,13,10,1,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Yellow,Red,1,0,
+267,RO_1266,F_2266,R_3266,P_4266,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,4,36,DART_GEN,23,6,12,65,15,16,11,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Red,Green,Green,1,1,Network Gap
+268,RO_1267,F_2267,R_3267,P_4267,Demographic,UCSF Medical Center,NY,Medicare HMO,4,24,DART_UI_VALIDATION,21,13,9,71,35,2,1,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Red,Red,Yellow,0,1,Invalid Taxonomy
+269,RO_1268,F_2268,R_3268,P_4268,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,3,95,DART_UI_VALIDATION,23,1,13,28,24,7,5,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Green,Yellow,Yellow,0,0,
+270,RO_1269,F_2269,R_3269,P_4269,ProviderGroup,UCSF Medical Center,NY,Medicaid FFS,3,6,DART_UI_VALIDATION,19,1,5,76,31,19,4,10,5,15,20,25,12,10,Green,Green,Red,Green,Green,Green,Green,1,0,
+271,RO_1270,F_2270,R_3270,P_4270,AvailityPDM,UCSF Medical Center,KS,Medicaid Managed Care,2,66,DART_REVIEW,12,6,8,49,32,3,13,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Yellow,Red,Green,1,0,
+272,RO_1271,F_2271,R_3271,P_4271,ProviderGroup,Kaiser Permanente,KS,Medicaid FFS,4,84,DART_GEN,18,4,7,118,35,6,14,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Red,Green,Yellow,0,0,
+273,RO_1272,F_2272,R_3272,P_4272,AvailityPDM,Cleveland Clinic,KS,Medicaid Managed Care,4,92,STOPPED,6,4,6,74,19,13,9,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Green,Yellow,0,0,
+274,RO_1273,F_2273,R_3273,P_4273,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,4,75,RESOLVED,18,11,12,38,17,13,3,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Green,Green,0,1,Missing NPI
+275,RO_1274,F_2274,R_3274,P_4274,ProviderGroup,MercyOne Medical Group,KS,Commercial PPO/EPO,1,4,STOPPED,19,6,27,59,37,3,14,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Red,Yellow,Green,1,0,
+276,RO_1275,F_2275,R_3275,P_4275,AvailityPDM,Kaiser Permanente,NY,Commercial PPO/EPO,4,79,PRE_PROCESSING,22,14,13,22,2,15,7,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Yellow,Red,0,1,Duplicate Record
+277,RO_1276,F_2276,R_3276,P_4276,AvailityPDM,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,1,6,MAPPING_APPROVAL,5,12,6,10,22,0,11,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Yellow,Red,0,0,
+278,RO_1277,F_2277,R_3277,P_4277,Demographic,MercyOne Medical Group,CA,Medicaid Managed Care,2,94,DART_UI_VALIDATION,24,11,18,43,31,16,8,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Green,Green,0,0,
+279,RO_1278,F_2278,R_3278,P_4278,ProviderGroup,Mayo Clinic,NY,Medicaid FFS,1,51,RESOLVED,9,7,18,57,15,9,6,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Green,Yellow,1,0,
+280,RO_1279,F_2279,R_3279,P_4279,ProviderGroup,Kaiser Permanente,NY,Commercial PPO/EPO,2,62,DART_GEN,3,9,8,84,4,15,12,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Green,0,0,
+281,RO_1280,F_2280,R_3280,P_4280,Demographic,MercyOne Medical Group,NY,Medicare HMO,4,57,DART_GEN,10,10,10,116,3,15,13,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Yellow,Green,Yellow,0,0,
+282,RO_1281,F_2281,R_3281,P_4281,ProviderGroup,Northwestern Memorial,KS,Commercial PPO/EPO,4,66,PRE_PROCESSING,19,5,15,73,20,7,10,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Red,Red,Green,0,0,
+283,RO_1282,F_2282,R_3282,P_4282,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,2,79,DART_UI_VALIDATION,3,9,7,70,39,6,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Green,Green,0,0,
+284,RO_1283,F_2283,R_3283,P_4283,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,3,75,SPS_LOAD,22,4,12,38,13,5,1,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Green,Red,0,0,
+285,RO_1284,F_2284,R_3284,P_4284,Salesforce,MercyOne Medical Group,KS,Medicaid Managed Care,2,8,MAPPING_APPROVAL,15,13,7,48,38,15,8,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Red,Yellow,0,0,
+286,RO_1285,F_2285,R_3285,P_4285,ProviderGroup,Massachusetts General,CA,Commercial PPO/EPO,3,26,SPS_LOAD,1,10,18,35,30,19,10,10,5,15,20,25,12,10,Red,Red,Green,Red,Green,Red,Green,0,0,
+287,RO_1286,F_2286,R_3286,P_4286,AvailityPDM,Massachusetts General,CA,Medicaid Managed Care,1,51,DART_REVIEW,7,2,17,26,13,15,3,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Green,Yellow,Yellow,1,0,
+288,RO_1287,F_2287,R_3287,P_4287,AvailityPDM,Northwestern Memorial,KS,Medicare HMO,1,45,STOPPED,12,3,17,22,5,6,8,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Yellow,Red,Yellow,0,0,
+289,RO_1288,F_2288,R_3288,P_4288,Salesforce,Northwestern Memorial,NY,Medicare HMO,1,44,DART_REVIEW,17,13,6,78,11,8,12,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Yellow,Yellow,Yellow,0,0,
+290,RO_1289,F_2289,R_3289,P_4289,ProviderGroup,Massachusetts General,KS,Medicare HMO,4,5,PRE_PROCESSING,21,11,17,35,15,13,4,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Green,Yellow,0,0,
+291,RO_1290,F_2290,R_3290,P_4290,AvailityPDM,Northwestern Memorial,KS,Medicaid FFS,1,70,STOPPED,24,1,23,58,16,10,8,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Yellow,Yellow,Yellow,0,1,Duplicate Record
+292,RO_1291,F_2291,R_3291,P_4291,AvailityPDM,Northwestern Memorial,KS,Medicaid Managed Care,3,26,DART_UI_VALIDATION,20,14,10,76,22,13,11,10,5,15,20,25,12,10,Green,Red,Green,Green,Red,Yellow,Yellow,0,1,Complete Validation Failure
+293,RO_1292,F_2292,R_3292,P_4292,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,1,68,STOPPED,5,14,20,16,13,6,1,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Yellow,Red,Green,1,0,
+294,RO_1293,F_2293,R_3293,P_4293,Demographic,Cleveland Clinic,CA,Medicare HMO,2,19,STOPPED,4,6,6,67,6,0,3,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Yellow,Green,Red,0,0,
+295,RO_1294,F_2294,R_3294,P_4294,ProviderGroup,MercyOne Medical Group,KS,Commercial PPO/EPO,2,84,RESOLVED,12,13,12,58,31,12,6,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Red,Red,Yellow,0,0,
+296,RO_1295,F_2295,R_3295,P_4295,Demographic,Massachusetts General,NY,Medicaid FFS,4,97,RESOLVED,20,6,21,62,14,19,9,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Green,Yellow,Green,1,1,Network Gap
+297,RO_1296,F_2296,R_3296,P_4296,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,2,20,PRE_PROCESSING,24,1,27,74,16,2,2,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Red,Yellow,0,0,
+298,RO_1297,F_2297,R_3297,P_4297,Salesforce,Massachusetts General,CA,Medicaid FFS,3,12,DART_REVIEW,18,11,6,71,33,19,11,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Yellow,Red,1,0,
+299,RO_1298,F_2298,R_3298,P_4298,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,1,47,DART_GEN,17,13,14,83,4,3,1,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Green,Yellow,0,1,Missing NPI
+300,RO_1299,F_2299,R_3299,P_4299,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,4,1,DART_UI_VALIDATION,19,3,20,52,26,10,10,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Green,Green,Green,0,0,
+301,RO_1300,F_2300,R_3300,P_4300,AvailityPDM,Mayo Clinic,NY,Medicaid FFS,1,90,STOPPED,9,5,10,34,22,1,3,10,5,15,20,25,12,10,Red,Red,Green,Red,Green,Red,Green,0,0,
+302,RO_1301,F_2301,R_3301,P_4301,Demographic,Northwestern Memorial,CA,Medicare HMO,1,14,MAPPING_APPROVAL,4,3,6,12,39,13,4,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Yellow,Yellow,0,0,
+303,RO_1302,F_2302,R_3302,P_4302,AvailityPDM,Norton Hospitals,KS,Medicare HMO,3,64,MAPPING_APPROVAL,21,10,6,38,13,11,11,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Yellow,Red,0,0,
+304,RO_1303,F_2303,R_3303,P_4303,ProviderGroup,Cleveland Clinic,CA,Medicaid Managed Care,2,38,ISF_GEN,2,3,17,41,14,16,5,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Green,Yellow,0,1,Duplicate Record
+305,RO_1304,F_2304,R_3304,P_4304,Demographic,UCSF Medical Center,KS,Medicaid Managed Care,2,37,STOPPED,4,14,28,35,32,11,3,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Green,Green,0,1,Invalid Taxonomy
+306,RO_1305,F_2305,R_3305,P_4305,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,1,11,STOPPED,2,10,19,25,30,11,13,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Yellow,Red,Yellow,1,0,
+307,RO_1306,F_2306,R_3306,P_4306,Demographic,Mayo Clinic,NY,Medicare HMO,4,77,PRE_PROCESSING,15,3,6,34,34,0,10,10,5,15,20,25,12,10,Red,Red,Red,Green,Green,Green,Red,0,0,
+308,RO_1307,F_2307,R_3307,P_4307,AvailityPDM,Massachusetts General,KS,Commercial PPO/EPO,2,3,MAPPING_APPROVAL,2,5,11,63,16,12,11,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Yellow,Red,Green,1,0,
+309,RO_1308,F_2308,R_3308,P_4308,ProviderGroup,Massachusetts General,CA,Medicaid FFS,4,33,DART_GEN,4,13,7,84,27,13,2,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Red,Green,Green,0,0,
+310,RO_1309,F_2309,R_3309,P_4309,ProviderGroup,Norton Hospitals,CA,Medicaid FFS,2,6,DART_GEN,6,5,12,75,18,1,2,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Red,Green,0,0,
+311,RO_1310,F_2310,R_3310,P_4310,AvailityPDM,Norton Hospitals,CA,Medicare HMO,4,50,SPS_LOAD,7,4,27,74,22,11,7,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Green,Red,Yellow,0,0,
+312,RO_1311,F_2311,R_3311,P_4311,ProviderGroup,Cleveland Clinic,KS,Medicaid Managed Care,3,10,MAPPING_APPROVAL,10,1,18,50,31,15,9,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Red,Green,0,0,
+313,RO_1312,F_2312,R_3312,P_4312,Demographic,Mayo Clinic,NY,Commercial PPO/EPO,4,5,DART_GEN,19,5,28,111,39,3,10,10,5,15,20,25,12,10,Green,Green,Green,Red,Red,Green,Green,1,0,
+314,RO_1313,F_2313,R_3313,P_4313,Demographic,Cedars-Sinai Medical Care Foundation,NY,Medicaid Managed Care,3,23,STOPPED,19,10,27,38,12,7,2,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Yellow,Red,Yellow,0,0,
+315,RO_1314,F_2314,R_3314,P_4314,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,3,10,SPS_LOAD,22,5,26,28,19,1,7,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Yellow,Yellow,0,0,
+316,RO_1315,F_2315,R_3315,P_4315,ProviderGroup,Northwestern Memorial,KS,Medicaid FFS,4,44,MAPPING_APPROVAL,12,4,11,75,34,9,7,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Red,Red,0,0,
+317,RO_1316,F_2316,R_3316,P_4316,Salesforce,Northwestern Memorial,NY,Medicare HMO,3,2,ISF_GEN,3,6,25,50,4,8,11,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Yellow,Yellow,0,0,
+318,RO_1317,F_2317,R_3317,P_4317,Demographic,UCSF Medical Center,NY,Medicaid Managed Care,1,13,PRE_PROCESSING,13,10,11,54,8,14,7,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Red,Green,Green,0,0,
+319,RO_1318,F_2318,R_3318,P_4318,Demographic,Johns Hopkins Hospital,CA,Medicaid FFS,3,40,RESOLVED,18,4,5,24,28,12,3,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Yellow,Yellow,Green,0,0,
+320,RO_1319,F_2319,R_3319,P_4319,Demographic,Massachusetts General,NY,Medicaid FFS,2,2,DART_UI_VALIDATION,8,14,21,12,5,16,12,10,5,15,20,25,12,10,Green,Red,Green,Green,Red,Red,Red,0,0,
+321,RO_1320,F_2320,R_3320,P_4320,Demographic,Northwestern Memorial,CA,Medicaid Managed Care,4,84,PRE_PROCESSING,21,7,13,20,24,15,7,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Green,Green,0,0,
+322,RO_1321,F_2321,R_3321,P_4321,Salesforce,UCSF Medical Center,KS,Medicare HMO,1,65,MAPPING_APPROVAL,15,7,25,62,30,1,1,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Green,Yellow,0,0,
+323,RO_1322,F_2322,R_3322,P_4322,AvailityPDM,Norton Hospitals,CA,Medicare HMO,4,63,MAPPING_APPROVAL,1,2,17,55,21,19,10,10,5,15,20,25,12,10,Green,Red,Red,Green,Yellow,Yellow,Red,0,0,
+324,RO_1323,F_2323,R_3323,P_4323,Demographic,Massachusetts General,NY,Commercial PPO/EPO,2,73,PRE_PROCESSING,3,3,25,39,1,19,1,10,5,15,20,25,12,10,Red,Green,Green,Green,Red,Green,Yellow,0,0,
+325,RO_1324,F_2324,R_3324,P_4324,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,2,17,ISF_GEN,8,1,23,66,4,13,5,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Green,Green,1,1,Invalid Taxonomy
+326,RO_1325,F_2325,R_3325,P_4325,Salesforce,Kaiser Permanente,CA,Commercial PPO/EPO,2,9,DART_REVIEW,4,8,25,27,26,2,2,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Yellow,Green,Yellow,0,0,
+327,RO_1326,F_2326,R_3326,P_4326,Demographic,Cleveland Clinic,NY,Medicaid Managed Care,3,75,STOPPED,16,9,23,60,24,11,9,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Green,Red,Yellow,0,0,
+328,RO_1327,F_2327,R_3327,P_4327,ProviderGroup,Northwestern Memorial,CA,Commercial PPO/EPO,3,15,MAPPING_APPROVAL,23,4,29,57,7,7,7,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Green,Red,0,0,
+329,RO_1328,F_2328,R_3328,P_4328,Demographic,Massachusetts General,NY,Commercial PPO/EPO,4,24,DART_GEN,10,6,29,75,0,1,4,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Yellow,Green,Yellow,0,0,
+330,RO_1329,F_2329,R_3329,P_4329,AvailityPDM,UCSF Medical Center,CA,Medicaid Managed Care,4,38,DART_REVIEW,12,9,26,17,19,3,4,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Yellow,Green,Red,1,0,
+331,RO_1330,F_2330,R_3330,P_4330,Salesforce,MercyOne Medical Group,CA,Commercial PPO/EPO,1,35,SPS_LOAD,14,6,21,31,22,13,2,10,5,15,20,25,12,10,Red,Green,Green,Red,Green,Green,Red,0,0,
+332,RO_1331,F_2331,R_3331,P_4331,AvailityPDM,Norton Hospitals,KS,Medicare HMO,1,94,SPS_LOAD,14,14,27,15,31,15,5,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Yellow,Green,Green,0,0,
+333,RO_1332,F_2332,R_3332,P_4332,Salesforce,Massachusetts General,CA,Medicaid FFS,4,95,RESOLVED,2,12,27,66,10,18,4,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Red,Red,Yellow,0,0,
+334,RO_1333,F_2333,R_3333,P_4333,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,3,49,SPS_LOAD,23,12,14,45,38,1,12,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Yellow,Red,Yellow,0,0,
+335,RO_1334,F_2334,R_3334,P_4334,Demographic,Cleveland Clinic,KS,Medicare HMO,2,69,SPS_LOAD,5,12,14,66,23,11,13,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Green,Green,Red,0,0,
+336,RO_1335,F_2335,R_3335,P_4335,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,4,62,DART_UI_VALIDATION,5,9,8,58,10,13,1,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Red,Green,Red,0,1,Complete Validation Failure
+337,RO_1336,F_2336,R_3336,P_4336,ProviderGroup,UCSF Medical Center,CA,Medicare HMO,1,60,PRE_PROCESSING,6,4,12,54,28,5,12,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Red,Red,0,0,
+338,RO_1337,F_2337,R_3337,P_4337,ProviderGroup,MercyOne Medical Group,KS,Medicaid FFS,3,50,SPS_LOAD,13,8,26,75,25,12,8,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Green,Yellow,0,1,Invalid Taxonomy
+339,RO_1338,F_2338,R_3338,P_4338,Demographic,Norton Hospitals,KS,Medicare HMO,4,78,MAPPING_APPROVAL,9,9,24,54,15,3,3,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Green,0,0,Invalid Taxonomy
+340,RO_1339,F_2339,R_3339,P_4339,Demographic,Kaiser Permanente,CA,Medicaid Managed Care,4,75,STOPPED,22,4,24,29,34,17,14,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Red,Red,Green,0,0,
+341,RO_1340,F_2340,R_3340,P_4340,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,3,9,PRE_PROCESSING,15,5,22,73,19,11,6,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Yellow,Green,0,0,
+342,RO_1341,F_2341,R_3341,P_4341,Demographic,Massachusetts General,KS,Commercial PPO/EPO,4,34,MAPPING_APPROVAL,14,14,18,76,2,19,4,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Yellow,Green,0,0,
+343,RO_1342,F_2342,R_3342,P_4342,Salesforce,UCSF Medical Center,CA,Medicaid Managed Care,3,76,PRE_PROCESSING,24,8,22,12,0,18,9,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Green,Green,0,1,Missing NPI
+344,RO_1343,F_2343,R_3343,P_4343,ProviderGroup,UCSF Medical Center,KS,Medicaid FFS,2,99,MAPPING_APPROVAL,7,12,18,63,0,7,7,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Red,Red,Green,0,1,Network Gap
+345,RO_1344,F_2344,R_3344,P_4344,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,3,35,DART_UI_VALIDATION,20,10,24,73,16,6,9,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Green,Green,Yellow,0,0,
+346,RO_1345,F_2345,R_3345,P_4345,AvailityPDM,MercyOne Medical Group,CA,Medicare HMO,3,1,STOPPED,2,14,25,49,1,15,10,10,5,15,20,25,12,10,Red,Green,Red,Green,Yellow,Green,Red,0,1,Address Mismatch
+347,RO_1346,F_2346,R_3346,P_4346,ProviderGroup,Cleveland Clinic,CA,Medicaid Managed Care,3,40,MAPPING_APPROVAL,7,6,28,68,28,18,3,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Red,Yellow,Green,1,0,
+348,RO_1347,F_2347,R_3347,P_4347,ProviderGroup,Cleveland Clinic,NY,Commercial PPO/EPO,4,64,DART_REVIEW,6,12,19,64,19,5,1,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Green,Red,1,0,
+349,RO_1348,F_2348,R_3348,P_4348,Salesforce,Mayo Clinic,NY,Medicaid Managed Care,4,22,DART_REVIEW,17,7,26,71,5,19,5,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Red,Red,Green,0,1,Invalid Taxonomy
+350,RO_1349,F_2349,R_3349,P_4349,ProviderGroup,Johns Hopkins Hospital,KS,Commercial PPO/EPO,3,60,MAPPING_APPROVAL,2,3,8,13,7,10,3,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Yellow,Green,Green,0,1,Invalid Taxonomy
+351,RO_1350,F_2350,R_3350,P_4350,AvailityPDM,Johns Hopkins Hospital,CA,Medicaid FFS,4,64,DART_REVIEW,3,7,17,69,28,4,6,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Yellow,Red,0,0,
+352,RO_1351,F_2351,R_3351,P_4351,AvailityPDM,Cleveland Clinic,KS,Medicaid FFS,1,93,RESOLVED,5,12,27,39,32,15,8,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Red,Yellow,Yellow,0,1,Address Mismatch
+353,RO_1352,F_2352,R_3352,P_4352,ProviderGroup,Northwestern Memorial,CA,Medicare HMO,1,72,SPS_LOAD,5,14,12,11,2,6,11,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Red,Yellow,0,1,Invalid Taxonomy
+354,RO_1353,F_2353,R_3353,P_4353,Demographic,Norton Hospitals,KS,Commercial PPO/EPO,4,11,SPS_LOAD,1,8,22,71,34,4,13,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Red,Yellow,Red,0,0,Missing NPI
+355,RO_1354,F_2354,R_3354,P_4354,ProviderGroup,Cleveland Clinic,CA,Medicaid FFS,4,14,PRE_PROCESSING,8,10,16,58,4,10,4,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Red,Red,Red,1,1,Missing NPI
+356,RO_1355,F_2355,R_3355,P_4355,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,3,60,RESOLVED,12,6,27,18,26,14,5,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Green,Green,0,1,Address Mismatch
+357,RO_1356,F_2356,R_3356,P_4356,AvailityPDM,Cleveland Clinic,KS,Commercial PPO/EPO,2,30,ISF_GEN,24,10,18,40,11,2,5,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Red,Yellow,Yellow,0,0,
+358,RO_1357,F_2357,R_3357,P_4357,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,4,35,STOPPED,4,9,6,70,19,4,4,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Yellow,Yellow,0,1,Duplicate Record
+359,RO_1358,F_2358,R_3358,P_4358,ProviderGroup,UCSF Medical Center,CA,Medicaid FFS,1,85,DART_GEN,13,13,22,65,19,4,4,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Green,Yellow,0,0,
+360,RO_1359,F_2359,R_3359,P_4359,ProviderGroup,Johns Hopkins Hospital,KS,Medicare HMO,3,37,ISF_GEN,23,6,28,34,8,8,4,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Yellow,Yellow,0,1,Invalid Taxonomy
+361,RO_1360,F_2360,R_3360,P_4360,Salesforce,Mayo Clinic,NY,Commercial PPO/EPO,4,5,SPS_LOAD,15,12,6,45,38,14,4,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Red,Yellow,Yellow,0,0,
+362,RO_1361,F_2361,R_3361,P_4361,AvailityPDM,Mayo Clinic,NY,Medicaid Managed Care,1,83,STOPPED,11,9,15,17,3,2,4,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Yellow,Green,0,0,
+363,RO_1362,F_2362,R_3362,P_4362,Salesforce,Northwestern Memorial,KS,Medicaid FFS,1,78,DART_REVIEW,10,13,13,67,18,5,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Green,Yellow,0,0,
+364,RO_1363,F_2363,R_3363,P_4363,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,2,26,ISF_GEN,3,4,16,54,37,16,2,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Yellow,Green,0,0,
+365,RO_1364,F_2364,R_3364,P_4364,ProviderGroup,Cleveland Clinic,CA,Commercial PPO/EPO,3,62,DART_REVIEW,22,8,21,71,26,7,2,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Yellow,Red,0,0,
+366,RO_1365,F_2365,R_3365,P_4365,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,3,4,DART_UI_VALIDATION,14,11,19,48,12,10,9,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Yellow,Green,0,1,Duplicate Record
+367,RO_1366,F_2366,R_3366,P_4366,Salesforce,Northwestern Memorial,NY,Medicaid FFS,2,89,PRE_PROCESSING,16,4,29,67,12,5,2,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Red,Red,0,1,Invalid Taxonomy
+368,RO_1367,F_2367,R_3367,P_4367,AvailityPDM,MercyOne Medical Group,NY,Medicaid Managed Care,2,42,STOPPED,10,2,21,73,21,7,6,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Red,Red,0,0,
+369,RO_1368,F_2368,R_3368,P_4368,Demographic,Cleveland Clinic,NY,Medicaid Managed Care,3,89,STOPPED,10,10,22,53,27,9,2,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Red,Red,Green,1,1,Network Gap
+370,RO_1369,F_2369,R_3369,P_4369,ProviderGroup,Mayo Clinic,KS,Medicare HMO,3,18,ISF_GEN,12,11,26,38,21,2,5,10,5,15,20,25,12,10,Red,Red,Green,Yellow,Green,Yellow,Green,0,1,Invalid Taxonomy
+371,RO_1370,F_2370,R_3370,P_4370,Salesforce,Johns Hopkins Hospital,KS,Medicaid FFS,4,40,MAPPING_APPROVAL,9,9,10,68,18,13,4,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Green,Green,Yellow,1,0,
+372,RO_1371,F_2371,R_3371,P_4371,AvailityPDM,MercyOne Medical Group,KS,Medicaid Managed Care,4,72,PRE_PROCESSING,1,5,21,18,7,13,12,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Yellow,Green,1,0,
+373,RO_1372,F_2372,R_3372,P_4372,ProviderGroup,Northwestern Memorial,NY,Medicaid FFS,2,39,PRE_PROCESSING,5,4,27,15,7,9,7,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Yellow,Green,Yellow,0,1,Missing NPI
+374,RO_1373,F_2373,R_3373,P_4373,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,4,14,SPS_LOAD,20,2,28,38,25,11,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Green,Yellow,Red,0,0,
+375,RO_1374,F_2374,R_3374,P_4374,AvailityPDM,Mayo Clinic,NY,Medicaid FFS,1,32,STOPPED,8,1,22,67,25,5,13,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Yellow,Yellow,Green,1,1,Complete Validation Failure
+376,RO_1375,F_2375,R_3375,P_4375,ProviderGroup,UCSF Medical Center,NY,Medicaid FFS,4,51,STOPPED,11,11,12,26,22,11,6,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Green,Green,Red,0,1,Complete Validation Failure
+377,RO_1376,F_2376,R_3376,P_4376,ProviderGroup,Johns Hopkins Hospital,KS,Medicaid FFS,4,38,MAPPING_APPROVAL,12,7,13,25,12,13,10,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Yellow,Yellow,0,1,Complete Validation Failure
+378,RO_1377,F_2377,R_3377,P_4377,Salesforce,Cleveland Clinic,CA,Medicare HMO,1,97,DART_REVIEW,1,6,10,12,27,1,5,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Red,Red,Green,1,0,
+379,RO_1378,F_2378,R_3378,P_4378,ProviderGroup,MercyOne Medical Group,KS,Medicare HMO,2,23,DART_GEN,22,2,9,96,8,8,1,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Red,Yellow,0,0,
+380,RO_1379,F_2379,R_3379,P_4379,Salesforce,UCSF Medical Center,CA,Medicare HMO,1,63,DART_UI_VALIDATION,20,8,16,73,19,9,12,10,5,15,20,25,12,10,Red,Red,Green,Yellow,Yellow,Green,Red,0,0,
+381,RO_1380,F_2380,R_3380,P_4380,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,4,15,DART_GEN,11,11,29,80,18,16,3,10,5,15,20,25,12,10,Green,Red,Red,Red,Red,Red,Green,0,0,
+382,RO_1381,F_2381,R_3381,P_4381,Demographic,Johns Hopkins Hospital,KS,Commercial PPO/EPO,2,97,SPS_LOAD,5,4,15,71,38,16,9,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Red,Red,Red,0,0,
+383,RO_1382,F_2382,R_3382,P_4382,Demographic,UCSF Medical Center,KS,Medicaid FFS,4,25,STOPPED,15,8,29,51,11,2,14,10,5,15,20,25,12,10,Green,Green,Red,Green,Yellow,Green,Red,0,0,
+384,RO_1383,F_2383,R_3383,P_4383,Salesforce,Cleveland Clinic,KS,Commercial PPO/EPO,1,17,ISF_GEN,5,7,5,51,14,18,1,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Green,Yellow,Red,0,0,
+385,RO_1384,F_2384,R_3384,P_4384,Salesforce,Norton Hospitals,NY,Medicaid FFS,1,97,ISF_GEN,12,5,15,70,30,0,5,10,5,15,20,25,12,10,Green,Green,Green,Red,Green,Yellow,Red,0,1,Complete Validation Failure
+386,RO_1385,F_2385,R_3385,P_4385,Demographic,Cleveland Clinic,KS,Medicaid FFS,4,66,ISF_GEN,5,10,23,22,13,11,2,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Red,Yellow,Green,0,0,
+387,RO_1386,F_2386,R_3386,P_4386,ProviderGroup,Mayo Clinic,NY,Medicaid FFS,3,78,DART_GEN,17,10,13,63,10,6,4,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Yellow,Green,0,0,
+388,RO_1387,F_2387,R_3387,P_4387,Salesforce,MercyOne Medical Group,CA,Medicare HMO,3,53,DART_REVIEW,17,12,6,63,25,3,14,10,5,15,20,25,12,10,Green,Red,Green,Green,Yellow,Yellow,Red,0,0,
+389,RO_1388,F_2388,R_3388,P_4388,AvailityPDM,Kaiser Permanente,KS,Medicaid Managed Care,1,51,DART_GEN,24,8,16,93,26,9,14,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Red,Yellow,Red,0,0,
+390,RO_1389,F_2389,R_3389,P_4389,ProviderGroup,Cleveland Clinic,NY,Medicare HMO,1,39,MAPPING_APPROVAL,12,14,8,17,10,12,11,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Green,Yellow,Red,0,0,
+391,RO_1390,F_2390,R_3390,P_4390,ProviderGroup,Massachusetts General,NY,Medicaid FFS,3,51,ISF_GEN,24,9,8,68,37,1,1,10,5,15,20,25,12,10,Red,Red,Red,Green,Green,Red,Green,0,1,Duplicate Record
+392,RO_1391,F_2391,R_3391,P_4391,Demographic,Kaiser Permanente,NY,Commercial PPO/EPO,3,70,PRE_PROCESSING,15,5,22,66,33,9,3,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Red,Green,0,0,
+393,RO_1392,F_2392,R_3392,P_4392,Salesforce,Kaiser Permanente,KS,Medicaid FFS,4,6,STOPPED,15,10,19,49,18,3,10,10,5,15,20,25,12,10,Red,Red,Red,Green,Yellow,Yellow,Green,1,1,Duplicate Record
+394,RO_1393,F_2393,R_3393,P_4393,ProviderGroup,MercyOne Medical Group,CA,Medicaid FFS,4,67,RESOLVED,6,5,23,68,5,17,7,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Green,Green,0,0,
+395,RO_1394,F_2394,R_3394,P_4394,Salesforce,MercyOne Medical Group,KS,Medicaid Managed Care,3,7,STOPPED,12,2,17,11,37,4,10,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Yellow,Yellow,0,1,Invalid Taxonomy
+396,RO_1395,F_2395,R_3395,P_4395,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,4,51,MAPPING_APPROVAL,20,5,23,19,27,18,3,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Green,Green,0,1,Duplicate Record
+397,RO_1396,F_2396,R_3396,P_4396,Salesforce,Mayo Clinic,CA,Medicare HMO,4,72,DART_REVIEW,18,3,21,53,0,1,4,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Red,Red,Yellow,1,1,Invalid Taxonomy
+398,RO_1397,F_2397,R_3397,P_4397,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,2,42,MAPPING_APPROVAL,14,7,10,20,34,11,2,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Yellow,Green,0,1,Network Gap
+399,RO_1398,F_2398,R_3398,P_4398,Salesforce,UCSF Medical Center,CA,Medicaid Managed Care,4,64,DART_REVIEW,2,10,20,11,39,16,3,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Red,Green,Green,0,1,Invalid Taxonomy
+400,RO_1399,F_2399,R_3399,P_4399,Demographic,UCSF Medical Center,CA,Medicaid Managed Care,1,15,MAPPING_APPROVAL,9,5,28,59,7,9,9,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Green,Yellow,0,1,Complete Validation Failure
+401,RO_1400,F_2400,R_3400,P_4400,AvailityPDM,UCSF Medical Center,NY,Medicaid FFS,4,29,DART_GEN,5,8,16,87,6,1,3,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Green,0,0,
+402,RO_1401,F_2401,R_3401,P_4401,ProviderGroup,Norton Hospitals,NY,Medicaid Managed Care,4,33,RESOLVED,20,1,23,32,10,5,11,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Green,Red,0,0,
+403,RO_1402,F_2402,R_3402,P_4402,ProviderGroup,Cleveland Clinic,CA,Medicaid Managed Care,3,94,DART_UI_VALIDATION,1,3,9,27,38,7,5,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Red,Green,Green,0,0,
+404,RO_1403,F_2403,R_3403,P_4403,AvailityPDM,Northwestern Memorial,CA,Medicare HMO,1,27,DART_UI_VALIDATION,23,3,21,71,3,18,2,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Yellow,Red,Green,0,0,
+405,RO_1404,F_2404,R_3404,P_4404,Demographic,MercyOne Medical Group,CA,Commercial PPO/EPO,4,36,ISF_GEN,3,9,27,71,24,10,4,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Red,Green,1,0,
+406,RO_1405,F_2405,R_3405,P_4405,ProviderGroup,Northwestern Memorial,CA,Medicare HMO,4,29,DART_GEN,6,5,5,97,11,11,12,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Red,Yellow,0,0,
+407,RO_1406,F_2406,R_3406,P_4406,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,2,38,MAPPING_APPROVAL,5,12,29,76,25,8,13,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Yellow,Yellow,0,1,Address Mismatch
+408,RO_1407,F_2407,R_3407,P_4407,Demographic,MercyOne Medical Group,CA,Commercial PPO/EPO,4,57,DART_REVIEW,21,9,28,47,37,1,7,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Yellow,Red,0,1,Address Mismatch
+409,RO_1408,F_2408,R_3408,P_4408,Demographic,MercyOne Medical Group,CA,Commercial PPO/EPO,4,97,MAPPING_APPROVAL,5,13,27,76,11,7,14,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Yellow,Yellow,1,0,
+410,RO_1409,F_2409,R_3409,P_4409,AvailityPDM,MercyOne Medical Group,KS,Medicaid Managed Care,2,27,DART_GEN,1,9,14,100,36,10,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Green,Yellow,Red,0,0,
+411,RO_1410,F_2410,R_3410,P_4410,AvailityPDM,Northwestern Memorial,NY,Medicare HMO,3,55,DART_UI_VALIDATION,17,1,19,10,23,3,12,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Red,Yellow,Red,1,1,Missing NPI
+412,RO_1411,F_2411,R_3411,P_4411,Demographic,MercyOne Medical Group,CA,Medicaid FFS,4,33,RESOLVED,19,2,27,54,15,9,3,10,5,15,20,25,12,10,Green,Green,Green,Red,Green,Red,Green,1,0,
+413,RO_1412,F_2412,R_3412,P_4412,Salesforce,Massachusetts General,CA,Medicare HMO,2,68,RESOLVED,14,5,25,37,12,19,5,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Yellow,Green,0,1,Missing NPI
+414,RO_1413,F_2413,R_3413,P_4413,AvailityPDM,Norton Hospitals,KS,Commercial PPO/EPO,1,86,DART_UI_VALIDATION,12,4,25,30,24,15,1,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Red,Yellow,Yellow,0,0,
+415,RO_1414,F_2414,R_3414,P_4414,Salesforce,Johns Hopkins Hospital,CA,Medicaid Managed Care,3,66,DART_REVIEW,10,10,15,22,3,7,10,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Yellow,Yellow,0,0,
+416,RO_1415,F_2415,R_3415,P_4415,Salesforce,Cleveland Clinic,CA,Medicaid Managed Care,1,10,ISF_GEN,20,9,17,36,10,3,10,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Red,Yellow,Yellow,0,0,
+417,RO_1416,F_2416,R_3416,P_4416,Demographic,Kaiser Permanente,CA,Medicaid Managed Care,1,5,DART_UI_VALIDATION,21,7,9,16,31,9,10,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Red,Red,Green,0,1,Invalid Taxonomy
+418,RO_1417,F_2417,R_3417,P_4417,Salesforce,Massachusetts General,KS,Medicaid FFS,2,74,DART_UI_VALIDATION,18,6,5,31,6,11,11,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Red,Red,0,0,
+419,RO_1418,F_2418,R_3418,P_4418,Salesforce,Northwestern Memorial,NY,Medicaid FFS,4,97,SPS_LOAD,24,7,28,62,10,13,1,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Green,Yellow,1,0,
+420,RO_1419,F_2419,R_3419,P_4419,Salesforce,Mayo Clinic,KS,Commercial PPO/EPO,2,38,ISF_GEN,11,1,16,13,27,15,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Yellow,Red,0,0,
+421,RO_1420,F_2420,R_3420,P_4420,Demographic,Massachusetts General,NY,Medicaid Managed Care,2,13,PRE_PROCESSING,2,1,15,32,22,17,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Green,Green,Green,1,0,
+422,RO_1421,F_2421,R_3421,P_4421,Demographic,Kaiser Permanente,KS,Medicare HMO,2,31,DART_UI_VALIDATION,18,8,21,79,22,11,10,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Red,Green,Yellow,0,1,Address Mismatch
+423,RO_1422,F_2422,R_3422,P_4422,AvailityPDM,UCSF Medical Center,KS,Medicaid Managed Care,2,47,DART_GEN,7,13,8,87,27,17,9,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Green,Yellow,Green,0,1,Complete Validation Failure
+424,RO_1423,F_2423,R_3423,P_4423,AvailityPDM,Kaiser Permanente,CA,Medicare HMO,3,88,DART_GEN,24,13,19,76,25,6,1,10,5,15,20,25,12,10,Red,Green,Green,Red,Red,Red,Yellow,1,0,
+425,RO_1424,F_2424,R_3424,P_4424,Salesforce,Mayo Clinic,NY,Medicare HMO,4,52,SPS_LOAD,15,2,29,17,24,19,1,10,5,15,20,25,12,10,Red,Green,Red,Red,Green,Green,Yellow,0,0,
+426,RO_1425,F_2425,R_3425,P_4425,Demographic,Massachusetts General,NY,Medicaid FFS,1,56,DART_REVIEW,11,12,13,10,28,6,4,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Green,Yellow,0,0,
+427,RO_1426,F_2426,R_3426,P_4426,Demographic,Kaiser Permanente,NY,Medicaid Managed Care,1,15,DART_UI_VALIDATION,18,10,25,46,18,8,4,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Yellow,Yellow,Yellow,0,1,Duplicate Record
+428,RO_1427,F_2427,R_3427,P_4427,Salesforce,Cleveland Clinic,NY,Commercial PPO/EPO,4,29,ISF_GEN,23,11,24,72,32,0,2,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Red,Yellow,Red,0,1,Complete Validation Failure
+429,RO_1428,F_2428,R_3428,P_4428,AvailityPDM,Northwestern Memorial,CA,Medicaid Managed Care,1,8,DART_UI_VALIDATION,12,9,23,31,35,5,9,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Red,Yellow,0,0,
+430,RO_1429,F_2429,R_3429,P_4429,Demographic,Massachusetts General,CA,Medicaid Managed Care,4,5,RESOLVED,6,7,23,79,13,5,14,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Yellow,Green,0,1,Complete Validation Failure
+431,RO_1430,F_2430,R_3430,P_4430,AvailityPDM,Massachusetts General,KS,Commercial PPO/EPO,1,29,RESOLVED,20,6,16,30,13,11,9,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Red,Red,Yellow,0,0,
+432,RO_1431,F_2431,R_3431,P_4431,Salesforce,Mayo Clinic,KS,Commercial PPO/EPO,2,47,RESOLVED,23,1,9,44,34,11,13,10,5,15,20,25,12,10,Red,Red,Red,Green,Yellow,Red,Green,1,1,Invalid Taxonomy
+433,RO_1432,F_2432,R_3432,P_4432,Demographic,Johns Hopkins Hospital,CA,Medicaid Managed Care,1,68,DART_UI_VALIDATION,13,1,14,14,29,9,13,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Green,0,1,Invalid Taxonomy
+434,RO_1433,F_2433,R_3433,P_4433,Salesforce,UCSF Medical Center,KS,Commercial PPO/EPO,4,76,DART_REVIEW,20,2,21,69,27,5,2,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Red,Green,1,1,Network Gap
+435,RO_1434,F_2434,R_3434,P_4434,ProviderGroup,UCSF Medical Center,CA,Medicare HMO,4,45,RESOLVED,16,6,9,55,16,16,14,10,5,15,20,25,12,10,Green,Red,Red,Green,Green,Red,Green,0,1,Complete Validation Failure
+436,RO_1435,F_2435,R_3435,P_4435,Salesforce,Johns Hopkins Hospital,NY,Medicaid FFS,4,2,STOPPED,18,14,26,59,2,18,9,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Yellow,Green,0,0,
+437,RO_1436,F_2436,R_3436,P_4436,Salesforce,MercyOne Medical Group,KS,Commercial PPO/EPO,4,27,MAPPING_APPROVAL,10,6,20,57,15,17,6,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Red,Red,Red,0,1,Complete Validation Failure
+438,RO_1437,F_2437,R_3437,P_4437,Salesforce,Kaiser Permanente,CA,Medicare HMO,4,95,ISF_GEN,23,2,11,15,29,5,8,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Green,Red,0,0,
+439,RO_1438,F_2438,R_3438,P_4438,Demographic,Northwestern Memorial,NY,Medicaid FFS,3,36,MAPPING_APPROVAL,8,1,13,65,28,18,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Red,Red,Yellow,1,0,
+440,RO_1439,F_2439,R_3439,P_4439,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,3,36,DART_REVIEW,18,10,7,68,14,9,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Yellow,Green,0,0,
+441,RO_1440,F_2440,R_3440,P_4440,Salesforce,Mayo Clinic,NY,Medicaid FFS,1,26,ISF_GEN,21,5,19,38,24,7,13,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Yellow,Yellow,0,1,Invalid Taxonomy
+442,RO_1441,F_2441,R_3441,P_4441,ProviderGroup,Norton Hospitals,CA,Medicaid Managed Care,4,43,STOPPED,1,5,20,27,37,5,4,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Red,Yellow,0,0,
+443,RO_1442,F_2442,R_3442,P_4442,Demographic,Massachusetts General,CA,Commercial PPO/EPO,1,27,DART_GEN,23,2,22,73,37,6,2,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Green,Yellow,0,0,
+444,RO_1443,F_2443,R_3443,P_4443,ProviderGroup,Cleveland Clinic,CA,Medicare HMO,4,69,DART_REVIEW,8,6,18,17,22,0,2,10,5,15,20,25,12,10,Red,Red,Red,Green,Green,Green,Red,1,0,
+445,RO_1444,F_2444,R_3444,P_4444,Salesforce,UCSF Medical Center,NY,Medicare HMO,4,20,MAPPING_APPROVAL,6,9,7,63,24,17,9,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Yellow,Yellow,Green,1,0,
+446,RO_1445,F_2445,R_3445,P_4445,Demographic,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,3,11,MAPPING_APPROVAL,5,2,16,47,6,19,1,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Green,Yellow,0,0,
+447,RO_1446,F_2446,R_3446,P_4446,ProviderGroup,UCSF Medical Center,NY,Medicare HMO,3,74,PRE_PROCESSING,15,10,13,57,21,11,12,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Yellow,Green,0,1,Invalid Taxonomy
+448,RO_1447,F_2447,R_3447,P_4447,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,2,38,STOPPED,22,2,11,36,16,15,7,10,5,15,20,25,12,10,Red,Red,Green,Green,Red,Red,Yellow,0,1,Network Gap
+449,RO_1448,F_2448,R_3448,P_4448,AvailityPDM,Mayo Clinic,CA,Commercial PPO/EPO,3,6,PRE_PROCESSING,15,3,13,29,17,9,11,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Green,Red,Yellow,0,0,
+450,RO_1449,F_2449,R_3449,P_4449,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,2,72,SPS_LOAD,2,13,17,21,9,9,14,10,5,15,20,25,12,10,Green,Red,Green,Green,Yellow,Red,Yellow,1,1,Network Gap
+451,RO_1450,F_2450,R_3450,P_4450,Demographic,MercyOne Medical Group,NY,Medicare HMO,2,23,DART_GEN,1,7,22,66,9,13,3,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Green,Yellow,0,1,Missing NPI
+452,RO_1451,F_2451,R_3451,P_4451,ProviderGroup,Mayo Clinic,CA,Medicaid Managed Care,2,47,PRE_PROCESSING,23,6,9,70,6,19,3,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Red,Yellow,0,0,
+453,RO_1452,F_2452,R_3452,P_4452,ProviderGroup,Massachusetts General,KS,Commercial PPO/EPO,2,90,STOPPED,23,12,17,40,37,9,2,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Red,Green,0,1,Address Mismatch
+454,RO_1453,F_2453,R_3453,P_4453,ProviderGroup,UCSF Medical Center,KS,Medicare HMO,2,46,DART_REVIEW,11,8,8,70,26,9,14,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Green,Red,Green,1,1,Complete Validation Failure
+455,RO_1454,F_2454,R_3454,P_4454,AvailityPDM,MercyOne Medical Group,NY,Medicare HMO,1,12,STOPPED,10,8,6,76,32,10,10,10,5,15,20,25,12,10,Red,Red,Green,Red,Red,Green,Red,0,0,
+456,RO_1455,F_2455,R_3455,P_4455,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,3,90,STOPPED,18,6,20,44,0,1,6,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Red,Yellow,Green,0,0,
+457,RO_1456,F_2456,R_3456,P_4456,Demographic,Cedars-Sinai Medical Care Foundation,CA,Commercial PPO/EPO,2,13,RESOLVED,18,12,13,24,33,19,13,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Red,Red,0,1,Complete Validation Failure
+458,RO_1457,F_2457,R_3457,P_4457,Demographic,Kaiser Permanente,KS,Commercial PPO/EPO,4,62,ISF_GEN,17,11,13,25,3,7,10,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Yellow,Yellow,Red,0,0,
+459,RO_1458,F_2458,R_3458,P_4458,Salesforce,Massachusetts General,NY,Medicaid FFS,3,82,DART_UI_VALIDATION,8,10,10,22,16,6,2,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Yellow,Red,Green,0,0,
+460,RO_1459,F_2459,R_3459,P_4459,Demographic,Cleveland Clinic,NY,Commercial PPO/EPO,3,89,SPS_LOAD,15,3,15,44,3,7,10,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Green,Yellow,0,0,
+461,RO_1460,F_2460,R_3460,P_4460,Demographic,Norton Hospitals,KS,Medicare HMO,2,97,STOPPED,8,3,26,68,25,0,4,10,5,15,20,25,12,10,Green,Red,Red,Red,Green,Yellow,Yellow,0,1,Complete Validation Failure
+462,RO_1461,F_2461,R_3461,P_4461,AvailityPDM,Johns Hopkins Hospital,NY,Medicare HMO,1,60,DART_REVIEW,17,1,28,30,3,1,10,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Green,Red,0,1,Network Gap
+463,RO_1462,F_2462,R_3462,P_4462,Salesforce,Norton Hospitals,KS,Medicaid Managed Care,2,43,STOPPED,12,7,26,63,0,17,9,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Green,Red,Yellow,0,1,Complete Validation Failure
+464,RO_1463,F_2463,R_3463,P_4463,Salesforce,Johns Hopkins Hospital,KS,Commercial PPO/EPO,1,76,RESOLVED,8,5,5,39,6,14,9,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Red,Red,0,0,
+465,RO_1464,F_2464,R_3464,P_4464,ProviderGroup,UCSF Medical Center,NY,Medicare HMO,4,68,STOPPED,14,4,8,57,29,0,6,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Red,Red,0,0,
+466,RO_1465,F_2465,R_3465,P_4465,Salesforce,Cleveland Clinic,KS,Medicaid Managed Care,3,5,STOPPED,4,10,17,44,8,4,13,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Yellow,Green,Red,0,0,
+467,RO_1466,F_2466,R_3466,P_4466,Salesforce,Kaiser Permanente,KS,Medicaid FFS,4,37,MAPPING_APPROVAL,1,4,27,47,34,1,4,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Red,Green,Red,0,0,
+468,RO_1467,F_2467,R_3467,P_4467,AvailityPDM,Johns Hopkins Hospital,CA,Medicaid FFS,1,72,SPS_LOAD,1,14,17,40,7,19,7,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Yellow,Green,Yellow,0,0,
+469,RO_1468,F_2468,R_3468,P_4468,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,1,92,DART_UI_VALIDATION,19,4,17,33,23,2,14,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Green,Green,1,1,Network Gap
+470,RO_1469,F_2469,R_3469,P_4469,Salesforce,Cleveland Clinic,NY,Medicare HMO,4,31,STOPPED,16,6,6,58,18,18,1,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Red,Red,0,0,
+471,RO_1470,F_2470,R_3470,P_4470,Salesforce,Kaiser Permanente,KS,Medicare HMO,1,9,PRE_PROCESSING,14,8,13,41,35,17,12,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Yellow,Red,Yellow,0,0,
+472,RO_1471,F_2471,R_3471,P_4471,AvailityPDM,Norton Hospitals,KS,Medicaid FFS,4,51,STOPPED,21,8,28,64,26,17,4,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Green,Yellow,Green,0,1,Complete Validation Failure
+473,RO_1472,F_2472,R_3472,P_4472,Salesforce,Cleveland Clinic,NY,Medicaid Managed Care,3,29,ISF_GEN,16,5,12,67,31,13,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Yellow,Red,0,0,
+474,RO_1473,F_2473,R_3473,P_4473,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,4,78,STOPPED,5,6,11,12,13,7,8,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Green,Red,Yellow,0,0,
+475,RO_1474,F_2474,R_3474,P_4474,AvailityPDM,Cleveland Clinic,KS,Commercial PPO/EPO,3,40,ISF_GEN,9,4,8,78,17,11,12,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Red,Red,Green,1,0,
+476,RO_1475,F_2475,R_3475,P_4475,ProviderGroup,MercyOne Medical Group,KS,Medicare HMO,4,41,RESOLVED,2,12,22,19,27,9,2,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Green,Green,0,1,Missing NPI
+477,RO_1476,F_2476,R_3476,P_4476,ProviderGroup,MercyOne Medical Group,NY,Medicare HMO,1,86,ISF_GEN,18,14,7,34,28,19,12,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Red,Red,Green,0,0,
+478,RO_1477,F_2477,R_3477,P_4477,Salesforce,Norton Hospitals,CA,Commercial PPO/EPO,4,11,ISF_GEN,6,11,10,77,15,16,5,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Red,0,1,Address Mismatch
+479,RO_1478,F_2478,R_3478,P_4478,Salesforce,Mayo Clinic,CA,Medicare HMO,1,23,ISF_GEN,9,13,16,70,34,10,6,10,5,15,20,25,12,10,Green,Green,Red,Red,Red,Yellow,Red,0,0,
+480,RO_1479,F_2479,R_3479,P_4479,Demographic,Massachusetts General,KS,Commercial PPO/EPO,4,1,RESOLVED,1,9,16,38,30,1,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Green,Red,0,1,Missing NPI
+481,RO_1480,F_2480,R_3480,P_4480,Salesforce,MercyOne Medical Group,NY,Medicaid FFS,4,46,DART_UI_VALIDATION,9,8,25,28,3,3,13,10,5,15,20,25,12,10,Red,Red,Green,Red,Green,Yellow,Green,0,0,
+482,RO_1481,F_2481,R_3481,P_4481,Demographic,Massachusetts General,NY,Medicaid FFS,2,21,PRE_PROCESSING,16,10,12,52,36,0,9,10,5,15,20,25,12,10,Red,Red,Green,Red,Green,Yellow,Green,0,1,Address Mismatch
+483,RO_1482,F_2482,R_3482,P_4482,ProviderGroup,Massachusetts General,NY,Medicare HMO,1,90,DART_GEN,13,12,26,81,16,14,10,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Red,Red,0,0,
+484,RO_1483,F_2483,R_3483,P_4483,Salesforce,Northwestern Memorial,NY,Medicare HMO,2,36,RESOLVED,9,10,26,70,38,12,1,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Yellow,Red,1,0,
+485,RO_1484,F_2484,R_3484,P_4484,Salesforce,Norton Hospitals,CA,Medicaid FFS,1,54,DART_GEN,21,1,5,110,25,7,14,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Yellow,Red,Green,1,0,
+486,RO_1485,F_2485,R_3485,P_4485,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,2,87,MAPPING_APPROVAL,13,2,8,34,38,3,3,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Red,Green,0,1,Duplicate Record
+487,RO_1486,F_2486,R_3486,P_4486,Salesforce,Norton Hospitals,CA,Medicaid FFS,3,57,DART_REVIEW,9,9,25,29,3,9,14,10,5,15,20,25,12,10,Green,Red,Red,Green,Green,Red,Red,0,0,
+488,RO_1487,F_2487,R_3487,P_4487,ProviderGroup,Mayo Clinic,KS,Commercial PPO/EPO,4,1,DART_UI_VALIDATION,11,8,15,57,29,18,2,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Red,Yellow,Yellow,1,0,
+489,RO_1488,F_2488,R_3488,P_4488,Salesforce,Kaiser Permanente,KS,Medicaid Managed Care,1,63,DART_GEN,4,14,7,60,29,17,12,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Red,Red,Green,0,1,Complete Validation Failure
+490,RO_1489,F_2489,R_3489,P_4489,Demographic,MercyOne Medical Group,NY,Medicaid FFS,1,54,PRE_PROCESSING,2,3,17,20,21,4,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Yellow,Green,0,0,
+491,RO_1490,F_2490,R_3490,P_4490,Salesforce,UCSF Medical Center,NY,Commercial PPO/EPO,4,55,DART_GEN,6,8,29,88,10,18,3,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Red,Red,1,1,Missing NPI
+492,RO_1491,F_2491,R_3491,P_4491,Demographic,Northwestern Memorial,CA,Commercial PPO/EPO,1,40,STOPPED,14,12,21,37,1,15,10,10,5,15,20,25,12,10,Green,Green,Red,Green,Yellow,Yellow,Red,1,0,
+493,RO_1492,F_2492,R_3492,P_4492,AvailityPDM,UCSF Medical Center,KS,Commercial PPO/EPO,1,15,DART_UI_VALIDATION,4,1,26,78,11,0,9,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Red,Yellow,0,1,Network Gap
+494,RO_1493,F_2493,R_3493,P_4493,Salesforce,Johns Hopkins Hospital,KS,Medicare HMO,2,21,SPS_LOAD,6,10,26,72,29,11,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Green,Yellow,0,0,
+495,RO_1494,F_2494,R_3494,P_4494,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,1,47,RESOLVED,19,4,14,68,35,1,14,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Green,Red,0,0,
+496,RO_1495,F_2495,R_3495,P_4495,AvailityPDM,Mayo Clinic,NY,Medicaid Managed Care,3,73,RESOLVED,6,3,25,14,17,7,9,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Red,Red,Yellow,0,0,
+497,RO_1496,F_2496,R_3496,P_4496,Salesforce,Kaiser Permanente,CA,Medicaid Managed Care,3,53,PRE_PROCESSING,2,6,16,60,25,17,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Red,Green,0,1,Missing NPI
+498,RO_1497,F_2497,R_3497,P_4497,Demographic,Mayo Clinic,NY,Commercial PPO/EPO,4,9,PRE_PROCESSING,18,7,19,30,6,15,2,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Yellow,Red,0,0,
+499,RO_1498,F_2498,R_3498,P_4498,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,1,74,DART_UI_VALIDATION,13,4,25,21,0,4,14,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Green,Red,0,0,
+500,RO_1499,F_2499,R_3499,P_4499,Demographic,Norton Hospitals,KS,Commercial PPO/EPO,4,52,STOPPED,9,7,14,59,25,12,3,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Yellow,Green,0,1,Complete Validation Failure
+501,RO_1500,F_2500,R_3500,P_4500,AvailityPDM,Kaiser Permanente,NY,Medicare HMO,3,57,STOPPED,23,9,18,13,22,18,14,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Yellow,Red,Green,0,0,
+502,RO_1501,F_2501,R_3501,P_4501,ProviderGroup,Johns Hopkins Hospital,NY,Medicare HMO,1,26,DART_REVIEW,19,11,17,51,25,2,4,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Green,Green,0,1,Missing NPI
+503,RO_1502,F_2502,R_3502,P_4502,Salesforce,Northwestern Memorial,NY,Medicaid Managed Care,1,41,DART_REVIEW,13,2,9,47,5,7,9,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Red,Green,0,1,Complete Validation Failure
+504,RO_1503,F_2503,R_3503,P_4503,ProviderGroup,Massachusetts General,CA,Commercial PPO/EPO,4,35,STOPPED,11,11,10,34,5,11,3,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Yellow,Yellow,0,1,Duplicate Record
+505,RO_1504,F_2504,R_3504,P_4504,Demographic,Cedars-Sinai Medical Care Foundation,KS,Commercial PPO/EPO,3,63,ISF_GEN,1,3,28,23,7,1,13,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Red,Red,1,1,Network Gap
+506,RO_1505,F_2505,R_3505,P_4505,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,25,SPS_LOAD,24,5,6,41,23,10,7,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Red,Yellow,Red,0,0,
+507,RO_1506,F_2506,R_3506,P_4506,ProviderGroup,Massachusetts General,KS,Medicare HMO,4,90,SPS_LOAD,22,3,26,20,21,11,12,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Green,Yellow,0,0,
+508,RO_1507,F_2507,R_3507,P_4507,ProviderGroup,Northwestern Memorial,NY,Medicaid FFS,3,75,DART_UI_VALIDATION,7,11,21,70,18,17,3,10,5,15,20,25,12,10,Green,Green,Green,Green,Green,Green,Red,1,1,Network Gap
+509,RO_1508,F_2508,R_3508,P_4508,Salesforce,UCSF Medical Center,KS,Medicaid Managed Care,4,38,MAPPING_APPROVAL,21,8,8,27,36,12,7,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Red,Yellow,Yellow,0,0,
+510,RO_1509,F_2509,R_3509,P_4509,ProviderGroup,Norton Hospitals,KS,Medicaid FFS,2,2,STOPPED,15,12,18,36,17,4,7,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Green,Yellow,0,1,Complete Validation Failure
+511,RO_1510,F_2510,R_3510,P_4510,Salesforce,UCSF Medical Center,KS,Medicare HMO,1,7,DART_REVIEW,1,10,14,64,30,11,9,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Green,Yellow,1,1,Invalid Taxonomy
+512,RO_1511,F_2511,R_3511,P_4511,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,2,82,SPS_LOAD,12,8,7,63,36,1,2,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Green,Red,0,0,
+513,RO_1512,F_2512,R_3512,P_4512,AvailityPDM,Kaiser Permanente,NY,Medicare HMO,3,91,DART_GEN,7,8,29,111,29,4,13,10,5,15,20,25,12,10,Red,Red,Green,Red,Red,Red,Red,0,1,Duplicate Record
+514,RO_1513,F_2513,R_3513,P_4513,Salesforce,MercyOne Medical Group,CA,Medicaid FFS,2,34,STOPPED,15,12,7,53,32,6,6,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Yellow,Yellow,Green,0,1,Invalid Taxonomy
+515,RO_1514,F_2514,R_3514,P_4514,AvailityPDM,Mayo Clinic,CA,Medicaid Managed Care,2,91,SPS_LOAD,21,12,19,14,9,11,9,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Red,Red,Yellow,0,1,Invalid Taxonomy
+516,RO_1515,F_2515,R_3515,P_4515,AvailityPDM,Johns Hopkins Hospital,CA,Medicare HMO,3,17,DART_UI_VALIDATION,19,9,10,50,36,15,12,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Green,Yellow,Green,1,1,Complete Validation Failure
+517,RO_1516,F_2516,R_3516,P_4516,ProviderGroup,Norton Hospitals,CA,Commercial PPO/EPO,4,43,DART_UI_VALIDATION,1,4,21,68,11,7,12,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Red,Yellow,1,1,Missing NPI
+518,RO_1517,F_2517,R_3517,P_4517,Demographic,Northwestern Memorial,KS,Medicaid FFS,2,59,RESOLVED,17,5,16,63,29,8,2,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Yellow,Yellow,0,1,Network Gap
+519,RO_1518,F_2518,R_3518,P_4518,AvailityPDM,Cleveland Clinic,CA,Medicare HMO,4,51,RESOLVED,17,5,26,31,26,14,2,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Red,Red,0,0,
+520,RO_1519,F_2519,R_3519,P_4519,AvailityPDM,Kaiser Permanente,CA,Commercial PPO/EPO,2,54,PRE_PROCESSING,3,8,24,74,38,4,13,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Yellow,Yellow,Red,0,0,
+521,RO_1520,F_2520,R_3520,P_4520,AvailityPDM,Northwestern Memorial,CA,Commercial PPO/EPO,4,24,STOPPED,12,7,28,73,8,12,14,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Yellow,Green,Green,0,1,Network Gap
+522,RO_1521,F_2521,R_3521,P_4521,Demographic,Johns Hopkins Hospital,NY,Medicare HMO,3,25,ISF_GEN,6,9,15,13,20,4,5,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Red,Green,Green,0,1,Missing NPI
+523,RO_1522,F_2522,R_3522,P_4522,Demographic,MercyOne Medical Group,KS,Medicaid FFS,2,71,RESOLVED,11,14,29,74,11,10,10,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Green,Yellow,Red,0,0,
+524,RO_1523,F_2523,R_3523,P_4523,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,3,52,ISF_GEN,3,8,8,24,28,9,10,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Green,Green,Yellow,0,0,
+525,RO_1524,F_2524,R_3524,P_4524,Demographic,UCSF Medical Center,KS,Medicaid Managed Care,2,70,DART_GEN,8,2,10,90,32,19,12,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Green,Red,Red,0,0,
+526,RO_1525,F_2525,R_3525,P_4525,Demographic,Cleveland Clinic,CA,Medicaid FFS,3,88,MAPPING_APPROVAL,14,10,5,56,14,12,10,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Green,Green,0,0,
+527,RO_1526,F_2526,R_3526,P_4526,Demographic,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,3,33,STOPPED,14,12,24,55,1,8,8,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Green,Yellow,0,1,Network Gap
+528,RO_1527,F_2527,R_3527,P_4527,Salesforce,UCSF Medical Center,KS,Medicare HMO,2,49,DART_REVIEW,10,4,27,23,38,13,11,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Yellow,Green,0,1,Missing NPI
+529,RO_1528,F_2528,R_3528,P_4528,AvailityPDM,UCSF Medical Center,NY,Medicare HMO,2,29,DART_GEN,2,6,20,89,17,17,9,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Red,Green,Red,0,0,
+530,RO_1529,F_2529,R_3529,P_4529,Demographic,UCSF Medical Center,NY,Medicaid FFS,2,63,ISF_GEN,14,12,19,29,2,14,2,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Red,Green,0,0,
+531,RO_1530,F_2530,R_3530,P_4530,Salesforce,UCSF Medical Center,KS,Commercial PPO/EPO,1,22,ISF_GEN,9,2,21,59,6,9,5,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Yellow,Green,Red,0,0,
+532,RO_1531,F_2531,R_3531,P_4531,ProviderGroup,UCSF Medical Center,KS,Commercial PPO/EPO,4,26,ISF_GEN,3,7,12,42,17,6,14,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Yellow,Green,0,1,Duplicate Record
+533,RO_1532,F_2532,R_3532,P_4532,ProviderGroup,Norton Hospitals,CA,Medicaid FFS,1,28,DART_UI_VALIDATION,21,3,16,68,37,7,7,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Red,Red,0,0,
+534,RO_1533,F_2533,R_3533,P_4533,Demographic,Johns Hopkins Hospital,CA,Medicaid FFS,1,85,MAPPING_APPROVAL,8,13,26,52,36,2,6,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Red,Green,Yellow,1,0,
+535,RO_1534,F_2534,R_3534,P_4534,AvailityPDM,Massachusetts General,CA,Medicaid FFS,3,49,DART_GEN,16,3,25,116,32,14,6,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Green,Green,Yellow,0,0,
+536,RO_1535,F_2535,R_3535,P_4535,Demographic,Norton Hospitals,NY,Medicaid Managed Care,2,71,SPS_LOAD,2,11,14,49,30,15,7,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Green,Red,0,0,
+537,RO_1536,F_2536,R_3536,P_4536,ProviderGroup,Johns Hopkins Hospital,CA,Medicaid Managed Care,4,81,DART_UI_VALIDATION,6,2,19,29,10,3,3,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Green,Red,0,0,
+538,RO_1537,F_2537,R_3537,P_4537,AvailityPDM,Cleveland Clinic,KS,Medicaid Managed Care,3,84,MAPPING_APPROVAL,21,11,13,47,3,5,13,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Yellow,Red,Red,0,0,
+539,RO_1538,F_2538,R_3538,P_4538,AvailityPDM,Mayo Clinic,NY,Medicare HMO,1,49,RESOLVED,12,8,6,12,17,0,3,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Green,Green,0,0,
+540,RO_1539,F_2539,R_3539,P_4539,ProviderGroup,Norton Hospitals,KS,Medicaid Managed Care,2,20,STOPPED,5,6,9,37,3,3,10,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Yellow,Green,Green,1,1,Complete Validation Failure
+541,RO_1540,F_2540,R_3540,P_4540,Salesforce,Cleveland Clinic,NY,Medicaid Managed Care,3,86,RESOLVED,2,1,10,65,33,10,9,10,5,15,20,25,12,10,Red,Green,Red,Green,Green,Yellow,Yellow,0,0,
+542,RO_1541,F_2541,R_3541,P_4541,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,2,92,DART_GEN,16,12,11,74,28,11,14,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Yellow,Red,1,1,Complete Validation Failure
+543,RO_1542,F_2542,R_3542,P_4542,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,3,63,ISF_GEN,5,1,25,75,23,4,8,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Yellow,Yellow,1,1,Complete Validation Failure
+544,RO_1543,F_2543,R_3543,P_4543,AvailityPDM,Kaiser Permanente,CA,Medicaid Managed Care,2,61,SPS_LOAD,15,7,29,46,21,15,5,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Green,Red,Red,0,1,Complete Validation Failure
+545,RO_1544,F_2544,R_3544,P_4544,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,49,PRE_PROCESSING,12,8,5,58,1,12,6,10,5,15,20,25,12,10,Green,Green,Green,Red,Red,Red,Yellow,0,1,Missing NPI
+546,RO_1545,F_2545,R_3545,P_4545,AvailityPDM,Northwestern Memorial,NY,Medicaid Managed Care,4,71,DART_GEN,4,5,27,77,5,12,11,10,5,15,20,25,12,10,Green,Red,Red,Red,Red,Green,Yellow,0,0,
+547,RO_1546,F_2546,R_3546,P_4546,ProviderGroup,Cleveland Clinic,CA,Medicare HMO,1,1,PRE_PROCESSING,15,12,11,45,24,16,12,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Red,Red,0,0,
+548,RO_1547,F_2547,R_3547,P_4547,AvailityPDM,MercyOne Medical Group,NY,Medicare HMO,4,96,ISF_GEN,11,11,24,63,20,6,10,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Green,Yellow,0,0,
+549,RO_1548,F_2548,R_3548,P_4548,AvailityPDM,Norton Hospitals,KS,Medicaid Managed Care,2,13,STOPPED,16,5,29,35,15,7,1,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Green,Green,0,1,Complete Validation Failure
+550,RO_1549,F_2549,R_3549,P_4549,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,3,94,ISF_GEN,23,4,16,49,30,12,10,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Yellow,Yellow,Green,0,1,Address Mismatch
+551,RO_1550,F_2550,R_3550,P_4550,Salesforce,UCSF Medical Center,KS,Medicaid FFS,1,87,STOPPED,6,14,20,52,13,15,12,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Yellow,Green,Green,0,0,
+552,RO_1551,F_2551,R_3551,P_4551,ProviderGroup,Cleveland Clinic,KS,Commercial PPO/EPO,4,51,PRE_PROCESSING,14,6,20,31,38,3,1,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Yellow,Yellow,Green,0,0,
+553,RO_1552,F_2552,R_3552,P_4552,AvailityPDM,MercyOne Medical Group,KS,Medicaid FFS,1,56,ISF_GEN,18,14,15,29,27,7,4,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Red,Green,Red,0,0,
+554,RO_1553,F_2553,R_3553,P_4553,ProviderGroup,Massachusetts General,NY,Commercial PPO/EPO,4,83,PRE_PROCESSING,12,6,25,17,31,15,2,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Red,Yellow,Green,0,1,Network Gap
+555,RO_1554,F_2554,R_3554,P_4554,AvailityPDM,Massachusetts General,NY,Commercial PPO/EPO,1,62,ISF_GEN,11,3,8,38,27,9,11,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Red,0,0,
+556,RO_1555,F_2555,R_3555,P_4555,Salesforce,MercyOne Medical Group,CA,Medicaid FFS,4,32,DART_REVIEW,13,9,17,49,8,11,7,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Yellow,Red,0,0,
+557,RO_1556,F_2556,R_3556,P_4556,Salesforce,MercyOne Medical Group,CA,Medicaid FFS,4,30,ISF_GEN,21,12,11,39,21,11,2,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Green,Green,0,0,
+558,RO_1557,F_2557,R_3557,P_4557,AvailityPDM,Cedars-Sinai Medical Care Foundation,KS,Commercial PPO/EPO,2,29,STOPPED,23,11,8,64,31,4,10,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Red,Red,Red,1,0,
+559,RO_1558,F_2558,R_3558,P_4558,Salesforce,Massachusetts General,KS,Medicare HMO,4,49,SPS_LOAD,11,14,19,25,4,15,2,10,5,15,20,25,12,10,Green,Green,Green,Red,Green,Green,Yellow,0,1,Network Gap
+560,RO_1559,F_2559,R_3559,P_4559,ProviderGroup,Norton Hospitals,NY,Medicaid Managed Care,2,45,PRE_PROCESSING,23,7,23,55,22,0,5,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Yellow,Red,0,0,
+561,RO_1560,F_2560,R_3560,P_4560,Salesforce,Mayo Clinic,CA,Medicare HMO,4,93,DART_REVIEW,16,1,13,71,4,8,4,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Yellow,Red,0,1,Address Mismatch
+562,RO_1561,F_2561,R_3561,P_4561,Demographic,Kaiser Permanente,NY,Medicaid FFS,3,30,MAPPING_APPROVAL,15,13,15,16,31,11,8,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Red,Red,0,0,
+563,RO_1562,F_2562,R_3562,P_4562,Salesforce,Norton Hospitals,NY,Medicaid FFS,3,16,DART_GEN,21,7,12,94,9,4,4,10,5,15,20,25,12,10,Green,Red,Green,Green,Red,Green,Red,0,1,Address Mismatch
+564,RO_1563,F_2563,R_3563,P_4563,Demographic,Kaiser Permanente,NY,Commercial PPO/EPO,3,40,RESOLVED,15,5,5,68,38,19,14,10,5,15,20,25,12,10,Red,Green,Green,Red,Green,Green,Yellow,0,1,Complete Validation Failure
+565,RO_1564,F_2564,R_3564,P_4564,ProviderGroup,Norton Hospitals,KS,Medicaid Managed Care,4,19,STOPPED,4,5,27,65,14,2,12,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Green,Green,Yellow,0,1,Complete Validation Failure
+566,RO_1565,F_2565,R_3565,P_4565,Salesforce,Cleveland Clinic,KS,Medicaid FFS,2,18,RESOLVED,11,14,29,57,6,4,6,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Yellow,Green,0,0,
+567,RO_1566,F_2566,R_3566,P_4566,Salesforce,Mayo Clinic,CA,Medicaid Managed Care,2,1,ISF_GEN,19,13,28,36,28,1,5,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Green,Green,Yellow,0,1,Address Mismatch
+568,RO_1567,F_2567,R_3567,P_4567,Salesforce,UCSF Medical Center,KS,Medicare HMO,4,78,DART_GEN,15,2,12,109,2,13,11,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Red,Red,Red,0,0,
+569,RO_1568,F_2568,R_3568,P_4568,ProviderGroup,Johns Hopkins Hospital,KS,Medicaid Managed Care,3,47,SPS_LOAD,4,4,17,44,18,1,14,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Red,Yellow,0,1,Missing NPI
+570,RO_1569,F_2569,R_3569,P_4569,ProviderGroup,UCSF Medical Center,NY,Medicare HMO,3,66,ISF_GEN,21,12,26,60,9,12,2,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Green,Red,0,1,Invalid Taxonomy
+571,RO_1570,F_2570,R_3570,P_4570,Demographic,Massachusetts General,KS,Medicaid FFS,2,92,ISF_GEN,13,6,8,46,27,6,11,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Green,Green,1,1,Missing NPI
+572,RO_1571,F_2571,R_3571,P_4571,AvailityPDM,Mayo Clinic,NY,Medicaid FFS,3,94,STOPPED,22,10,12,66,28,9,13,10,5,15,20,25,12,10,Red,Red,Red,Green,Green,Green,Green,0,0,
+573,RO_1572,F_2572,R_3572,P_4572,ProviderGroup,Norton Hospitals,CA,Commercial PPO/EPO,1,38,DART_REVIEW,19,11,7,17,14,12,12,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Red,Green,0,0,
+574,RO_1573,F_2573,R_3573,P_4573,Salesforce,Kaiser Permanente,KS,Medicare HMO,2,51,ISF_GEN,2,7,13,29,34,15,14,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Green,Green,Green,0,0,
+575,RO_1574,F_2574,R_3574,P_4574,Demographic,Mayo Clinic,CA,Medicare HMO,3,63,DART_UI_VALIDATION,14,11,6,62,5,13,8,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Red,Yellow,Red,0,0,
+576,RO_1575,F_2575,R_3575,P_4575,Salesforce,Cleveland Clinic,KS,Medicaid Managed Care,2,4,RESOLVED,4,5,6,21,11,10,2,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Red,Red,Green,1,1,Address Mismatch
+577,RO_1576,F_2576,R_3576,P_4576,Salesforce,Norton Hospitals,NY,Commercial PPO/EPO,1,1,MAPPING_APPROVAL,16,9,17,58,37,9,9,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Red,Yellow,0,1,Network Gap
+578,RO_1577,F_2577,R_3577,P_4577,ProviderGroup,Cleveland Clinic,KS,Commercial PPO/EPO,2,8,DART_GEN,21,3,19,89,12,5,9,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Yellow,Yellow,Green,0,0,
+579,RO_1578,F_2578,R_3578,P_4578,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,2,29,SPS_LOAD,20,1,27,73,28,3,3,10,5,15,20,25,12,10,Red,Red,Green,Yellow,Yellow,Yellow,Red,0,1,Missing NPI
+580,RO_1579,F_2579,R_3579,P_4579,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicare HMO,2,55,SPS_LOAD,14,4,16,51,18,0,4,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Yellow,Yellow,Green,0,0,
+581,RO_1580,F_2580,R_3580,P_4580,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,2,3,ISF_GEN,15,9,8,38,2,6,8,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Red,Yellow,Yellow,1,0,
+582,RO_1581,F_2581,R_3581,P_4581,Demographic,Johns Hopkins Hospital,NY,Medicaid FFS,1,32,MAPPING_APPROVAL,3,4,12,28,7,8,9,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Red,Green,0,1,Network Gap
+583,RO_1582,F_2582,R_3582,P_4582,Salesforce,Johns Hopkins Hospital,CA,Medicaid Managed Care,4,10,PRE_PROCESSING,8,2,13,20,7,7,3,10,5,15,20,25,12,10,Green,Green,Red,Green,Yellow,Yellow,Yellow,1,1,Missing NPI
+584,RO_1583,F_2583,R_3583,P_4583,Demographic,Massachusetts General,CA,Medicaid Managed Care,2,74,DART_GEN,16,10,27,93,19,4,5,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Green,Green,Yellow,Green,0,0,
+585,RO_1584,F_2584,R_3584,P_4584,ProviderGroup,Johns Hopkins Hospital,NY,Medicare HMO,2,83,STOPPED,10,14,9,67,3,18,11,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Green,Yellow,Red,0,1,Network Gap
+586,RO_1585,F_2585,R_3585,P_4585,ProviderGroup,Cleveland Clinic,KS,Medicaid FFS,3,34,STOPPED,4,14,28,43,20,9,8,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Green,Red,Green,0,0,
+587,RO_1586,F_2586,R_3586,P_4586,ProviderGroup,MercyOne Medical Group,NY,Commercial PPO/EPO,2,97,SPS_LOAD,18,5,24,29,2,10,3,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Yellow,Green,1,0,
+588,RO_1587,F_2587,R_3587,P_4587,ProviderGroup,Massachusetts General,NY,Medicaid FFS,3,87,ISF_GEN,2,3,22,59,7,14,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Yellow,Red,0,0,
+589,RO_1588,F_2588,R_3588,P_4588,ProviderGroup,Massachusetts General,KS,Medicaid Managed Care,4,55,MAPPING_APPROVAL,17,13,15,19,22,5,11,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Green,Green,0,1,Duplicate Record
+590,RO_1589,F_2589,R_3589,P_4589,AvailityPDM,Cleveland Clinic,NY,Medicaid FFS,1,92,ISF_GEN,13,12,19,41,15,14,8,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Yellow,Green,1,0,
+591,RO_1590,F_2590,R_3590,P_4590,Demographic,UCSF Medical Center,NY,Commercial PPO/EPO,1,32,RESOLVED,4,13,26,61,12,4,10,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Red,Red,0,0,
+592,RO_1591,F_2591,R_3591,P_4591,AvailityPDM,Mayo Clinic,CA,Medicaid Managed Care,4,50,PRE_PROCESSING,11,9,13,24,2,18,11,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Yellow,Yellow,0,0,
+593,RO_1592,F_2592,R_3592,P_4592,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,7,STOPPED,7,4,21,12,8,18,14,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Red,Yellow,Red,0,1,Missing NPI
+594,RO_1593,F_2593,R_3593,P_4593,Salesforce,Johns Hopkins Hospital,KS,Medicaid FFS,4,93,STOPPED,12,6,16,46,13,9,3,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Red,Red,Red,0,0,
+595,RO_1594,F_2594,R_3594,P_4594,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,4,8,MAPPING_APPROVAL,10,2,11,49,12,11,2,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Green,Yellow,0,0,
+596,RO_1595,F_2595,R_3595,P_4595,Demographic,Johns Hopkins Hospital,KS,Medicare HMO,4,65,MAPPING_APPROVAL,7,6,14,49,6,3,10,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Yellow,Yellow,0,0,
+597,RO_1596,F_2596,R_3596,P_4596,Salesforce,Northwestern Memorial,KS,Medicare HMO,1,57,RESOLVED,13,3,29,65,14,17,13,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Red,Yellow,Green,0,0,
+598,RO_1597,F_2597,R_3597,P_4597,Salesforce,MercyOne Medical Group,CA,Commercial PPO/EPO,3,67,ISF_GEN,7,12,29,32,6,15,7,10,5,15,20,25,12,10,Red,Green,Red,Red,Red,Green,Red,0,1,Network Gap
+599,RO_1598,F_2598,R_3598,P_4598,Salesforce,UCSF Medical Center,NY,Medicaid FFS,4,88,STOPPED,24,12,14,20,37,7,12,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Green,Red,0,0,
+600,RO_1599,F_2599,R_3599,P_4599,AvailityPDM,Mayo Clinic,NY,Medicaid Managed Care,2,87,PRE_PROCESSING,17,9,17,73,33,3,9,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Green,Yellow,Yellow,1,1,Invalid Taxonomy
+601,RO_1600,F_2600,R_3600,P_4600,AvailityPDM,Cleveland Clinic,NY,Medicaid FFS,1,59,SPS_LOAD,10,11,23,17,21,11,1,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Yellow,Red,Red,0,0,
+602,RO_1601,F_2601,R_3601,P_4601,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Commercial PPO/EPO,4,72,STOPPED,10,2,15,65,23,1,3,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Yellow,Green,0,1,Complete Validation Failure
+603,RO_1602,F_2602,R_3602,P_4602,Demographic,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,4,54,SPS_LOAD,24,12,17,69,36,3,5,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Red,Yellow,0,0,
+604,RO_1603,F_2603,R_3603,P_4603,Salesforce,Cleveland Clinic,KS,Medicaid Managed Care,2,67,DART_UI_VALIDATION,4,12,25,19,0,4,3,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Green,Red,0,0,
+605,RO_1604,F_2604,R_3604,P_4604,Demographic,Mayo Clinic,NY,Medicaid Managed Care,3,51,PRE_PROCESSING,20,9,12,48,9,2,1,10,5,15,20,25,12,10,Green,Red,Green,Green,Yellow,Green,Yellow,0,0,
+606,RO_1605,F_2605,R_3605,P_4605,ProviderGroup,Mayo Clinic,CA,Commercial PPO/EPO,3,97,STOPPED,4,5,12,37,15,8,7,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Yellow,Red,Yellow,0,1,Missing NPI
+607,RO_1606,F_2606,R_3606,P_4606,ProviderGroup,Massachusetts General,CA,Medicaid FFS,3,92,SPS_LOAD,22,8,8,58,7,17,7,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Green,Green,Green,0,1,Invalid Taxonomy
+608,RO_1607,F_2607,R_3607,P_4607,Salesforce,Northwestern Memorial,CA,Medicaid Managed Care,4,8,DART_GEN,7,2,19,101,24,10,10,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Red,Red,0,0,
+609,RO_1608,F_2608,R_3608,P_4608,ProviderGroup,Johns Hopkins Hospital,KS,Medicare HMO,4,34,RESOLVED,22,6,15,22,11,2,12,10,5,15,20,25,12,10,Green,Green,Green,Red,Red,Yellow,Green,0,1,Complete Validation Failure
+610,RO_1609,F_2609,R_3609,P_4609,Salesforce,MercyOne Medical Group,CA,Commercial PPO/EPO,4,35,SPS_LOAD,1,3,15,45,24,1,8,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Red,Red,Yellow,0,0,
+611,RO_1610,F_2610,R_3610,P_4610,ProviderGroup,Massachusetts General,NY,Medicaid Managed Care,1,96,DART_UI_VALIDATION,12,12,5,35,16,8,5,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Red,Green,Green,0,0,
+612,RO_1611,F_2611,R_3611,P_4611,ProviderGroup,Cleveland Clinic,CA,Commercial PPO/EPO,2,88,MAPPING_APPROVAL,24,12,21,13,25,13,10,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Green,Yellow,Red,0,0,
+613,RO_1612,F_2612,R_3612,P_4612,Salesforce,Massachusetts General,CA,Medicare HMO,4,78,SPS_LOAD,13,14,19,73,13,3,12,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Green,Yellow,Yellow,0,0,
+614,RO_1613,F_2613,R_3613,P_4613,ProviderGroup,Norton Hospitals,KS,Medicaid Managed Care,2,32,ISF_GEN,10,10,24,47,35,8,5,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Green,Red,Green,1,0,Missing NPI
+615,RO_1614,F_2614,R_3614,P_4614,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,2,46,DART_REVIEW,15,5,10,31,22,12,5,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Red,Yellow,0,0,
+616,RO_1615,F_2615,R_3615,P_4615,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,3,16,RESOLVED,13,12,28,11,5,17,1,10,5,15,20,25,12,10,Green,Red,Green,Green,Red,Red,Green,0,0,
+617,RO_1616,F_2616,R_3616,P_4616,Demographic,Johns Hopkins Hospital,NY,Medicaid Managed Care,1,68,DART_GEN,23,8,26,70,4,14,10,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Yellow,Red,0,0,
+618,RO_1617,F_2617,R_3617,P_4617,AvailityPDM,Mayo Clinic,CA,Medicaid Managed Care,4,37,MAPPING_APPROVAL,22,10,29,20,24,9,5,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Red,Red,0,0,
+619,RO_1618,F_2618,R_3618,P_4618,Demographic,Norton Hospitals,KS,Commercial PPO/EPO,3,54,DART_REVIEW,22,14,19,55,17,15,6,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Yellow,Yellow,Red,0,0,
+620,RO_1619,F_2619,R_3619,P_4619,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,3,85,STOPPED,21,1,13,71,12,11,13,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Green,Red,Green,0,0,
+621,RO_1620,F_2620,R_3620,P_4620,AvailityPDM,Johns Hopkins Hospital,CA,Commercial PPO/EPO,4,14,SPS_LOAD,22,5,18,78,13,19,12,10,5,15,20,25,12,10,Green,Green,Green,Green,Green,Green,Red,0,0,
+622,RO_1621,F_2621,R_3621,P_4621,Demographic,Cleveland Clinic,KS,Medicaid FFS,2,95,DART_REVIEW,9,3,22,73,27,4,1,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Red,Green,Red,0,0,
+623,RO_1622,F_2622,R_3622,P_4622,Demographic,UCSF Medical Center,NY,Medicare HMO,3,55,DART_GEN,9,4,21,86,17,1,11,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Red,Red,0,0,
+624,RO_1623,F_2623,R_3623,P_4623,Demographic,MercyOne Medical Group,KS,Medicaid FFS,2,48,PRE_PROCESSING,15,2,22,49,27,9,7,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Yellow,Yellow,0,0,
+625,RO_1624,F_2624,R_3624,P_4624,Salesforce,Norton Hospitals,KS,Medicaid FFS,1,82,STOPPED,10,9,9,33,26,0,1,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Yellow,Green,Red,0,1,Complete Validation Failure
+626,RO_1625,F_2625,R_3625,P_4625,ProviderGroup,MercyOne Medical Group,CA,Commercial PPO/EPO,2,7,STOPPED,24,3,24,53,31,6,11,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Green,Red,Yellow,0,0,
+627,RO_1626,F_2626,R_3626,P_4626,ProviderGroup,Northwestern Memorial,KS,Medicaid Managed Care,1,74,MAPPING_APPROVAL,10,2,24,69,8,16,2,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Yellow,Red,0,0,
+628,RO_1627,F_2627,R_3627,P_4627,AvailityPDM,Massachusetts General,CA,Medicare HMO,2,7,STOPPED,8,10,13,71,39,15,2,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Green,Red,0,0,
+629,RO_1628,F_2628,R_3628,P_4628,Demographic,Norton Hospitals,NY,Medicaid FFS,3,33,PRE_PROCESSING,24,11,15,26,31,2,5,10,5,15,20,25,12,10,Red,Green,Green,Red,Red,Red,Red,0,0,
+630,RO_1629,F_2629,R_3629,P_4629,ProviderGroup,MercyOne Medical Group,NY,Medicaid Managed Care,3,23,SPS_LOAD,16,9,28,74,19,13,14,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Yellow,Red,1,0,
+631,RO_1630,F_2630,R_3630,P_4630,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,1,85,DART_GEN,17,7,26,83,27,9,10,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Yellow,Red,Green,1,0,
+632,RO_1631,F_2631,R_3631,P_4631,ProviderGroup,Kaiser Permanente,NY,Medicaid Managed Care,4,19,DART_UI_VALIDATION,5,6,5,64,32,6,13,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Red,Yellow,Yellow,0,0,
+633,RO_1632,F_2632,R_3632,P_4632,Demographic,Cleveland Clinic,CA,Medicare HMO,1,19,SPS_LOAD,4,1,22,62,3,16,7,10,5,15,20,25,12,10,Red,Green,Green,Red,Red,Green,Green,0,0,
+634,RO_1633,F_2633,R_3633,P_4633,ProviderGroup,Cleveland Clinic,CA,Medicaid Managed Care,1,36,DART_UI_VALIDATION,18,5,10,65,33,5,1,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Red,Yellow,0,1,Invalid Taxonomy
+635,RO_1634,F_2634,R_3634,P_4634,AvailityPDM,Johns Hopkins Hospital,CA,Commercial PPO/EPO,2,29,MAPPING_APPROVAL,24,12,6,18,2,3,10,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Red,Yellow,Yellow,0,0,
+636,RO_1635,F_2635,R_3635,P_4635,Demographic,Northwestern Memorial,KS,Medicaid FFS,2,60,ISF_GEN,19,11,19,31,25,16,1,10,5,15,20,25,12,10,Red,Red,Green,Red,Red,Yellow,Green,0,0,
+637,RO_1636,F_2636,R_3636,P_4636,ProviderGroup,Norton Hospitals,KS,Medicaid Managed Care,1,82,SPS_LOAD,4,14,25,22,7,8,1,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Red,Red,0,0,Invalid Taxonomy
+638,RO_1637,F_2637,R_3637,P_4637,AvailityPDM,Northwestern Memorial,KS,Medicaid FFS,3,2,DART_REVIEW,7,11,18,57,5,3,6,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Red,Red,1,0,
+639,RO_1638,F_2638,R_3638,P_4638,AvailityPDM,MercyOne Medical Group,CA,Medicare HMO,2,1,DART_REVIEW,10,3,9,27,15,6,2,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Green,Yellow,0,1,Duplicate Record
+640,RO_1639,F_2639,R_3639,P_4639,ProviderGroup,Massachusetts General,CA,Medicaid FFS,4,47,STOPPED,18,1,10,49,23,1,1,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Yellow,Green,0,0,
+641,RO_1640,F_2640,R_3640,P_4640,Demographic,Cleveland Clinic,CA,Medicaid Managed Care,2,69,SPS_LOAD,19,4,10,26,38,16,6,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Yellow,Yellow,Yellow,0,1,Invalid Taxonomy
+642,RO_1641,F_2641,R_3641,P_4641,Salesforce,Cleveland Clinic,CA,Medicare HMO,2,20,DART_UI_VALIDATION,4,13,26,24,29,7,14,10,5,15,20,25,12,10,Red,Red,Red,Green,Green,Yellow,Green,0,0,
+643,RO_1642,F_2642,R_3642,P_4642,AvailityPDM,Massachusetts General,KS,Medicare HMO,4,11,DART_REVIEW,10,2,22,24,12,14,2,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Red,Red,0,0,
+644,RO_1643,F_2643,R_3643,P_4643,AvailityPDM,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,2,SPS_LOAD,1,2,18,72,4,14,6,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Yellow,Red,Red,0,1,Duplicate Record
+645,RO_1644,F_2644,R_3644,P_4644,ProviderGroup,Northwestern Memorial,KS,Medicare HMO,4,67,DART_GEN,23,3,14,94,24,7,10,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Green,Green,Yellow,0,0,
+646,RO_1645,F_2645,R_3645,P_4645,Salesforce,MercyOne Medical Group,KS,Medicare HMO,1,87,SPS_LOAD,18,8,18,22,19,15,8,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Yellow,Red,Yellow,0,0,
+647,RO_1646,F_2646,R_3646,P_4646,Salesforce,UCSF Medical Center,CA,Medicaid FFS,1,12,STOPPED,5,8,17,41,17,18,2,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Yellow,Green,1,1,Address Mismatch
+648,RO_1647,F_2647,R_3647,P_4647,Salesforce,Cleveland Clinic,CA,Medicaid Managed Care,1,20,STOPPED,15,12,7,18,17,10,11,10,5,15,20,25,12,10,Green,Red,Red,Green,Green,Yellow,Yellow,0,0,
+649,RO_1648,F_2648,R_3648,P_4648,ProviderGroup,Johns Hopkins Hospital,NY,Medicaid FFS,4,5,RESOLVED,17,7,10,49,1,1,9,10,5,15,20,25,12,10,Green,Green,Red,Red,Red,Red,Green,0,0,
+650,RO_1649,F_2649,R_3649,P_4649,Demographic,Cleveland Clinic,NY,Medicaid Managed Care,1,37,ISF_GEN,3,6,12,29,9,16,8,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Green,Green,Yellow,0,0,
+651,RO_1650,F_2650,R_3650,P_4650,AvailityPDM,Mayo Clinic,NY,Medicare HMO,3,38,DART_UI_VALIDATION,12,9,16,72,11,15,12,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Red,Green,0,0,
+652,RO_1651,F_2651,R_3651,P_4651,ProviderGroup,Kaiser Permanente,CA,Medicare HMO,4,94,STOPPED,2,4,17,53,12,14,10,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Green,Green,Yellow,0,1,Network Gap
+653,RO_1652,F_2652,R_3652,P_4652,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Commercial PPO/EPO,3,9,STOPPED,1,12,15,47,10,12,1,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Red,Green,1,1,Complete Validation Failure
+654,RO_1653,F_2653,R_3653,P_4653,AvailityPDM,Norton Hospitals,KS,Commercial PPO/EPO,1,98,STOPPED,23,1,16,69,18,14,7,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Red,Green,0,1,Complete Validation Failure
+655,RO_1654,F_2654,R_3654,P_4654,AvailityPDM,MercyOne Medical Group,KS,Medicaid FFS,2,53,DART_REVIEW,21,8,5,57,34,3,14,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Red,Green,1,0,
+656,RO_1655,F_2655,R_3655,P_4655,Salesforce,Massachusetts General,CA,Medicaid FFS,1,44,DART_REVIEW,17,7,21,27,38,15,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Green,Red,Red,0,0,
+657,RO_1656,F_2656,R_3656,P_4656,Salesforce,UCSF Medical Center,NY,Medicaid Managed Care,3,99,DART_UI_VALIDATION,22,7,20,25,25,11,10,10,5,15,20,25,12,10,Red,Green,Green,Green,Yellow,Green,Yellow,0,0,
+658,RO_1657,F_2657,R_3657,P_4657,AvailityPDM,Johns Hopkins Hospital,KS,Medicaid Managed Care,3,86,SPS_LOAD,16,3,15,64,13,3,6,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Green,Red,1,1,Network Gap
+659,RO_1658,F_2658,R_3658,P_4658,AvailityPDM,UCSF Medical Center,NY,Commercial PPO/EPO,4,24,ISF_GEN,5,4,17,48,23,2,14,10,5,15,20,25,12,10,Red,Green,Green,Red,Yellow,Yellow,Green,0,0,
+660,RO_1659,F_2659,R_3659,P_4659,Demographic,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,2,81,MAPPING_APPROVAL,15,10,22,77,0,16,6,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Green,Red,0,0,
+661,RO_1660,F_2660,R_3660,P_4660,Demographic,Mayo Clinic,CA,Medicaid Managed Care,4,74,DART_GEN,3,9,15,98,21,17,6,10,5,15,20,25,12,10,Red,Green,Green,Green,Yellow,Yellow,Yellow,0,1,Network Gap
+662,RO_1661,F_2661,R_3661,P_4661,ProviderGroup,Mayo Clinic,CA,Medicaid FFS,3,30,RESOLVED,7,6,16,71,22,17,6,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Green,Red,Green,0,1,Duplicate Record
+663,RO_1662,F_2662,R_3662,P_4662,AvailityPDM,Massachusetts General,KS,Medicaid Managed Care,1,59,ISF_GEN,11,5,10,22,18,16,10,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Red,Yellow,0,0,
+664,RO_1663,F_2663,R_3663,P_4663,Demographic,Kaiser Permanente,CA,Medicaid FFS,2,87,MAPPING_APPROVAL,10,3,13,15,17,11,7,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Green,Yellow,Green,1,0,
+665,RO_1664,F_2664,R_3664,P_4664,AvailityPDM,Northwestern Memorial,CA,Medicaid Managed Care,1,96,DART_GEN,9,9,20,67,11,3,12,10,5,15,20,25,12,10,Red,Green,Green,Green,Green,Green,Green,0,0,
+666,RO_1665,F_2665,R_3665,P_4665,Salesforce,Mayo Clinic,CA,Medicare HMO,1,81,STOPPED,14,5,8,23,27,11,3,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Yellow,Yellow,Yellow,0,1,Network Gap
+667,RO_1666,F_2666,R_3666,P_4666,Demographic,Massachusetts General,KS,Medicare HMO,2,81,SPS_LOAD,13,5,7,63,27,19,14,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Green,Green,Red,1,0,
+668,RO_1667,F_2667,R_3667,P_4667,Salesforce,Kaiser Permanente,NY,Medicaid FFS,4,14,DART_UI_VALIDATION,2,14,20,13,32,14,6,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Yellow,Red,0,0,
+669,RO_1668,F_2668,R_3668,P_4668,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,1,9,STOPPED,3,4,28,48,18,15,3,10,5,15,20,25,12,10,Red,Red,Red,Green,Yellow,Red,Green,0,0,
+670,RO_1669,F_2669,R_3669,P_4669,Salesforce,MercyOne Medical Group,KS,Medicaid FFS,3,40,PRE_PROCESSING,7,14,29,34,27,4,7,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Red,Green,0,0,
+671,RO_1670,F_2670,R_3670,P_4670,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,1,66,ISF_GEN,21,4,16,41,36,14,7,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Red,Green,Green,0,0,
+672,RO_1671,F_2671,R_3671,P_4671,Salesforce,Massachusetts General,NY,Commercial PPO/EPO,2,25,SPS_LOAD,18,12,15,68,25,16,8,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Green,Green,Green,0,1,Invalid Taxonomy
+673,RO_1672,F_2672,R_3672,P_4672,ProviderGroup,MercyOne Medical Group,KS,Medicaid Managed Care,2,73,PRE_PROCESSING,3,1,9,72,34,17,2,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Green,Yellow,1,1,Duplicate Record
+674,RO_1673,F_2673,R_3673,P_4673,AvailityPDM,Massachusetts General,NY,Commercial PPO/EPO,2,22,MAPPING_APPROVAL,10,7,29,47,33,4,9,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Green,0,1,Network Gap
+675,RO_1674,F_2674,R_3674,P_4674,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,4,4,ISF_GEN,22,9,22,62,34,12,13,10,5,15,20,25,12,10,Red,Red,Green,Yellow,Yellow,Red,Yellow,0,0,
+676,RO_1675,F_2675,R_3675,P_4675,Demographic,Cleveland Clinic,KS,Medicaid Managed Care,1,26,RESOLVED,7,3,23,76,39,18,5,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Red,Red,0,1,Duplicate Record
+677,RO_1676,F_2676,R_3676,P_4676,Demographic,Cleveland Clinic,KS,Medicaid Managed Care,4,58,SPS_LOAD,9,12,27,37,15,12,9,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Green,Yellow,0,1,Address Mismatch
+678,RO_1677,F_2677,R_3677,P_4677,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,4,29,MAPPING_APPROVAL,17,13,27,12,37,17,10,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Green,Green,0,0,
+679,RO_1678,F_2678,R_3678,P_4678,AvailityPDM,UCSF Medical Center,CA,Medicare HMO,2,98,MAPPING_APPROVAL,11,2,10,31,12,13,5,10,5,15,20,25,12,10,Red,Green,Green,Red,Yellow,Yellow,Red,0,0,
+680,RO_1679,F_2679,R_3679,P_4679,Demographic,UCSF Medical Center,CA,Commercial PPO/EPO,2,87,DART_REVIEW,7,3,26,47,22,3,7,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Red,Red,0,0,
+681,RO_1680,F_2680,R_3680,P_4680,Demographic,Mayo Clinic,CA,Medicaid Managed Care,4,37,DART_GEN,24,1,22,110,21,3,11,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Green,Green,Green,1,1,Duplicate Record
+682,RO_1681,F_2681,R_3681,P_4681,Demographic,Mayo Clinic,KS,Medicare HMO,1,75,DART_UI_VALIDATION,14,6,10,66,15,19,9,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Green,Green,Red,0,0,
+683,RO_1682,F_2682,R_3682,P_4682,AvailityPDM,MercyOne Medical Group,KS,Medicaid Managed Care,3,70,MAPPING_APPROVAL,19,11,8,15,27,19,4,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Yellow,Green,0,1,Missing NPI
+684,RO_1683,F_2683,R_3683,P_4683,Demographic,MercyOne Medical Group,KS,Medicaid FFS,4,18,PRE_PROCESSING,4,11,16,41,34,18,2,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Yellow,Red,1,0,
+685,RO_1684,F_2684,R_3684,P_4684,AvailityPDM,Cleveland Clinic,CA,Medicaid Managed Care,1,85,SPS_LOAD,6,7,23,19,7,12,9,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Yellow,Green,0,1,Invalid Taxonomy
+686,RO_1685,F_2685,R_3685,P_4685,Salesforce,UCSF Medical Center,CA,Commercial PPO/EPO,2,42,SPS_LOAD,10,11,6,12,21,11,13,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Green,Yellow,0,0,
+687,RO_1686,F_2686,R_3686,P_4686,Salesforce,Kaiser Permanente,CA,Medicare HMO,2,41,STOPPED,7,11,21,68,20,6,2,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Yellow,Red,Yellow,0,1,Complete Validation Failure
+688,RO_1687,F_2687,R_3687,P_4687,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,38,DART_REVIEW,13,2,15,58,25,11,3,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Yellow,Green,0,0,
+689,RO_1688,F_2688,R_3688,P_4688,ProviderGroup,Kaiser Permanente,CA,Medicaid Managed Care,3,34,PRE_PROCESSING,14,8,15,68,39,3,10,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Red,Green,0,1,Missing NPI
+690,RO_1689,F_2689,R_3689,P_4689,AvailityPDM,MercyOne Medical Group,KS,Commercial PPO/EPO,2,17,ISF_GEN,4,14,25,40,20,1,2,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Yellow,Yellow,Green,0,0,
+691,RO_1690,F_2690,R_3690,P_4690,Demographic,Kaiser Permanente,CA,Commercial PPO/EPO,2,37,RESOLVED,8,6,20,78,24,1,3,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Red,Red,Red,0,0,
+692,RO_1691,F_2691,R_3691,P_4691,ProviderGroup,Massachusetts General,CA,Medicaid FFS,2,25,RESOLVED,5,14,6,71,0,4,6,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Green,Green,Green,0,0,
+693,RO_1692,F_2692,R_3692,P_4692,ProviderGroup,Norton Hospitals,KS,Commercial PPO/EPO,1,76,STOPPED,1,4,6,61,5,9,3,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Green,Red,Green,0,1,Complete Validation Failure
+694,RO_1693,F_2693,R_3693,P_4693,Salesforce,Cleveland Clinic,NY,Commercial PPO/EPO,4,87,DART_GEN,4,5,27,77,22,9,10,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Green,Green,Green,0,0,
+695,RO_1694,F_2694,R_3694,P_4694,AvailityPDM,UCSF Medical Center,NY,Commercial PPO/EPO,2,86,STOPPED,3,8,12,40,22,8,8,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Green,Red,Green,0,0,
+696,RO_1695,F_2695,R_3695,P_4695,Demographic,Northwestern Memorial,CA,Commercial PPO/EPO,4,85,DART_REVIEW,9,14,17,31,22,12,11,10,5,15,20,25,12,10,Red,Green,Red,Red,Green,Red,Yellow,1,1,Missing NPI
+697,RO_1696,F_2696,R_3696,P_4696,ProviderGroup,Cleveland Clinic,NY,Medicaid Managed Care,3,27,DART_GEN,8,3,14,72,31,6,6,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Yellow,Red,Green,1,0,
+698,RO_1697,F_2697,R_3697,P_4697,Demographic,Massachusetts General,NY,Medicaid FFS,2,57,PRE_PROCESSING,1,3,12,22,29,4,7,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Yellow,Red,0,0,
+699,RO_1698,F_2698,R_3698,P_4698,Salesforce,UCSF Medical Center,KS,Medicare HMO,2,31,STOPPED,6,14,8,54,12,9,1,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Green,Green,Red,0,0,
+700,RO_1699,F_2699,R_3699,P_4699,AvailityPDM,MercyOne Medical Group,CA,Medicare HMO,3,6,STOPPED,9,14,19,51,17,9,3,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Red,Red,Green,0,0,
+701,RO_1700,F_2700,R_3700,P_4700,Demographic,Northwestern Memorial,KS,Commercial PPO/EPO,2,91,DART_GEN,7,11,5,104,22,5,3,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Green,Yellow,Green,0,1,Missing NPI
+702,RO_1701,F_2701,R_3701,P_4701,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,4,40,ISF_GEN,4,4,15,29,14,18,2,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Green,Green,0,0,
+703,RO_1702,F_2702,R_3702,P_4702,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Commercial PPO/EPO,1,98,PRE_PROCESSING,13,1,11,63,32,7,7,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Red,Red,Red,0,1,Network Gap
+704,RO_1703,F_2703,R_3703,P_4703,Demographic,Mayo Clinic,KS,Commercial PPO/EPO,4,12,DART_UI_VALIDATION,17,9,21,45,20,0,9,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Green,Red,Red,0,0,
+705,RO_1704,F_2704,R_3704,P_4704,AvailityPDM,Johns Hopkins Hospital,CA,Medicaid Managed Care,1,53,DART_GEN,2,8,24,83,38,16,4,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Yellow,Green,Yellow,0,0,
+706,RO_1705,F_2705,R_3705,P_4705,AvailityPDM,Massachusetts General,CA,Medicaid FFS,1,71,PRE_PROCESSING,5,8,28,24,22,6,12,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Green,Red,Red,1,1,Duplicate Record
+707,RO_1706,F_2706,R_3706,P_4706,Demographic,UCSF Medical Center,NY,Medicare HMO,4,10,ISF_GEN,12,14,22,26,26,13,5,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Yellow,Yellow,Green,0,0,
+708,RO_1707,F_2707,R_3707,P_4707,ProviderGroup,Johns Hopkins Hospital,CA,Medicaid Managed Care,4,45,MAPPING_APPROVAL,21,10,26,33,17,16,3,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Yellow,Yellow,Green,0,0,
+709,RO_1708,F_2708,R_3708,P_4708,ProviderGroup,Johns Hopkins Hospital,CA,Medicare HMO,4,17,DART_REVIEW,8,6,26,67,23,8,11,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Green,Red,Green,0,0,
+710,RO_1709,F_2709,R_3709,P_4709,Salesforce,Northwestern Memorial,CA,Medicaid Managed Care,4,26,SPS_LOAD,6,7,16,32,39,16,9,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Yellow,Red,Yellow,0,1,Duplicate Record
+711,RO_1710,F_2710,R_3710,P_4710,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,3,85,DART_UI_VALIDATION,8,6,13,55,6,4,14,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Yellow,Red,Red,0,0,
+712,RO_1711,F_2711,R_3711,P_4711,Salesforce,MercyOne Medical Group,CA,Commercial PPO/EPO,2,92,SPS_LOAD,18,9,9,17,19,19,4,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Red,Red,Yellow,0,0,
+713,RO_1712,F_2712,R_3712,P_4712,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,1,62,SPS_LOAD,3,3,14,68,26,7,5,10,5,15,20,25,12,10,Green,Red,Green,Red,Green,Yellow,Green,0,0,
+714,RO_1713,F_2713,R_3713,P_4713,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,4,46,DART_GEN,22,14,8,110,5,5,1,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Red,Red,Yellow,0,0,
+715,RO_1714,F_2714,R_3714,P_4714,ProviderGroup,Massachusetts General,KS,Medicaid FFS,4,64,STOPPED,12,3,9,22,26,10,11,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Red,Yellow,1,1,Network Gap
+716,RO_1715,F_2715,R_3715,P_4715,Salesforce,Massachusetts General,CA,Commercial PPO/EPO,4,2,PRE_PROCESSING,3,3,14,48,8,18,12,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Yellow,Red,Yellow,1,0,
+717,RO_1716,F_2716,R_3716,P_4716,Salesforce,UCSF Medical Center,CA,Medicaid Managed Care,3,54,MAPPING_APPROVAL,22,10,15,37,30,3,13,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Red,Yellow,Green,1,0,
+718,RO_1717,F_2717,R_3717,P_4717,AvailityPDM,Cleveland Clinic,NY,Medicare HMO,4,65,MAPPING_APPROVAL,6,3,25,70,20,17,2,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Green,Green,0,1,Invalid Taxonomy
+719,RO_1718,F_2718,R_3718,P_4718,AvailityPDM,MercyOne Medical Group,NY,Medicaid FFS,4,51,STOPPED,2,9,28,25,25,0,12,10,5,15,20,25,12,10,Red,Green,Green,Green,Green,Green,Green,0,0,
+720,RO_1719,F_2719,R_3719,P_4719,Salesforce,UCSF Medical Center,KS,Medicare HMO,4,53,DART_REVIEW,23,12,14,11,39,12,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Yellow,Red,0,0,
+721,RO_1720,F_2720,R_3720,P_4720,ProviderGroup,Northwestern Memorial,CA,Medicare HMO,2,36,STOPPED,12,4,12,26,12,13,9,10,5,15,20,25,12,10,Red,Red,Red,Red,Green,Green,Red,0,0,
+722,RO_1721,F_2721,R_3721,P_4721,ProviderGroup,MercyOne Medical Group,CA,Medicare HMO,3,26,DART_UI_VALIDATION,2,13,6,39,22,0,2,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Yellow,0,0,
+723,RO_1722,F_2722,R_3722,P_4722,AvailityPDM,MercyOne Medical Group,KS,Medicaid FFS,4,29,DART_UI_VALIDATION,6,7,27,22,19,10,5,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Green,Green,Red,1,0,
+724,RO_1723,F_2723,R_3723,P_4723,AvailityPDM,Johns Hopkins Hospital,CA,Medicare HMO,1,21,DART_REVIEW,17,14,12,22,36,16,13,10,5,15,20,25,12,10,Green,Red,Green,Green,Red,Green,Red,0,0,
+725,RO_1724,F_2724,R_3724,P_4724,Demographic,UCSF Medical Center,CA,Medicaid FFS,1,11,DART_GEN,3,9,20,82,27,3,8,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Yellow,Green,Green,0,0,
+726,RO_1725,F_2725,R_3725,P_4725,AvailityPDM,Norton Hospitals,CA,Medicaid Managed Care,1,40,DART_GEN,2,11,26,71,16,11,3,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Yellow,Green,0,0,
+727,RO_1726,F_2726,R_3726,P_4726,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,3,11,RESOLVED,23,12,9,64,27,9,6,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Red,Green,1,0,
+728,RO_1727,F_2727,R_3727,P_4727,AvailityPDM,UCSF Medical Center,NY,Commercial PPO/EPO,3,36,SPS_LOAD,20,7,29,49,1,5,4,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Yellow,Red,Green,0,0,
+729,RO_1728,F_2728,R_3728,P_4728,Demographic,MercyOne Medical Group,NY,Medicare HMO,1,59,PRE_PROCESSING,8,9,7,24,24,0,11,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Green,Red,1,0,
+730,RO_1729,F_2729,R_3729,P_4729,Salesforce,Mayo Clinic,CA,Commercial PPO/EPO,4,39,DART_REVIEW,22,12,16,61,5,6,7,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Yellow,Red,Yellow,1,1,Network Gap
+731,RO_1730,F_2730,R_3730,P_4730,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,3,99,ISF_GEN,12,3,17,62,10,15,10,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Green,Green,1,0,
+732,RO_1731,F_2731,R_3731,P_4731,ProviderGroup,MercyOne Medical Group,KS,Medicaid Managed Care,1,54,SPS_LOAD,4,4,17,61,37,13,14,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Green,Red,Red,0,1,Network Gap
+733,RO_1732,F_2732,R_3732,P_4732,Demographic,Cleveland Clinic,CA,Medicaid Managed Care,1,98,STOPPED,5,14,14,39,5,19,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Yellow,Yellow,0,0,
+734,RO_1733,F_2733,R_3733,P_4733,Salesforce,Kaiser Permanente,CA,Medicaid FFS,4,55,MAPPING_APPROVAL,13,8,8,42,10,19,3,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Red,Green,Green,0,1,Network Gap
+735,RO_1734,F_2734,R_3734,P_4734,Salesforce,Cleveland Clinic,CA,Medicaid FFS,2,24,STOPPED,15,6,13,66,13,5,6,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Red,Yellow,Green,0,1,Invalid Taxonomy
+736,RO_1735,F_2735,R_3735,P_4735,AvailityPDM,UCSF Medical Center,CA,Medicare HMO,3,22,MAPPING_APPROVAL,23,5,26,61,1,4,12,10,5,15,20,25,12,10,Red,Green,Green,Green,Green,Yellow,Green,0,0,
+737,RO_1736,F_2736,R_3736,P_4736,Salesforce,Mayo Clinic,CA,Commercial PPO/EPO,4,69,STOPPED,16,13,28,18,39,17,10,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Red,Red,Green,0,0,
+738,RO_1737,F_2737,R_3737,P_4737,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,1,56,DART_REVIEW,10,4,27,63,2,14,9,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Yellow,Red,Green,1,0,
+739,RO_1738,F_2738,R_3738,P_4738,Salesforce,Mayo Clinic,NY,Medicaid Managed Care,1,33,DART_UI_VALIDATION,23,8,6,10,34,5,11,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Green,Green,Yellow,0,0,
+740,RO_1739,F_2739,R_3739,P_4739,ProviderGroup,Kaiser Permanente,KS,Medicare HMO,4,36,MAPPING_APPROVAL,16,1,23,53,32,18,10,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Yellow,Yellow,Yellow,1,0,
+741,RO_1740,F_2740,R_3740,P_4740,ProviderGroup,UCSF Medical Center,NY,Medicaid Managed Care,3,20,STOPPED,12,14,5,18,23,0,1,10,5,15,20,25,12,10,Green,Red,Green,Red,Green,Green,Green,0,1,Invalid Taxonomy
+742,RO_1741,F_2741,R_3741,P_4741,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,2,83,DART_REVIEW,17,9,29,41,18,0,3,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Red,Yellow,0,0,
+743,RO_1742,F_2742,R_3742,P_4742,Demographic,MercyOne Medical Group,KS,Commercial PPO/EPO,2,99,STOPPED,16,1,11,24,17,12,2,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Red,Red,Red,1,0,
+744,RO_1743,F_2743,R_3743,P_4743,ProviderGroup,Mayo Clinic,NY,Medicare HMO,1,81,DART_REVIEW,12,8,21,21,23,2,8,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Yellow,Green,Yellow,0,0,
+745,RO_1744,F_2744,R_3744,P_4744,Salesforce,Northwestern Memorial,NY,Commercial PPO/EPO,3,62,RESOLVED,8,4,7,66,34,9,7,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Yellow,Green,0,0,
+746,RO_1745,F_2745,R_3745,P_4745,Salesforce,UCSF Medical Center,KS,Medicaid FFS,2,98,SPS_LOAD,20,9,24,17,0,2,2,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Red,Yellow,Red,0,1,Address Mismatch
+747,RO_1746,F_2746,R_3746,P_4746,ProviderGroup,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,3,73,RESOLVED,3,14,24,36,35,8,6,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Red,Yellow,Yellow,0,1,Address Mismatch
+748,RO_1747,F_2747,R_3747,P_4747,Salesforce,UCSF Medical Center,CA,Medicaid FFS,3,26,DART_GEN,16,11,25,108,24,7,3,10,5,15,20,25,12,10,Green,Red,Green,Red,Yellow,Yellow,Red,0,0,
+749,RO_1748,F_2748,R_3748,P_4748,AvailityPDM,MercyOne Medical Group,NY,Medicaid Managed Care,1,66,DART_UI_VALIDATION,13,5,7,21,33,2,8,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Green,Red,Red,0,0,
+750,RO_1749,F_2749,R_3749,P_4749,Salesforce,Northwestern Memorial,KS,Medicaid FFS,2,73,RESOLVED,23,3,7,74,24,12,10,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Red,Green,Green,0,0,
+751,RO_1750,F_2750,R_3750,P_4750,AvailityPDM,Northwestern Memorial,CA,Medicare HMO,4,73,RESOLVED,19,9,21,51,15,5,13,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Red,Yellow,0,1,Address Mismatch
+752,RO_1751,F_2751,R_3751,P_4751,ProviderGroup,MercyOne Medical Group,CA,Medicare HMO,1,40,PRE_PROCESSING,8,11,11,71,33,12,3,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Yellow,Red,Green,0,0,
+753,RO_1752,F_2752,R_3752,P_4752,ProviderGroup,MercyOne Medical Group,NY,Medicare HMO,2,17,RESOLVED,22,14,18,20,28,19,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Red,Red,Green,0,0,
+754,RO_1753,F_2753,R_3753,P_4753,ProviderGroup,Northwestern Memorial,KS,Medicare HMO,2,1,MAPPING_APPROVAL,5,14,21,52,18,19,14,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Red,Red,Green,0,1,Address Mismatch
+755,RO_1754,F_2754,R_3754,P_4754,AvailityPDM,Northwestern Memorial,CA,Medicare HMO,2,89,DART_REVIEW,20,9,22,26,22,11,9,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Green,Green,Green,1,0,
+756,RO_1755,F_2755,R_3755,P_4755,Salesforce,Cleveland Clinic,NY,Commercial PPO/EPO,2,61,MAPPING_APPROVAL,8,4,17,41,18,12,1,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Green,Green,Yellow,0,1,Duplicate Record
+757,RO_1756,F_2756,R_3756,P_4756,AvailityPDM,Northwestern Memorial,CA,Medicaid Managed Care,2,43,SPS_LOAD,24,11,24,49,24,1,5,10,5,15,20,25,12,10,Green,Green,Red,Red,Red,Yellow,Yellow,0,0,
+758,RO_1757,F_2757,R_3757,P_4757,Salesforce,Norton Hospitals,KS,Medicaid FFS,3,42,STOPPED,12,4,24,32,15,15,3,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Green,Green,0,1,Complete Validation Failure
+759,RO_1758,F_2758,R_3758,P_4758,Salesforce,Norton Hospitals,NY,Medicaid FFS,1,25,DART_GEN,1,12,25,89,8,5,6,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Red,Red,Red,1,0,
+760,RO_1759,F_2759,R_3759,P_4759,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,3,39,DART_UI_VALIDATION,21,8,22,15,0,18,10,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Yellow,Yellow,0,0,
+761,RO_1760,F_2760,R_3760,P_4760,Demographic,Norton Hospitals,KS,Medicare HMO,4,35,SPS_LOAD,20,2,8,59,18,12,2,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Yellow,Yellow,Green,0,0,
+762,RO_1761,F_2761,R_3761,P_4761,ProviderGroup,Northwestern Memorial,CA,Medicare HMO,2,3,DART_UI_VALIDATION,6,9,5,46,32,16,9,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Green,Yellow,0,1,Missing NPI
+763,RO_1762,F_2762,R_3762,P_4762,Salesforce,Mayo Clinic,NY,Medicaid FFS,1,44,STOPPED,22,13,22,73,33,8,6,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Green,Red,Yellow,Green,0,0,
+764,RO_1763,F_2763,R_3763,P_4763,Salesforce,Kaiser Permanente,KS,Medicare HMO,2,51,STOPPED,18,14,5,63,15,16,7,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Yellow,Green,Green,0,0,
+765,RO_1764,F_2764,R_3764,P_4764,AvailityPDM,Northwestern Memorial,NY,Commercial PPO/EPO,1,94,PRE_PROCESSING,8,6,17,58,39,1,5,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Yellow,Red,0,0,
+766,RO_1765,F_2765,R_3765,P_4765,Demographic,Johns Hopkins Hospital,CA,Commercial PPO/EPO,3,98,DART_REVIEW,7,9,24,20,17,18,9,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Yellow,Red,Green,0,0,
+767,RO_1766,F_2766,R_3766,P_4766,ProviderGroup,Northwestern Memorial,CA,Commercial PPO/EPO,1,12,DART_GEN,1,8,24,90,33,18,1,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Yellow,Green,1,0,
+768,RO_1767,F_2767,R_3767,P_4767,Demographic,Norton Hospitals,KS,Medicaid Managed Care,4,19,STOPPED,21,7,27,30,24,6,5,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Green,Yellow,0,1,Complete Validation Failure
+769,RO_1768,F_2768,R_3768,P_4768,ProviderGroup,Massachusetts General,CA,Medicaid Managed Care,4,44,MAPPING_APPROVAL,16,13,14,75,5,9,11,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Red,Red,Red,0,0,
+770,RO_1769,F_2769,R_3769,P_4769,Salesforce,UCSF Medical Center,NY,Commercial PPO/EPO,1,59,SPS_LOAD,12,14,15,72,20,9,10,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Red,Yellow,Yellow,0,0,
+771,RO_1770,F_2770,R_3770,P_4770,Salesforce,Mayo Clinic,CA,Medicaid Managed Care,1,49,DART_UI_VALIDATION,6,1,13,37,5,19,11,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Yellow,Green,Red,1,0,
+772,RO_1771,F_2771,R_3771,P_4771,AvailityPDM,Mayo Clinic,NY,Commercial PPO/EPO,1,61,MAPPING_APPROVAL,20,14,13,26,31,8,6,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Red,Red,Green,1,0,
+773,RO_1772,F_2772,R_3772,P_4772,AvailityPDM,Massachusetts General,CA,Medicare HMO,1,17,STOPPED,2,12,9,15,38,16,7,10,5,15,20,25,12,10,Yellow,Red,Green,Green,Yellow,Red,Red,0,0,
+774,RO_1773,F_2773,R_3773,P_4773,Demographic,Kaiser Permanente,NY,Medicaid Managed Care,4,74,ISF_GEN,14,3,5,28,30,14,12,10,5,15,20,25,12,10,Red,Red,Green,Red,Yellow,Red,Yellow,0,0,
+775,RO_1774,F_2774,R_3774,P_4774,Demographic,Johns Hopkins Hospital,NY,Commercial PPO/EPO,2,57,RESOLVED,4,11,21,65,9,1,4,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Yellow,Green,Green,0,0,
+776,RO_1775,F_2775,R_3775,P_4775,ProviderGroup,Mayo Clinic,NY,Medicaid Managed Care,1,55,DART_UI_VALIDATION,1,14,26,37,29,3,12,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Green,Red,Red,Red,0,0,
+777,RO_1776,F_2776,R_3776,P_4776,AvailityPDM,Massachusetts General,CA,Medicaid FFS,1,47,DART_UI_VALIDATION,23,2,6,75,17,18,13,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Yellow,Yellow,Red,0,1,Address Mismatch
+778,RO_1777,F_2777,R_3777,P_4777,Salesforce,Cedars-Sinai Medical Care Foundation,NY,Medicaid FFS,4,12,DART_GEN,18,5,28,87,23,16,1,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Red,Yellow,Yellow,0,0,
+779,RO_1778,F_2778,R_3778,P_4778,AvailityPDM,Norton Hospitals,KS,Commercial PPO/EPO,4,62,STOPPED,13,5,17,46,8,4,11,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Red,Red,Red,0,1,Complete Validation Failure
+780,RO_1779,F_2779,R_3779,P_4779,Demographic,MercyOne Medical Group,CA,Commercial PPO/EPO,3,80,ISF_GEN,2,5,13,77,30,6,8,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Red,Red,Yellow,0,1,Complete Validation Failure
+781,RO_1780,F_2780,R_3780,P_4780,AvailityPDM,Massachusetts General,NY,Commercial PPO/EPO,1,88,DART_GEN,9,4,8,81,14,17,10,10,5,15,20,25,12,10,Red,Yellow,Green,Green,Green,Green,Yellow,0,1,Missing NPI
+782,RO_1781,F_2781,R_3781,P_4781,Salesforce,Johns Hopkins Hospital,NY,Medicaid FFS,3,83,RESOLVED,21,5,9,52,3,6,4,10,5,15,20,25,12,10,Red,Red,Green,Red,Green,Yellow,Green,0,0,
+783,RO_1782,F_2782,R_3782,P_4782,AvailityPDM,Massachusetts General,NY,Medicaid Managed Care,4,8,DART_GEN,2,3,15,103,39,16,3,10,5,15,20,25,12,10,Red,Green,Red,Green,Green,Red,Yellow,0,0,
+784,RO_1783,F_2783,R_3783,P_4783,Demographic,Massachusetts General,NY,Medicaid FFS,4,95,DART_GEN,9,12,28,87,8,6,12,10,5,15,20,25,12,10,Red,Green,Green,Green,Green,Red,Yellow,0,1,Complete Validation Failure
+785,RO_1784,F_2784,R_3784,P_4784,Salesforce,Kaiser Permanente,KS,Commercial PPO/EPO,2,21,DART_GEN,1,1,23,72,8,3,7,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Yellow,Yellow,Red,0,0,
+786,RO_1785,F_2785,R_3785,P_4785,ProviderGroup,Cleveland Clinic,KS,Commercial PPO/EPO,1,81,DART_REVIEW,11,5,25,61,25,7,12,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Red,Yellow,0,0,
+787,RO_1786,F_2786,R_3786,P_4786,ProviderGroup,Northwestern Memorial,KS,Commercial PPO/EPO,3,87,DART_GEN,3,13,7,84,3,12,2,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Yellow,Green,Yellow,0,0,
+788,RO_1787,F_2787,R_3787,P_4787,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,4,80,DART_GEN,20,9,16,103,16,3,8,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Green,Yellow,Red,0,0,
+789,RO_1788,F_2788,R_3788,P_4788,Salesforce,Cleveland Clinic,NY,Commercial PPO/EPO,4,70,DART_GEN,23,13,23,110,15,5,14,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Yellow,Yellow,Green,0,0,
+790,RO_1789,F_2789,R_3789,P_4789,Salesforce,Cleveland Clinic,CA,Commercial PPO/EPO,3,72,DART_GEN,4,9,23,105,14,4,6,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Red,Green,0,1,Complete Validation Failure
+791,RO_1790,F_2790,R_3790,P_4790,Demographic,Cleveland Clinic,KS,Medicare HMO,2,25,DART_UI_VALIDATION,18,4,17,65,34,11,7,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Yellow,Green,0,0,
+792,RO_1791,F_2791,R_3791,P_4791,Salesforce,Johns Hopkins Hospital,NY,Medicare HMO,4,82,ISF_GEN,23,3,11,37,4,3,14,10,5,15,20,25,12,10,Red,Yellow,Red,Green,Red,Green,Red,0,0,
+793,RO_1792,F_2792,R_3792,P_4792,Demographic,MercyOne Medical Group,NY,Medicare HMO,1,89,MAPPING_APPROVAL,6,1,19,10,4,8,5,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Green,Yellow,Green,1,0,
+794,RO_1793,F_2793,R_3793,P_4793,Salesforce,Cleveland Clinic,KS,Medicaid FFS,4,12,MAPPING_APPROVAL,3,2,27,51,19,3,9,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Yellow,Green,Yellow,0,0,
+795,RO_1794,F_2794,R_3794,P_4794,Demographic,UCSF Medical Center,NY,Medicaid Managed Care,1,15,MAPPING_APPROVAL,22,8,11,57,14,18,5,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Yellow,Red,Green,1,1,Network Gap
+796,RO_1795,F_2795,R_3795,P_4795,Demographic,UCSF Medical Center,NY,Commercial PPO/EPO,3,59,RESOLVED,11,1,12,49,17,13,11,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Red,Green,Yellow,0,0,
+797,RO_1796,F_2796,R_3796,P_4796,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Medicare HMO,1,26,PRE_PROCESSING,15,8,9,72,1,4,5,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Green,Red,Yellow,1,1,Duplicate Record
+798,RO_1797,F_2797,R_3797,P_4797,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,3,26,STOPPED,22,13,25,13,28,17,3,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Green,Red,0,0,
+799,RO_1798,F_2798,R_3798,P_4798,Salesforce,Kaiser Permanente,CA,Medicaid Managed Care,1,47,PRE_PROCESSING,5,7,18,47,12,9,11,10,5,15,20,25,12,10,Red,Red,Green,Green,Green,Red,Yellow,0,0,
+800,RO_1799,F_2799,R_3799,P_4799,ProviderGroup,Massachusetts General,CA,Commercial PPO/EPO,3,32,RESOLVED,20,8,8,36,3,18,1,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Yellow,Red,Green,0,1,Invalid Taxonomy
+801,RO_1800,F_2800,R_3800,P_4800,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Commercial PPO/EPO,1,10,DART_UI_VALIDATION,10,12,27,18,9,11,2,10,5,15,20,25,12,10,Green,Red,Red,Green,Yellow,Green,Green,0,0,
+802,RO_1801,F_2801,R_3801,P_4801,AvailityPDM,Mayo Clinic,KS,Medicaid Managed Care,2,16,DART_UI_VALIDATION,12,6,14,25,30,17,8,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Red,Green,Red,1,0,
+803,RO_1802,F_2802,R_3802,P_4802,ProviderGroup,Massachusetts General,KS,Medicaid Managed Care,1,71,RESOLVED,15,12,24,65,7,16,1,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Yellow,Yellow,Yellow,0,1,Missing NPI
+804,RO_1803,F_2803,R_3803,P_4803,ProviderGroup,Kaiser Permanente,KS,Medicaid Managed Care,1,17,DART_REVIEW,17,14,19,40,2,10,7,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Green,Red,Red,0,0,
+805,RO_1804,F_2804,R_3804,P_4804,Salesforce,MercyOne Medical Group,CA,Medicaid FFS,2,23,RESOLVED,10,9,22,23,8,2,14,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Red,Yellow,Yellow,0,1,Address Mismatch
+806,RO_1805,F_2805,R_3805,P_4805,Demographic,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,4,26,ISF_GEN,6,3,24,34,29,16,14,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Yellow,Green,0,1,Address Mismatch
+807,RO_1806,F_2806,R_3806,P_4806,Salesforce,Norton Hospitals,NY,Commercial PPO/EPO,4,85,STOPPED,18,10,17,43,10,0,5,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Yellow,Red,Green,1,0,
+808,RO_1807,F_2807,R_3807,P_4807,Salesforce,Mayo Clinic,NY,Medicare HMO,1,86,DART_REVIEW,13,4,12,76,34,14,3,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Red,Green,Yellow,0,0,
+809,RO_1808,F_2808,R_3808,P_4808,ProviderGroup,Johns Hopkins Hospital,NY,Medicaid Managed Care,2,7,SPS_LOAD,3,13,13,33,36,8,12,10,5,15,20,25,12,10,Green,Green,Red,Green,Red,Green,Green,0,0,
+810,RO_1809,F_2809,R_3809,P_4809,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,1,14,DART_GEN,24,6,20,66,12,14,12,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Yellow,Red,Green,0,0,
+811,RO_1810,F_2810,R_3810,P_4810,Salesforce,Johns Hopkins Hospital,NY,Commercial PPO/EPO,3,79,ISF_GEN,10,8,23,29,35,2,11,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Yellow,Yellow,Yellow,1,1,Invalid Taxonomy
+812,RO_1811,F_2811,R_3811,P_4811,Salesforce,Kaiser Permanente,NY,Medicare HMO,3,7,PRE_PROCESSING,14,5,20,73,12,18,7,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Yellow,Yellow,Yellow,0,1,Missing NPI
+813,RO_1812,F_2812,R_3812,P_4812,ProviderGroup,MercyOne Medical Group,NY,Medicare HMO,1,9,STOPPED,6,3,11,19,11,12,9,10,5,15,20,25,12,10,Green,Red,Red,Red,Yellow,Yellow,Yellow,0,0,
+814,RO_1813,F_2813,R_3813,P_4813,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,4,48,SPS_LOAD,3,6,18,76,36,11,2,10,5,15,20,25,12,10,Red,Red,Red,Green,Yellow,Red,Yellow,0,0,
+815,RO_1814,F_2814,R_3814,P_4814,Demographic,Northwestern Memorial,CA,Medicaid FFS,4,72,RESOLVED,16,4,18,33,9,19,8,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Yellow,Yellow,0,0,
+816,RO_1815,F_2815,R_3815,P_4815,Salesforce,Cleveland Clinic,CA,Medicaid Managed Care,1,59,STOPPED,7,9,29,14,8,0,9,10,5,15,20,25,12,10,Green,Yellow,Green,Green,Yellow,Yellow,Yellow,0,0,
+817,RO_1816,F_2816,R_3816,P_4816,Demographic,Kaiser Permanente,CA,Medicare HMO,1,87,PRE_PROCESSING,20,13,8,76,6,16,11,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Yellow,Yellow,Red,1,1,Address Mismatch
+818,RO_1817,F_2817,R_3817,P_4817,Salesforce,MercyOne Medical Group,CA,Commercial PPO/EPO,3,93,STOPPED,14,3,19,67,1,12,3,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Yellow,Yellow,0,0,
+819,RO_1818,F_2818,R_3818,P_4818,AvailityPDM,Massachusetts General,NY,Medicare HMO,4,82,DART_UI_VALIDATION,9,4,7,36,22,0,2,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Yellow,Green,Red,1,1,Address Mismatch
+820,RO_1819,F_2819,R_3819,P_4819,ProviderGroup,UCSF Medical Center,NY,Commercial PPO/EPO,1,95,SPS_LOAD,15,7,9,24,38,9,7,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Yellow,Red,Red,0,0,
+821,RO_1820,F_2820,R_3820,P_4820,Salesforce,Massachusetts General,NY,Medicaid FFS,3,94,ISF_GEN,21,7,5,44,39,14,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Green,Red,Yellow,0,1,Network Gap
+822,RO_1821,F_2821,R_3821,P_4821,Salesforce,Massachusetts General,NY,Medicare HMO,4,39,RESOLVED,3,12,7,62,38,6,5,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Green,Yellow,Green,1,0,
+823,RO_1822,F_2822,R_3822,P_4822,Salesforce,Mayo Clinic,KS,Commercial PPO/EPO,2,99,MAPPING_APPROVAL,2,12,19,53,20,17,10,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Yellow,Red,0,0,
+824,RO_1823,F_2823,R_3823,P_4823,Demographic,Massachusetts General,CA,Medicare HMO,3,18,STOPPED,2,4,28,35,22,15,5,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Green,Red,Green,0,0,
+825,RO_1824,F_2824,R_3824,P_4824,Salesforce,Norton Hospitals,KS,Commercial PPO/EPO,4,59,STOPPED,3,6,12,56,28,13,4,10,5,15,20,25,12,10,Red,Green,Green,Green,Yellow,Green,Yellow,0,1,Complete Validation Failure
+826,RO_1825,F_2825,R_3825,P_4825,AvailityPDM,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,4,17,DART_UI_VALIDATION,18,12,8,43,13,17,13,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Red,Red,Yellow,0,0,
+827,RO_1826,F_2826,R_3826,P_4826,Demographic,Johns Hopkins Hospital,KS,Commercial PPO/EPO,3,14,PRE_PROCESSING,14,13,6,59,25,6,5,10,5,15,20,25,12,10,Red,Green,Green,Green,Green,Red,Red,0,0,
+828,RO_1827,F_2827,R_3827,P_4827,ProviderGroup,UCSF Medical Center,CA,Commercial PPO/EPO,2,31,PRE_PROCESSING,20,3,28,21,4,16,13,10,5,15,20,25,12,10,Green,Green,Red,Green,Yellow,Yellow,Yellow,0,0,
+829,RO_1828,F_2828,R_3828,P_4828,AvailityPDM,Massachusetts General,CA,Commercial PPO/EPO,3,24,DART_GEN,18,6,28,104,30,17,4,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Green,Red,1,0,
+830,RO_1829,F_2829,R_3829,P_4829,Salesforce,Kaiser Permanente,KS,Commercial PPO/EPO,4,99,SPS_LOAD,10,12,14,57,24,11,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Green,Red,1,0,
+831,RO_1830,F_2830,R_3830,P_4830,AvailityPDM,Kaiser Permanente,KS,Medicaid Managed Care,1,60,MAPPING_APPROVAL,2,2,8,64,30,7,6,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Red,Yellow,Yellow,0,1,Address Mismatch
+832,RO_1831,F_2831,R_3831,P_4831,Salesforce,Northwestern Memorial,NY,Medicaid FFS,1,45,DART_UI_VALIDATION,22,8,7,10,19,1,4,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Red,Red,Red,1,0,
+833,RO_1832,F_2832,R_3832,P_4832,AvailityPDM,Cleveland Clinic,KS,Medicaid Managed Care,3,98,DART_UI_VALIDATION,1,2,6,75,16,6,2,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Red,Green,Red,1,0,
+834,RO_1833,F_2833,R_3833,P_4833,Demographic,Norton Hospitals,CA,Medicaid FFS,4,3,DART_REVIEW,4,11,29,39,1,3,9,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Red,Red,Green,0,0,
+835,RO_1834,F_2834,R_3834,P_4834,Salesforce,Norton Hospitals,CA,Medicaid FFS,1,37,ISF_GEN,14,7,21,12,24,17,2,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Green,Yellow,Yellow,0,0,
+836,RO_1835,F_2835,R_3835,P_4835,Demographic,Mayo Clinic,CA,Medicaid Managed Care,4,43,STOPPED,1,9,27,30,12,5,9,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Yellow,Green,0,0,
+837,RO_1836,F_2836,R_3836,P_4836,AvailityPDM,Massachusetts General,CA,Medicare HMO,3,40,DART_REVIEW,14,1,25,58,38,8,10,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Green,Red,Red,0,0,
+838,RO_1837,F_2837,R_3837,P_4837,Salesforce,Northwestern Memorial,KS,Medicaid FFS,1,90,DART_GEN,16,8,28,65,27,8,6,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Green,Red,0,0,
+839,RO_1838,F_2838,R_3838,P_4838,ProviderGroup,Massachusetts General,NY,Medicaid Managed Care,4,55,DART_REVIEW,22,7,24,47,5,13,9,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Green,Red,Yellow,1,0,
+840,RO_1839,F_2839,R_3839,P_4839,ProviderGroup,Mayo Clinic,CA,Commercial PPO/EPO,1,87,RESOLVED,14,6,27,24,2,7,9,10,5,15,20,25,12,10,Green,Green,Green,Red,Green,Green,Red,0,1,Duplicate Record
+841,RO_1840,F_2840,R_3840,P_4840,Salesforce,UCSF Medical Center,CA,Medicaid Managed Care,3,39,DART_UI_VALIDATION,20,6,17,61,34,18,3,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Yellow,Yellow,Red,0,0,
+842,RO_1841,F_2841,R_3841,P_4841,AvailityPDM,Norton Hospitals,CA,Medicaid FFS,4,15,DART_UI_VALIDATION,3,6,9,55,17,2,1,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Red,Red,0,1,Missing NPI
+843,RO_1842,F_2842,R_3842,P_4842,ProviderGroup,Cedars-Sinai Medical Care Foundation,KS,Medicare HMO,1,4,ISF_GEN,3,9,25,34,10,17,1,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Yellow,Red,0,0,
+844,RO_1843,F_2843,R_3843,P_4843,Salesforce,Johns Hopkins Hospital,CA,Medicare HMO,3,93,RESOLVED,9,2,13,30,19,4,3,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Green,Yellow,Green,0,0,
+845,RO_1844,F_2844,R_3844,P_4844,ProviderGroup,MercyOne Medical Group,NY,Medicare HMO,1,86,SPS_LOAD,6,1,29,14,4,13,5,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Yellow,Green,Red,0,0,
+846,RO_1845,F_2845,R_3845,P_4845,Salesforce,Mayo Clinic,NY,Commercial PPO/EPO,1,25,DART_GEN,13,13,29,83,18,3,13,10,5,15,20,25,12,10,Green,Yellow,Red,Green,Green,Green,Green,0,0,
+847,RO_1846,F_2846,R_3846,P_4846,AvailityPDM,Cleveland Clinic,CA,Medicaid Managed Care,2,13,SPS_LOAD,21,12,26,56,21,6,3,10,5,15,20,25,12,10,Red,Red,Red,Green,Red,Green,Green,0,1,Duplicate Record
+848,RO_1847,F_2847,R_3847,P_4847,AvailityPDM,Johns Hopkins Hospital,CA,Medicaid Managed Care,2,82,DART_UI_VALIDATION,2,6,10,77,18,19,12,10,5,15,20,25,12,10,Red,Green,Red,Green,Yellow,Red,Yellow,0,1,Invalid Taxonomy
+849,RO_1848,F_2848,R_3848,P_4848,Demographic,Cleveland Clinic,KS,Medicare HMO,3,33,DART_UI_VALIDATION,8,10,9,27,15,11,9,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Green,Green,0,0,
+850,RO_1849,F_2849,R_3849,P_4849,ProviderGroup,Norton Hospitals,CA,Commercial PPO/EPO,2,16,SPS_LOAD,21,11,29,30,23,1,9,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Yellow,Red,Green,0,0,
+851,RO_1850,F_2850,R_3850,P_4850,Demographic,Johns Hopkins Hospital,KS,Medicare HMO,3,42,DART_REVIEW,2,8,14,32,3,10,3,10,5,15,20,25,12,10,Green,Red,Red,Green,Red,Red,Green,0,0,
+852,RO_1851,F_2851,R_3851,P_4851,AvailityPDM,Norton Hospitals,NY,Medicaid FFS,2,66,RESOLVED,4,3,12,73,14,13,3,10,5,15,20,25,12,10,Red,Green,Green,Green,Red,Green,Yellow,0,0,
+853,RO_1852,F_2852,R_3852,P_4852,Salesforce,Northwestern Memorial,KS,Medicaid Managed Care,1,55,ISF_GEN,15,12,11,76,24,15,12,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Yellow,Yellow,Red,0,0,
+854,RO_1853,F_2853,R_3853,P_4853,AvailityPDM,UCSF Medical Center,KS,Commercial PPO/EPO,3,99,ISF_GEN,4,10,11,49,34,19,14,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Green,Red,Yellow,0,1,Network Gap
+855,RO_1854,F_2854,R_3854,P_4854,AvailityPDM,Kaiser Permanente,CA,Medicare HMO,3,42,DART_GEN,13,1,10,78,13,5,5,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Red,Red,Green,1,1,Missing NPI
+856,RO_1855,F_2855,R_3855,P_4855,Salesforce,Cleveland Clinic,NY,Commercial PPO/EPO,1,34,MAPPING_APPROVAL,12,9,25,61,18,3,2,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Green,Green,0,1,Network Gap
+857,RO_1856,F_2856,R_3856,P_4856,Demographic,UCSF Medical Center,KS,Medicaid FFS,3,30,DART_REVIEW,13,13,24,70,37,14,6,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Green,Red,Green,0,1,Complete Validation Failure
+858,RO_1857,F_2857,R_3857,P_4857,ProviderGroup,Mayo Clinic,NY,Medicaid FFS,3,13,DART_GEN,14,13,7,78,35,0,7,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Green,Yellow,1,0,
+859,RO_1858,F_2858,R_3858,P_4858,AvailityPDM,Cedars-Sinai Medical Care Foundation,KS,Medicaid Managed Care,2,13,STOPPED,20,1,23,14,6,6,13,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Red,Yellow,Yellow,0,0,
+860,RO_1859,F_2859,R_3859,P_4859,AvailityPDM,Johns Hopkins Hospital,NY,Commercial PPO/EPO,3,18,SPS_LOAD,18,3,26,62,29,11,9,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Red,Yellow,Green,0,0,
+861,RO_1860,F_2860,R_3860,P_4860,ProviderGroup,UCSF Medical Center,KS,Medicare HMO,4,32,SPS_LOAD,6,8,19,64,18,9,6,10,5,15,20,25,12,10,Red,Green,Red,Red,Yellow,Red,Yellow,1,0,
+862,RO_1861,F_2861,R_3861,P_4861,AvailityPDM,Massachusetts General,NY,Medicare HMO,1,96,DART_GEN,11,14,8,95,24,4,3,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Green,Green,Yellow,0,0,
+863,RO_1862,F_2862,R_3862,P_4862,ProviderGroup,UCSF Medical Center,KS,Medicare HMO,2,99,ISF_GEN,2,3,16,65,15,11,12,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Yellow,Green,Green,0,1,Address Mismatch
+864,RO_1863,F_2863,R_3863,P_4863,ProviderGroup,Mayo Clinic,NY,Medicaid Managed Care,2,39,ISF_GEN,23,13,10,68,39,17,5,10,5,15,20,25,12,10,Yellow,Green,Yellow,Red,Yellow,Green,Red,1,1,Missing NPI
+865,RO_1864,F_2864,R_3864,P_4864,ProviderGroup,Northwestern Memorial,KS,Medicaid FFS,4,46,RESOLVED,19,4,23,78,7,9,4,10,5,15,20,25,12,10,Red,Green,Green,Red,Yellow,Yellow,Yellow,0,1,Invalid Taxonomy
+866,RO_1865,F_2865,R_3865,P_4865,Salesforce,Northwestern Memorial,CA,Medicare HMO,1,29,PRE_PROCESSING,19,8,8,68,17,5,5,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Yellow,Yellow,Green,0,1,Complete Validation Failure
+867,RO_1866,F_2866,R_3866,P_4866,Demographic,Cedars-Sinai Medical Care Foundation,NY,Medicaid Managed Care,1,62,ISF_GEN,5,1,19,11,27,11,8,10,5,15,20,25,12,10,Green,Red,Red,Green,Yellow,Green,Green,0,1,Complete Validation Failure
+868,RO_1867,F_2867,R_3867,P_4867,Demographic,MercyOne Medical Group,CA,Medicaid Managed Care,2,93,SPS_LOAD,19,13,13,74,15,6,8,10,5,15,20,25,12,10,Green,Red,Green,Red,Red,Green,Green,0,0,
+869,RO_1868,F_2868,R_3868,P_4868,Salesforce,Cedars-Sinai Medical Care Foundation,CA,Medicaid Managed Care,3,62,RESOLVED,2,13,9,69,18,17,6,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Red,Green,Green,0,1,Network Gap
+870,RO_1869,F_2869,R_3869,P_4869,Demographic,Johns Hopkins Hospital,KS,Medicaid Managed Care,2,57,ISF_GEN,10,6,17,60,16,1,1,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Green,Red,Red,0,0,
+871,RO_1870,F_2870,R_3870,P_4870,Demographic,Cleveland Clinic,CA,Medicaid Managed Care,1,16,STOPPED,2,1,27,39,12,9,8,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Yellow,Red,Green,1,0,
+872,RO_1871,F_2871,R_3871,P_4871,Demographic,Cleveland Clinic,NY,Medicaid Managed Care,4,56,STOPPED,11,14,22,20,6,14,8,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Red,Yellow,Green,1,1,Complete Validation Failure
+873,RO_1872,F_2872,R_3872,P_4872,AvailityPDM,UCSF Medical Center,KS,Medicaid FFS,2,10,DART_UI_VALIDATION,18,1,9,48,26,11,2,10,5,15,20,25,12,10,Green,Yellow,Red,Yellow,Red,Red,Red,1,1,Missing NPI
+874,RO_1873,F_2873,R_3873,P_4873,Salesforce,Cleveland Clinic,KS,Medicaid FFS,1,30,RESOLVED,24,14,29,72,9,16,4,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Green,Yellow,Red,0,0,
+875,RO_1874,F_2874,R_3874,P_4874,Demographic,MercyOne Medical Group,NY,Medicare HMO,2,25,DART_REVIEW,15,8,20,73,33,3,12,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Yellow,Green,Green,0,0,
+876,RO_1875,F_2875,R_3875,P_4875,Salesforce,Kaiser Permanente,NY,Commercial PPO/EPO,3,84,DART_REVIEW,9,11,23,70,35,6,2,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Green,Red,Yellow,1,0,
+877,RO_1876,F_2876,R_3876,P_4876,Demographic,Northwestern Memorial,CA,Medicaid FFS,2,5,STOPPED,23,4,18,63,24,8,4,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Green,Red,Red,1,0,
+878,RO_1877,F_2877,R_3877,P_4877,Demographic,UCSF Medical Center,CA,Commercial PPO/EPO,2,65,PRE_PROCESSING,19,12,29,67,5,18,12,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Red,Yellow,Green,0,1,Network Gap
+879,RO_1878,F_2878,R_3878,P_4878,Salesforce,Johns Hopkins Hospital,KS,Medicare HMO,1,94,SPS_LOAD,9,1,20,65,23,6,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Red,Green,Red,0,0,
+880,RO_1879,F_2879,R_3879,P_4879,ProviderGroup,UCSF Medical Center,NY,Medicaid FFS,1,49,MAPPING_APPROVAL,3,10,19,43,17,1,13,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Green,Green,Yellow,0,0,
+881,RO_1880,F_2880,R_3880,P_4880,Salesforce,Norton Hospitals,NY,Medicaid FFS,1,3,ISF_GEN,21,7,26,40,22,5,10,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Yellow,Green,Yellow,0,0,
+882,RO_1881,F_2881,R_3881,P_4881,ProviderGroup,Norton Hospitals,KS,Medicare HMO,2,45,PRE_PROCESSING,9,5,8,61,5,17,7,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Green,Green,0,0,
+883,RO_1882,F_2882,R_3882,P_4882,AvailityPDM,Norton Hospitals,CA,Medicare HMO,3,14,DART_GEN,14,5,11,110,28,5,9,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Red,Red,Yellow,Red,1,0,
+884,RO_1883,F_2883,R_3883,P_4883,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,4,30,DART_REVIEW,19,1,20,64,24,12,14,10,5,15,20,25,12,10,Red,Green,Green,Red,Red,Yellow,Green,0,1,Complete Validation Failure
+885,RO_1884,F_2884,R_3884,P_4884,ProviderGroup,Cleveland Clinic,CA,Commercial PPO/EPO,4,68,RESOLVED,7,14,28,31,16,18,14,10,5,15,20,25,12,10,Green,Green,Red,Green,Red,Yellow,Red,0,0,
+886,RO_1885,F_2885,R_3885,P_4885,Demographic,Massachusetts General,CA,Medicare HMO,1,18,MAPPING_APPROVAL,16,10,26,49,23,1,8,10,5,15,20,25,12,10,Green,Red,Green,Green,Yellow,Red,Red,0,0,
+887,RO_1886,F_2886,R_3886,P_4886,AvailityPDM,UCSF Medical Center,KS,Medicaid FFS,1,62,RESOLVED,16,11,25,10,10,11,12,10,5,15,20,25,12,10,Green,Green,Green,Yellow,Red,Red,Green,0,0,
+888,RO_1887,F_2887,R_3887,P_4887,Salesforce,Massachusetts General,NY,Medicaid Managed Care,2,37,DART_UI_VALIDATION,1,6,26,74,25,14,9,10,5,15,20,25,12,10,Green,Yellow,Green,Yellow,Yellow,Green,Yellow,0,0,
+889,RO_1888,F_2888,R_3888,P_4888,ProviderGroup,MercyOne Medical Group,KS,Commercial PPO/EPO,4,25,DART_REVIEW,4,14,25,72,33,13,8,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Red,Red,0,1,Invalid Taxonomy
+890,RO_1889,F_2889,R_3889,P_4889,ProviderGroup,Northwestern Memorial,KS,Medicare HMO,1,48,DART_UI_VALIDATION,4,9,12,63,27,5,2,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Green,Red,Green,0,0,
+891,RO_1890,F_2890,R_3890,P_4890,Salesforce,UCSF Medical Center,CA,Medicaid FFS,3,65,DART_UI_VALIDATION,7,9,21,51,2,17,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Yellow,Green,0,1,Duplicate Record
+892,RO_1891,F_2891,R_3891,P_4891,ProviderGroup,MercyOne Medical Group,NY,Medicaid FFS,3,53,STOPPED,8,8,20,30,10,4,2,10,5,15,20,25,12,10,Green,Green,Green,Green,Green,Red,Green,0,0,
+893,RO_1892,F_2892,R_3892,P_4892,Salesforce,Cleveland Clinic,KS,Commercial PPO/EPO,1,79,STOPPED,17,5,27,31,37,17,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Yellow,Yellow,Red,Yellow,0,0,
+894,RO_1893,F_2893,R_3893,P_4893,ProviderGroup,Northwestern Memorial,NY,Commercial PPO/EPO,1,73,DART_REVIEW,5,1,14,47,13,2,12,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Red,Red,Green,0,0,
+895,RO_1894,F_2894,R_3894,P_4894,Demographic,Cleveland Clinic,KS,Medicaid Managed Care,4,15,DART_UI_VALIDATION,7,9,14,17,25,2,11,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Yellow,Green,Green,1,0,
+896,RO_1895,F_2895,R_3895,P_4895,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,4,49,PRE_PROCESSING,20,1,6,71,20,9,2,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Green,Yellow,Green,0,1,Missing NPI
+897,RO_1896,F_2896,R_3896,P_4896,Salesforce,Johns Hopkins Hospital,KS,Medicaid Managed Care,2,88,SPS_LOAD,20,8,13,56,38,18,4,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Yellow,Red,Green,1,0,
+898,RO_1897,F_2897,R_3897,P_4897,AvailityPDM,Northwestern Memorial,CA,Medicare HMO,4,68,MAPPING_APPROVAL,4,5,21,26,29,2,1,10,5,15,20,25,12,10,Red,Green,Green,Red,Yellow,Yellow,Green,0,0,
+899,RO_1898,F_2898,R_3898,P_4898,Demographic,Mayo Clinic,CA,Commercial PPO/EPO,3,12,DART_UI_VALIDATION,6,3,15,26,7,11,5,10,5,15,20,25,12,10,Yellow,Yellow,Green,Green,Red,Yellow,Red,1,0,
+900,RO_1899,F_2899,R_3899,P_4899,Salesforce,Northwestern Memorial,KS,Medicaid Managed Care,3,59,DART_GEN,7,11,14,68,19,15,6,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Red,Yellow,1,0,
+901,RO_1900,F_2900,R_3900,P_4900,ProviderGroup,Cleveland Clinic,CA,Commercial PPO/EPO,1,37,STOPPED,18,7,26,26,31,16,9,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Yellow,Red,Green,0,1,Invalid Taxonomy
+902,RO_1901,F_2901,R_3901,P_4901,ProviderGroup,UCSF Medical Center,KS,Medicare HMO,4,61,ISF_GEN,5,7,29,47,21,6,10,10,5,15,20,25,12,10,Red,Green,Green,Red,Green,Yellow,Green,0,0,
+903,RO_1902,F_2902,R_3902,P_4902,ProviderGroup,UCSF Medical Center,CA,Medicare HMO,2,43,DART_REVIEW,20,9,21,54,6,12,8,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Red,Yellow,Yellow,0,0,
+904,RO_1903,F_2903,R_3903,P_4903,AvailityPDM,UCSF Medical Center,NY,Medicaid Managed Care,3,70,DART_UI_VALIDATION,3,7,8,15,8,1,2,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Green,Green,Red,1,1,Invalid Taxonomy
+905,RO_1904,F_2904,R_3904,P_4904,Salesforce,Massachusetts General,CA,Medicaid FFS,3,39,DART_UI_VALIDATION,7,13,20,44,0,3,1,10,5,15,20,25,12,10,Yellow,Red,Yellow,Yellow,Yellow,Green,Green,0,0,
+906,RO_1905,F_2905,R_3905,P_4905,ProviderGroup,Northwestern Memorial,NY,Medicare HMO,2,56,STOPPED,22,11,24,23,28,9,2,10,5,15,20,25,12,10,Yellow,Red,Red,Yellow,Red,Green,Red,0,0,
+907,RO_1906,F_2906,R_3906,P_4906,AvailityPDM,Mayo Clinic,NY,Medicare HMO,2,63,RESOLVED,14,14,19,70,7,6,7,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Green,Green,Red,0,0,
+908,RO_1907,F_2907,R_3907,P_4907,AvailityPDM,Massachusetts General,CA,Medicare HMO,3,46,RESOLVED,7,3,29,24,3,16,4,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Yellow,Green,Red,1,1,Network Gap
+909,RO_1908,F_2908,R_3908,P_4908,Salesforce,Norton Hospitals,NY,Medicare HMO,3,88,MAPPING_APPROVAL,5,11,25,63,34,19,10,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Red,Yellow,Yellow,0,1,Address Mismatch
+910,RO_1909,F_2909,R_3909,P_4909,ProviderGroup,Cleveland Clinic,CA,Medicaid FFS,2,11,SPS_LOAD,22,13,9,36,2,5,5,10,5,15,20,25,12,10,Red,Yellow,Green,Yellow,Yellow,Red,Yellow,0,0,
+911,RO_1910,F_2910,R_3910,P_4910,Demographic,Cleveland Clinic,NY,Medicare HMO,3,62,DART_REVIEW,5,14,10,22,39,18,12,10,5,15,20,25,12,10,Green,Green,Red,Red,Yellow,Red,Yellow,0,0,
+912,RO_1911,F_2911,R_3911,P_4911,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,77,RESOLVED,23,13,21,40,6,4,7,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Green,Red,Red,0,1,Network Gap
+913,RO_1912,F_2912,R_3912,P_4912,Demographic,Johns Hopkins Hospital,NY,Commercial PPO/EPO,1,98,ISF_GEN,2,1,5,44,26,9,3,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Yellow,Green,Yellow,0,0,
+914,RO_1913,F_2913,R_3913,P_4913,Demographic,Northwestern Memorial,KS,Medicaid FFS,2,25,ISF_GEN,21,8,29,69,0,8,10,10,5,15,20,25,12,10,Yellow,Green,Green,Yellow,Yellow,Green,Yellow,0,0,
+915,RO_1914,F_2914,R_3914,P_4914,ProviderGroup,Mayo Clinic,CA,Medicaid Managed Care,4,71,DART_UI_VALIDATION,22,12,23,15,26,12,2,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Red,Red,Red,0,0,
+916,RO_1915,F_2915,R_3915,P_4915,Demographic,Norton Hospitals,CA,Commercial PPO/EPO,2,52,SPS_LOAD,6,3,8,78,15,18,13,10,5,15,20,25,12,10,Red,Red,Yellow,Yellow,Yellow,Red,Red,1,1,Missing NPI
+917,RO_1916,F_2916,R_3916,P_4916,AvailityPDM,Northwestern Memorial,CA,Medicaid FFS,2,4,SPS_LOAD,15,12,21,67,37,5,7,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Red,Green,0,0,
+918,RO_1917,F_2917,R_3917,P_4917,AvailityPDM,Massachusetts General,NY,Medicaid FFS,4,59,MAPPING_APPROVAL,21,8,13,58,6,3,5,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Red,Yellow,Yellow,0,0,
+919,RO_1918,F_2918,R_3918,P_4918,ProviderGroup,Mayo Clinic,KS,Medicaid FFS,4,72,MAPPING_APPROVAL,10,8,28,32,22,2,14,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Yellow,Green,0,0,
+920,RO_1919,F_2919,R_3919,P_4919,Salesforce,Northwestern Memorial,NY,Medicaid FFS,4,20,ISF_GEN,23,13,6,43,10,2,1,10,5,15,20,25,12,10,Green,Yellow,Red,Red,Yellow,Red,Green,0,0,
+921,RO_1920,F_2920,R_3920,P_4920,AvailityPDM,Northwestern Memorial,NY,Medicaid FFS,1,93,DART_UI_VALIDATION,24,5,12,35,32,3,1,10,5,15,20,25,12,10,Green,Red,Green,Yellow,Red,Red,Green,0,1,Missing NPI
+922,RO_1921,F_2921,R_3921,P_4921,ProviderGroup,Kaiser Permanente,CA,Medicaid FFS,3,63,DART_GEN,7,13,19,107,35,4,9,10,5,15,20,25,12,10,Green,Yellow,Yellow,Yellow,Green,Green,Red,0,0,
+923,RO_1922,F_2922,R_3922,P_4922,Demographic,Norton Hospitals,NY,Medicaid Managed Care,1,54,DART_UI_VALIDATION,5,12,11,14,36,7,5,10,5,15,20,25,12,10,Red,Red,Green,Red,Red,Red,Green,0,0,
+924,RO_1923,F_2923,R_3923,P_4923,AvailityPDM,Northwestern Memorial,NY,Medicaid Managed Care,3,74,DART_UI_VALIDATION,1,13,10,29,16,15,1,10,5,15,20,25,12,10,Yellow,Green,Red,Green,Green,Green,Red,0,0,
+925,RO_1924,F_2924,R_3924,P_4924,ProviderGroup,Massachusetts General,KS,Medicaid Managed Care,1,98,DART_REVIEW,13,1,5,15,34,2,7,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Yellow,Green,0,0,
+926,RO_1925,F_2925,R_3925,P_4925,ProviderGroup,MercyOne Medical Group,NY,Medicaid FFS,3,57,DART_REVIEW,21,13,19,79,4,11,9,10,5,15,20,25,12,10,Green,Green,Green,Red,Green,Yellow,Red,1,1,Network Gap
+927,RO_1926,F_2926,R_3926,P_4926,Salesforce,UCSF Medical Center,KS,Commercial PPO/EPO,1,90,SPS_LOAD,18,10,27,68,31,7,11,10,5,15,20,25,12,10,Green,Red,Yellow,Red,Yellow,Red,Green,0,0,
+928,RO_1927,F_2927,R_3927,P_4927,Demographic,Northwestern Memorial,CA,Medicaid Managed Care,4,41,DART_REVIEW,13,7,11,73,2,12,1,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Red,Green,1,1,Address Mismatch
+929,RO_1928,F_2928,R_3928,P_4928,Demographic,Johns Hopkins Hospital,KS,Medicare HMO,2,3,RESOLVED,21,12,29,27,34,3,10,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Red,Yellow,Yellow,0,0,
+930,RO_1929,F_2929,R_3929,P_4929,Demographic,MercyOne Medical Group,KS,Medicare HMO,1,6,DART_UI_VALIDATION,21,10,21,13,13,13,14,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Yellow,Yellow,0,0,
+931,RO_1930,F_2930,R_3930,P_4930,ProviderGroup,Kaiser Permanente,CA,Medicaid FFS,3,5,STOPPED,18,5,6,26,30,13,13,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Red,Red,Red,0,0,
+932,RO_1931,F_2931,R_3931,P_4931,ProviderGroup,Norton Hospitals,KS,Commercial PPO/EPO,4,5,RESOLVED,5,8,13,23,30,12,4,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Red,Green,Yellow,1,0,
+933,RO_1932,F_2932,R_3932,P_4932,Demographic,Northwestern Memorial,KS,Medicaid Managed Care,1,54,SPS_LOAD,13,9,13,22,16,5,14,10,5,15,20,25,12,10,Green,Green,Red,Yellow,Yellow,Green,Red,0,0,
+934,RO_1933,F_2933,R_3933,P_4933,ProviderGroup,Cedars-Sinai Medical Care Foundation,CA,Medicaid FFS,1,47,ISF_GEN,4,11,17,16,23,16,3,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Yellow,Yellow,Red,0,1,Network Gap
+935,RO_1934,F_2934,R_3934,P_4934,Salesforce,Kaiser Permanente,NY,Commercial PPO/EPO,4,87,ISF_GEN,17,14,10,53,22,3,5,10,5,15,20,25,12,10,Green,Red,Yellow,Yellow,Green,Green,Yellow,0,0,
+936,RO_1935,F_2935,R_3935,P_4935,ProviderGroup,Norton Hospitals,KS,Medicare HMO,1,49,PRE_PROCESSING,3,7,10,24,17,7,7,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Yellow,Red,Red,0,0,
+937,RO_1936,F_2936,R_3936,P_4936,ProviderGroup,Massachusetts General,NY,Medicaid Managed Care,2,9,ISF_GEN,17,14,24,28,13,16,8,10,5,15,20,25,12,10,Green,Red,Green,Green,Green,Red,Red,0,1,Missing NPI
+938,RO_1937,F_2937,R_3937,P_4937,AvailityPDM,Cleveland Clinic,CA,Medicaid FFS,1,99,DART_GEN,11,13,24,118,14,2,13,10,5,15,20,25,12,10,Green,Green,Yellow,Red,Red,Green,Yellow,0,1,Address Mismatch
+939,RO_1938,F_2938,R_3938,P_4938,Salesforce,Johns Hopkins Hospital,CA,Medicaid FFS,2,20,DART_REVIEW,21,7,25,44,14,16,2,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Yellow,Yellow,Red,0,0,
+940,RO_1939,F_2939,R_3939,P_4939,AvailityPDM,MercyOne Medical Group,NY,Commercial PPO/EPO,2,61,MAPPING_APPROVAL,20,1,7,44,5,8,7,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Green,Red,Green,1,0,
+941,RO_1940,F_2940,R_3940,P_4940,Demographic,Johns Hopkins Hospital,KS,Medicaid FFS,4,35,DART_GEN,23,4,21,95,26,1,14,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Green,Yellow,0,0,
+942,RO_1941,F_2941,R_3941,P_4941,Demographic,Kaiser Permanente,NY,Medicaid FFS,1,50,ISF_GEN,21,2,21,29,14,12,14,10,5,15,20,25,12,10,Red,Green,Green,Red,Green,Yellow,Green,0,1,Missing NPI
+943,RO_1942,F_2942,R_3942,P_4942,Salesforce,Johns Hopkins Hospital,CA,Medicaid Managed Care,4,82,SPS_LOAD,4,2,16,44,35,19,1,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Yellow,Red,Yellow,0,1,Address Mismatch
+944,RO_1943,F_2943,R_3943,P_4943,ProviderGroup,UCSF Medical Center,CA,Medicare HMO,1,62,MAPPING_APPROVAL,2,2,20,41,7,1,7,10,5,15,20,25,12,10,Red,Yellow,Yellow,Green,Red,Red,Green,1,1,Address Mismatch
+945,RO_1944,F_2944,R_3944,P_4944,AvailityPDM,Northwestern Memorial,KS,Medicare HMO,1,17,MAPPING_APPROVAL,20,4,19,57,14,19,8,10,5,15,20,25,12,10,Red,Yellow,Green,Red,Yellow,Red,Red,1,1,Network Gap
+946,RO_1945,F_2945,R_3945,P_4945,Salesforce,Massachusetts General,CA,Commercial PPO/EPO,3,88,MAPPING_APPROVAL,16,14,17,53,2,10,2,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Red,Yellow,Yellow,1,0,
+947,RO_1946,F_2946,R_3946,P_4946,AvailityPDM,Norton Hospitals,NY,Medicare HMO,1,3,RESOLVED,18,1,27,33,12,14,9,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Yellow,Green,Green,0,1,Network Gap
+948,RO_1947,F_2947,R_3947,P_4947,ProviderGroup,MercyOne Medical Group,NY,Commercial PPO/EPO,4,32,STOPPED,8,4,5,70,33,10,1,10,5,15,20,25,12,10,Green,Red,Yellow,Green,Green,Red,Red,1,0,
+949,RO_1948,F_2948,R_3948,P_4948,AvailityPDM,UCSF Medical Center,NY,Medicaid Managed Care,2,99,PRE_PROCESSING,3,2,21,26,23,2,13,10,5,15,20,25,12,10,Yellow,Green,Green,Green,Green,Red,Green,0,0,
+950,RO_1949,F_2949,R_3949,P_4949,Salesforce,Kaiser Permanente,NY,Commercial PPO/EPO,1,13,PRE_PROCESSING,9,5,7,59,39,2,6,10,5,15,20,25,12,10,Red,Green,Red,Red,Green,Red,Yellow,0,0,
+951,RO_1950,F_2950,R_3950,P_4950,ProviderGroup,UCSF Medical Center,KS,Medicare HMO,3,89,SPS_LOAD,20,3,19,74,31,11,1,10,5,15,20,25,12,10,Red,Green,Red,Red,Red,Red,Red,0,1,Network Gap
+952,RO_1951,F_2951,R_3951,P_4951,ProviderGroup,Cleveland Clinic,NY,Medicaid FFS,4,73,STOPPED,6,12,8,41,31,4,3,10,5,15,20,25,12,10,Yellow,Red,Green,Yellow,Red,Red,Green,0,1,Address Mismatch
+953,RO_1952,F_2952,R_3952,P_4952,Salesforce,Massachusetts General,KS,Medicaid Managed Care,1,68,MAPPING_APPROVAL,10,8,8,45,29,19,11,10,5,15,20,25,12,10,Green,Green,Red,Red,Green,Green,Green,1,0,
+954,RO_1953,F_2953,R_3953,P_4953,ProviderGroup,UCSF Medical Center,CA,Medicare HMO,4,14,MAPPING_APPROVAL,21,4,22,22,12,6,6,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Green,Green,Yellow,0,1,Address Mismatch
+955,RO_1954,F_2954,R_3954,P_4954,AvailityPDM,Johns Hopkins Hospital,CA,Medicaid Managed Care,3,98,DART_REVIEW,10,1,21,79,0,6,3,10,5,15,20,25,12,10,Yellow,Yellow,Green,Red,Red,Red,Green,0,1,Missing NPI
+956,RO_1955,F_2955,R_3955,P_4955,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,3,11,ISF_GEN,13,1,23,67,33,12,8,10,5,15,20,25,12,10,Yellow,Red,Red,Green,Red,Green,Red,0,0,
+957,RO_1956,F_2956,R_3956,P_4956,Salesforce,MercyOne Medical Group,KS,Medicare HMO,4,56,MAPPING_APPROVAL,17,12,15,23,14,8,5,10,5,15,20,25,12,10,Yellow,Red,Yellow,Green,Yellow,Green,Red,0,0,
+958,RO_1957,F_2957,R_3957,P_4957,AvailityPDM,Massachusetts General,CA,Medicaid FFS,1,67,SPS_LOAD,9,10,24,46,13,12,2,10,5,15,20,25,12,10,Yellow,Green,Yellow,Green,Green,Red,Red,0,1,Invalid Taxonomy
+959,RO_1958,F_2958,R_3958,P_4958,ProviderGroup,UCSF Medical Center,CA,Medicaid FFS,2,92,DART_REVIEW,17,3,7,77,28,11,4,10,5,15,20,25,12,10,Green,Yellow,Green,Red,Green,Red,Green,0,0,
+960,RO_1959,F_2959,R_3959,P_4959,Demographic,Cleveland Clinic,NY,Medicaid FFS,3,29,DART_GEN,24,9,12,97,33,12,9,10,5,15,20,25,12,10,Yellow,Red,Red,Red,Green,Green,Red,1,0,
+961,RO_1960,F_2960,R_3960,P_4960,AvailityPDM,UCSF Medical Center,KS,Medicaid FFS,1,9,DART_GEN,9,7,18,99,17,9,4,10,5,15,20,25,12,10,Red,Red,Red,Yellow,Green,Green,Yellow,0,1,Network Gap
+962,RO_1961,F_2961,R_3961,P_4961,Salesforce,Cleveland Clinic,CA,Medicaid Managed Care,1,67,DART_REVIEW,9,2,5,25,6,0,10,10,5,15,20,25,12,10,Green,Green,Yellow,Green,Yellow,Red,Yellow,0,1,Duplicate Record
+963,RO_1962,F_2962,R_3962,P_4962,ProviderGroup,Mayo Clinic,KS,Medicare HMO,2,25,RESOLVED,1,13,18,71,28,7,10,10,5,15,20,25,12,10,Yellow,Yellow,Yellow,Yellow,Yellow,Yellow,Yellow,0,0,
+964,RO_1963,F_2963,R_3963,P_4963,Salesforce,Northwestern Memorial,CA,Medicaid FFS,3,98,ISF_GEN,2,9,6,13,30,15,8,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Green,Yellow,Red,0,1,Missing NPI
+965,RO_1964,F_2964,R_3964,P_4964,AvailityPDM,Massachusetts General,KS,Medicaid FFS,3,76,ISF_GEN,16,10,27,54,24,12,5,10,5,15,20,25,12,10,Green,Green,Yellow,Yellow,Green,Green,Red,1,0,
+966,RO_1965,F_2965,R_3965,P_4965,Demographic,Kaiser Permanente,KS,Medicaid FFS,1,42,STOPPED,1,2,8,37,37,2,11,10,5,15,20,25,12,10,Green,Green,Green,Red,Yellow,Green,Yellow,0,0,
+967,RO_1966,F_2966,R_3966,P_4966,AvailityPDM,Kaiser Permanente,CA,Commercial PPO/EPO,1,9,ISF_GEN,10,3,28,75,13,2,11,10,5,15,20,25,12,10,Red,Green,Red,Green,Red,Green,Yellow,0,0,
+968,RO_1967,F_2967,R_3967,P_4967,AvailityPDM,Mayo Clinic,NY,Medicare HMO,2,79,PRE_PROCESSING,18,11,23,40,7,4,10,10,5,15,20,25,12,10,Yellow,Red,Yellow,Red,Red,Red,Green,0,0,
+969,RO_1968,F_2968,R_3968,P_4968,ProviderGroup,UCSF Medical Center,NY,Medicaid Managed Care,2,40,PRE_PROCESSING,8,13,10,12,26,10,13,10,5,15,20,25,12,10,Yellow,Yellow,Red,Green,Green,Green,Green,0,1,Missing NPI
+970,RO_1969,F_2969,R_3969,P_4969,Salesforce,Mayo Clinic,NY,Commercial PPO/EPO,3,25,DART_UI_VALIDATION,21,10,29,17,1,6,13,10,5,15,20,25,12,10,Red,Yellow,Yellow,Yellow,Yellow,Red,Yellow,0,0,
+971,RO_1970,F_2970,R_3970,P_4970,AvailityPDM,Kaiser Permanente,CA,Commercial PPO/EPO,4,5,DART_UI_VALIDATION,11,14,5,33,16,9,14,10,5,15,20,25,12,10,Yellow,Green,Yellow,Yellow,Green,Green,Red,0,0,
+972,RO_1971,F_2971,R_3971,P_4971,AvailityPDM,Mayo Clinic,CA,Medicaid Managed Care,3,11,RESOLVED,23,2,21,24,36,9,1,10,5,15,20,25,12,10,Red,Green,Red,Red,Yellow,Green,Yellow,0,0,
+973,RO_1972,F_2972,R_3972,P_4972,Demographic,Mayo Clinic,NY,Medicaid FFS,1,59,RESOLVED,2,3,12,52,13,19,7,10,5,15,20,25,12,10,Green,Red,Red,Red,Red,Red,Green,0,1,Complete Validation Failure
+974,RO_1973,F_2973,R_3973,P_4973,Demographic,Kaiser Permanente,CA,Medicaid FFS,3,98,STOPPED,8,6,23,40,24,1,3,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Yellow,0,0,
+975,RO_1974,F_2974,R_3974,P_4974,Salesforce,Massachusetts General,CA,Medicare HMO,4,88,DART_REVIEW,22,9,25,54,29,2,10,10,5,15,20,25,12,10,Green,Green,Green,Green,Green,Green,Green,0,0,
+976,RO_1975,F_2975,R_3975,P_4975,Salesforce,Cleveland Clinic,NY,Medicaid FFS,2,79,STOPPED,8,9,5,75,28,7,8,10,5,15,20,25,12,10,Red,Red,Yellow,Green,Yellow,Green,Green,0,0,
+977,RO_1976,F_2976,R_3976,P_4976,ProviderGroup,Massachusetts General,CA,Commercial PPO/EPO,4,38,RESOLVED,17,7,9,17,19,10,14,10,5,15,20,25,12,10,Green,Yellow,Yellow,Red,Yellow,Green,Green,0,1,Network Gap
+978,RO_1977,F_2977,R_3977,P_4977,Salesforce,Cleveland Clinic,CA,Commercial PPO/EPO,4,72,ISF_GEN,15,12,20,66,20,12,12,10,5,15,20,25,12,10,Green,Yellow,Yellow,Green,Yellow,Red,Yellow,1,0,
+979,RO_1978,F_2978,R_3978,P_4978,Demographic,UCSF Medical Center,KS,Commercial PPO/EPO,4,5,STOPPED,17,3,10,39,21,6,3,10,5,15,20,25,12,10,Red,Green,Red,Yellow,Green,Yellow,Red,0,0,
+980,RO_1979,F_2979,R_3979,P_4979,Salesforce,Mayo Clinic,KS,Medicaid Managed Care,2,48,ISF_GEN,23,4,12,27,34,12,1,10,5,15,20,25,12,10,Red,Yellow,Red,Yellow,Green,Yellow,Yellow,0,0,
+981,RO_1980,F_2980,R_3980,P_4980,AvailityPDM,Mayo Clinic,NY,Medicaid FFS,4,90,RESOLVED,24,6,17,78,36,1,5,10,5,15,20,25,12,10,Red,Yellow,Yellow,Red,Green,Red,Green,0,1,Missing NPI
+982,RO_1981,F_2981,R_3981,P_4981,Salesforce,Cedars-Sinai Medical Care Foundation,KS,Medicaid FFS,4,18,SPS_LOAD,13,11,20,48,15,5,2,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Red,Green,Green,1,0,
+983,RO_1982,F_2982,R_3982,P_4982,Salesforce,Northwestern Memorial,KS,Medicaid FFS,4,70,STOPPED,19,5,7,69,16,8,11,10,5,15,20,25,12,10,Green,Red,Red,Green,Yellow,Yellow,Yellow,0,0,
+984,RO_1983,F_2983,R_3983,P_4983,ProviderGroup,UCSF Medical Center,CA,Medicaid FFS,1,37,STOPPED,5,2,23,52,15,19,4,10,5,15,20,25,12,10,Yellow,Yellow,Green,Yellow,Yellow,Red,Green,1,0,
+985,RO_1984,F_2984,R_3984,P_4984,AvailityPDM,Johns Hopkins Hospital,KS,Medicare HMO,4,60,DART_REVIEW,12,13,16,54,1,1,1,10,5,15,20,25,12,10,Red,Green,Green,Yellow,Red,Green,Red,0,0,
+986,RO_1985,F_2985,R_3985,P_4985,ProviderGroup,Johns Hopkins Hospital,CA,Medicare HMO,2,48,DART_UI_VALIDATION,1,6,20,32,3,17,9,10,5,15,20,25,12,10,Red,Green,Red,Green,Green,Green,Green,1,1,Complete Validation Failure
+987,RO_1986,F_2986,R_3986,P_4986,Demographic,Cleveland Clinic,KS,Commercial PPO/EPO,4,77,RESOLVED,23,3,15,78,20,15,6,10,5,15,20,25,12,10,Red,Red,Red,Red,Yellow,Yellow,Green,1,0,
+988,RO_1987,F_2987,R_3987,P_4987,Salesforce,MercyOne Medical Group,NY,Commercial PPO/EPO,4,28,STOPPED,5,14,14,15,38,11,8,10,5,15,20,25,12,10,Red,Green,Red,Red,Green,Green,Green,0,1,Duplicate Record
+989,RO_1988,F_2988,R_3988,P_4988,Salesforce,Mayo Clinic,CA,Medicaid Managed Care,2,69,DART_GEN,8,8,29,118,33,6,11,10,5,15,20,25,12,10,Yellow,Red,Green,Red,Green,Red,Red,0,1,Duplicate Record
+990,RO_1989,F_2989,R_3989,P_4989,Demographic,Norton Hospitals,KS,Commercial PPO/EPO,4,77,MAPPING_APPROVAL,13,2,24,13,29,6,4,10,5,15,20,25,12,10,Yellow,Green,Red,Red,Green,Yellow,Green,0,0,
+991,RO_1990,F_2990,R_3990,P_4990,ProviderGroup,Mayo Clinic,CA,Medicaid FFS,2,81,RESOLVED,8,1,8,32,5,16,9,10,5,15,20,25,12,10,Red,Green,Yellow,Red,Yellow,Red,Yellow,0,1,Network Gap
+992,RO_1991,F_2991,R_3991,P_4991,AvailityPDM,Cedars-Sinai Medical Care Foundation,NY,Commercial PPO/EPO,4,40,DART_REVIEW,23,9,16,15,16,12,2,10,5,15,20,25,12,10,Yellow,Green,Green,Red,Yellow,Red,Green,0,1,Address Mismatch
+993,RO_1992,F_2992,R_3992,P_4992,ProviderGroup,Cleveland Clinic,NY,Commercial PPO/EPO,2,45,DART_UI_VALIDATION,11,14,27,41,38,10,9,10,5,15,20,25,12,10,Yellow,Yellow,Red,Red,Red,Yellow,Red,0,1,Complete Validation Failure
+994,RO_1993,F_2993,R_3993,P_4993,ProviderGroup,Massachusetts General,CA,Medicare HMO,4,96,SPS_LOAD,1,12,6,27,24,5,12,10,5,15,20,25,12,10,Red,Red,Red,Red,Red,Green,Green,0,0,
+995,RO_1994,F_2994,R_3994,P_4994,AvailityPDM,Mayo Clinic,NY,Medicaid FFS,4,62,DART_REVIEW,13,3,28,24,4,13,5,10,5,15,20,25,12,10,Red,Green,Yellow,Green,Yellow,Red,Red,0,0,
+996,RO_1995,F_2995,R_3995,P_4995,Salesforce,Massachusetts General,NY,Medicaid Managed Care,1,93,ISF_GEN,19,11,26,49,4,5,13,10,5,15,20,25,12,10,Red,Green,Yellow,Yellow,Green,Yellow,Green,0,0,
+997,RO_1996,F_2996,R_3996,P_4996,ProviderGroup,Kaiser Permanente,KS,Medicaid Managed Care,1,58,DART_REVIEW,24,1,23,15,19,5,6,10,5,15,20,25,12,10,Yellow,Green,Red,Yellow,Red,Red,Green,0,1,Address Mismatch
+998,RO_1997,F_2997,R_3997,P_4997,Demographic,Kaiser Permanente,NY,Medicaid Managed Care,4,67,PRE_PROCESSING,3,7,29,72,15,1,3,10,5,15,20,25,12,10,Green,Red,Red,Yellow,Red,Yellow,Yellow,0,0,
+999,RO_1998,F_2998,R_3998,P_4998,AvailityPDM,UCSF Medical Center,KS,Commercial PPO/EPO,4,56,PRE_PROCESSING,24,13,9,76,36,19,4,10,5,15,20,25,12,10,Red,Yellow,Red,Red,Yellow,Red,Green,1,0,
+1000,RO_1999,F_2999,R_3999,P_4999,Salesforce,Mayo Clinic,CA,Medicaid Managed Care,3,40,STOPPED,17,10,12,20,39,14,6,10,5,15,20,25,12,10,Red,Red,Yellow,Red,Red,Yellow,Red,0,0,
